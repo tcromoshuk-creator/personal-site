@@ -25,31 +25,28 @@ export default function RootLayout({
           Skip to main content
         </a>
         <header className="site-header">
-          <Link href="/" className="brand" aria-label="Tyrell Cromoshuk home">
-            <span>Tyrell Cromoshuk</span>
-            <small>Growth & E-Commerce Executive</small>
-          </Link>
-          <nav className="main-nav" aria-label="Main navigation">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <div className="site-header-inner">
+            <Link href="/" className="brand" aria-label="Tyrell Cromoshuk home">
+              Tyrell Cromoshuk
+            </Link>
+            <nav className="main-nav" aria-label="Main navigation">
+              {navItems.map((item) => (
+                <Link key={item.href} href={item.href}>
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <span className="header-status">Open to Leadership & Advisory</span>
+          </div>
         </header>
         <main id="main">{children}</main>
         <footer className="site-footer">
-          <div>
-            <strong>Tyrell Cromoshuk</strong>
-            <p>
-              Growth leadership across e-commerce, marketplaces, acquisition,
-              lifecycle, reporting, and operating cadence.
-            </p>
-          </div>
+          <p>© 2026 Tyrell Cromoshuk</p>
           <div className="footer-links">
-            <Link href="/contact">Start a conversation</Link>
+            <Link href="/contact">Start a Conversation</Link>
             <a href="https://www.linkedin.com/in/tyrellcromoshuk/">LinkedIn</a>
             <a href="mailto:tcromoshuk@gmail.com">Email</a>
+            <a href="#main">Back to Top</a>
           </div>
         </footer>
       </body>

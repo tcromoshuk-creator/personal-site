@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudy } from "@/lib/content";
 
@@ -31,6 +32,28 @@ function CompanyMark({ company }: { company: string }) {
   );
 }
 
+function CaseLogo({ study }: { study: CaseStudy }) {
+  const logos: Record<string, string> = {
+    "netflix-shop": "/logos/netflix.svg",
+    "five-four-menlo-club": "/logos/menlo-club-linkedin-logo.jpg",
+    veestro: "/logos/veestro.png",
+  };
+  const whiteLogoSlugs = new Set(["veestro"]);
+  const logo = logos[study.slug];
+
+  if (!logo) {
+    return <CompanyMark company={study.company} />;
+  }
+
+  return (
+    <span
+      className={`case-logo-mark${whiteLogoSlugs.has(study.slug) ? " case-logo-white-mark" : ""}`}
+    >
+      <Image src={logo} alt="" width={120} height={48} sizes="120px" />
+    </span>
+  );
+}
+
 export function CaseCard({
   study,
   variant = "default",
@@ -44,43 +67,40 @@ export function CaseCard({
       metric,
       label: "Outcome",
     }));
-  const isFeaturedHomepageCase =
-    variant === "homepage" && ["mad-engine", "netflix-shop"].includes(study.slug);
 
   if (variant === "homepage") {
     return (
-      <Link
-        className={`card case-card case-card-compact${
-          isFeaturedHomepageCase ? " case-card-featured" : ""
-        }`}
-        href={`/case-studies/${study.slug}`}
-      >
-        <CategoryMeta category={study.category} limit={2} />
-        <div className="case-card-title">
+      <article className="card case-card case-card-compact">
+        <div className="case-card-company">
           <div className="case-title-row">
-            <CompanyMark company={study.company} />
+            <CaseLogo study={study} />
             <h3>{study.company}</h3>
           </div>
-          <p>{study.homepageContext ?? study.summary}</p>
+          <p>{study.title}</p>
+        </div>
+        <div className="case-card-body">
+          <p>{study.summary}</p>
+          <div className="case-card-capabilities">
+            {study.services.slice(0, 3).map((service) => (
+              <span className="mini-chip" key={service}>
+                {service}
+              </span>
+            ))}
+          </div>
         </div>
         <div className="outcome-tile-grid" aria-label={`${study.company} outcomes`}>
           {homepageOutcomes.slice(0, 3).map((outcome) => (
             <div className="outcome-tile" key={`${study.slug}-${outcome.metric}`}>
-              <span>{outcome.label}</span>
               <strong>{outcome.metric}</strong>
+              <span>{outcome.label}</span>
               {outcome.context && <small>{outcome.context}</small>}
             </div>
           ))}
         </div>
-        <div className="case-card-capabilities">
-          {study.services.slice(0, 2).map((service) => (
-            <span className="mini-chip" key={service}>
-              {service}
-            </span>
-          ))}
-        </div>
-        <span className="case-card-link">Read case study →</span>
-      </Link>
+        <Link className="case-card-link" href={`/case-studies/${study.slug}`}>
+          Read case study →
+        </Link>
+      </article>
     );
   }
 

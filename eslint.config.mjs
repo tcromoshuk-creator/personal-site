@@ -3,7 +3,14 @@ import nextTypescript from "eslint-config-next/typescript";
 
 const eslintConfig = [
   {
-    ignores: [".next/**", ".next-*/**", ".chrome-profile*/**", "node_modules/**", ".npm-cache/**"],
+    ignores: [
+      ".next/**",
+      ".next-*/**",
+      ".chrome-profile*/**",
+      "node_modules/**",
+      ".npm-cache/**",
+      "tmp/**",
+    ],
   },
   ...nextVitals,
   ...nextTypescript,

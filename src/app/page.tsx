@@ -4,37 +4,24 @@ import { CompanyStrip } from "@/components/CompanyStrip";
 import { ExpertiseCards } from "@/components/ExpertiseCards";
 import { GrowthOperatingSystem } from "@/components/GrowthOperatingSystem";
 import { Hero } from "@/components/Hero";
-import { MetricStrip } from "@/components/MetricStrip";
 import { PlatformEcosystem } from "@/components/PlatformEcosystem";
 import { Section } from "@/components/Section";
-import {
-  caseStudies,
-  homepageAudiences,
-  homepageProofMetrics,
-  industries,
-} from "@/lib/content";
+import { caseStudies, homepageAudiences, industries, site } from "@/lib/content";
+
+const homepageCaseStudySlugs = ["netflix-shop", "five-four-menlo-club", "veestro"];
 
 export default function Home() {
   return (
     <>
       <Hero
-        title="I build the operating systems behind profitable digital commerce growth."
-        intro="Growth and e-commerce leadership across DTC, marketplaces, retail media, lifecycle, forecasting, and executive reporting."
+        title="Growth and e-commerce leadership for brands."
+        intro="I help brands scale across DTC, marketplaces, and retail ecosystems by building profitable revenue engines. Over 15 years of hands-on growth leadership across Shopify, BigCommerce, Amazon, Walmart, Target+ and TikTok Shop."
         primaryCta={{ href: "/experience", label: "View Experience" }}
         secondaryCta={{ href: "/contact", label: "Start a Conversation" }}
         showSystemMap
       />
 
-      <Section tone="alt" className="kpi-proof-section">
-        <MetricStrip metrics={homepageProofMetrics} columns="four" />
-      </Section>
-
-      <Section
-        className="credibility-section"
-        eyebrow="Company and category experience"
-        title="Proven builder across direct-to-consumer, entertainment, marketplace, and subscription businesses."
-        intro="I believe growth touches more than marketing channels. It connects product experience, merchandising, operations, finance, analytics, retention, and executive decision-making."
-      >
+      <Section className="logo-section">
         <CompanyStrip />
         <div className="industry-tags-block section-after">
           <span className="industry-tags-label">Industries Spanned</span>
@@ -49,11 +36,9 @@ export default function Home() {
       </Section>
 
       <Section
-        tone="soft"
         className="capabilities-section"
-        eyebrow="Growth & E-Commerce Expertise"
-        title="Core areas of growth and e-commerce expertise."
-        intro="These are the functions and systems I use to lead growth across e-commerce, marketplaces, acquisition, retention, analytics, forecasting, and AI-enabled workflows."
+        eyebrow="Core Expertise"
+        title="Growth functions I lead end-to-end."
       >
         <ExpertiseCards />
         <div className="button-row section-action">
@@ -63,16 +48,13 @@ export default function Home() {
         </div>
       </Section>
 
-      <Section
-        className="case-proof-section"
-        eyebrow="Selected case studies"
-        title="Selected growth and e-commerce outcomes."
-        intro="These examples highlight the business problems I have worked on, the growth systems I helped build, and the measurable outcomes behind the work."
-      >
+      <Section className="case-proof-section" eyebrow="Case Studies" title="A few highlights of my work">
         <div className="grid case-grid">
-          {caseStudies.slice(0, 4).map((study) => (
-            <CaseCard key={study.slug} study={study} variant="homepage" />
-          ))}
+          {caseStudies
+            .filter((study) => homepageCaseStudySlugs.includes(study.slug))
+            .map((study) => (
+              <CaseCard key={study.slug} study={study} variant="homepage" />
+            ))}
         </div>
         <div className="button-row case-button-row">
           <Link className="button secondary" href="/case-studies">
@@ -82,35 +64,31 @@ export default function Home() {
       </Section>
 
       <Section
-        tone="alt"
-        className="process-section"
-        eyebrow="Growth operating system"
-        title="How I turn growth problems into operating systems."
-        intro="My framework starts with the real constraint - revenue, margin, retention, reporting, or ownership - then turns it into a clear operating cadence for prioritizing work, measuring performance, and scaling what works."
-      >
-        <GrowthOperatingSystem />
-      </Section>
-
-      <Section
         className="matrix-section"
-        eyebrow="Platform and channel ecosystem"
-        title="Platforms and systems I have operated across."
+        eyebrow="Platform Ecosystem"
+        title="The stack I operate."
         intro="A curated view of the channels, tools, and operating systems behind the work."
       >
         <PlatformEcosystem />
       </Section>
 
       <Section
-        tone="soft"
+        className="process-section"
+        eyebrow="Growth Operating System"
+        title="Six steps I run inside every P&L."
+      >
+        <GrowthOperatingSystem />
+      </Section>
+
+      <Section
         className="audience-section"
-        eyebrow="Full-time or fractional"
-        title="Explore full-time leadership or strategic advisory support."
-        intro="Start with the path that fits your need: full-time growth, e-commerce, marketplace, or marketing leadership - or fractional/advisory support for senior strategic growth mandates."
+        eyebrow="Engagement Models"
+        title="Two ways to work together."
       >
         <div className="grid two-col">
           {homepageAudiences.map((audience) => (
             <div className="card audience-card" key={audience.title}>
-              <div>
+              <div className="audience-copy">
                 <p className="case-card-meta">{audience.subtitle}</p>
                 <h3>{audience.title}</h3>
                 <p>{audience.body}</p>
@@ -122,6 +100,7 @@ export default function Home() {
               </ul>
               <Link className="button secondary" href={audience.href}>
                 {audience.cta}
+                <span aria-hidden="true">→</span>
               </Link>
             </div>
           ))}
@@ -130,18 +109,21 @@ export default function Home() {
 
       <Section
         className="contact-section"
-        eyebrow="Contact"
-        title="Start a conversation about growth leadership or advisory support."
-        intro="Reach out about full-time growth, e-commerce, marketplace, or marketing leadership, fractional advisory, or project-based work across commerce, acquisition, lifecycle, forecasting, reporting, and AI-enabled workflows."
+        eyebrow="Start a Conversation"
+        title="Building a growth engine? Let’s talk."
+        intro="Reach out about full-time leadership roles, selective advisory work, or just to talk growth."
       >
-        <div className="button-row">
+        <div className="button-row contact-button-row">
           <Link className="button primary" href="/contact">
-            Start a Conversation
+            Contact Me
+            <span aria-hidden="true">→</span>
           </Link>
-          <Link className="button secondary" href="/case-studies">
-            View Case Studies
-          </Link>
+          <a className="button secondary" href={site.linkedin}>
+            LinkedIn
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
+        <p className="contact-email">{site.email}</p>
       </Section>
     </>
   );

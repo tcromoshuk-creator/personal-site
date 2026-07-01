@@ -34,24 +34,17 @@ export const proofMetrics = [
 
 export const homepageProofMetrics = [
   {
-    value: "15 years",
-    label: "Operating growth systems",
-    support: "Consumer, marketplace, DTC, subscription, fintech, and entertainment.",
+    value: "$300M+",
+    label: "Revenue Contribution",
   },
   {
     value: "$90M+",
-    label: "Growth and marketing budgets",
-    support: "Paid media, retail media, lifecycle, launch, and acquisition programs.",
+    label: "Growth Budgets Managed",
   },
   {
-    value: "$300M+",
-    label: "Revenue contribution",
-    support: "DTC, marketplace, subscription, and digital commerce.",
-  },
-  {
-    value: "$120M+",
-    label: "E-commerce portfolio scope",
-    support: "Amazon, Walmart, Target+, TikTok Shop, and retail media.",
+    value: "15+ Years",
+    label: "Growth Leadership",
+    filled: true,
   },
 ];
 
@@ -69,13 +62,17 @@ export const industries = [
 ];
 
 export const companyStrip = [
-  { name: "Mad Engine", mark: "ME" },
-  { name: "Netflix", mark: "N" },
-  { name: "Paxful", mark: "PX" },
-  { name: "Veestro", mark: "VE" },
-  { name: "Menlo Club (Five Four Group)", mark: "MC" },
-  { name: "adMixt", mark: "AX" },
-  { name: "adParlor", mark: "AP" },
+  { name: "Mad Engine", mark: "Mad Engine", logo: "/logos/mad-engine-global.jpg" },
+  { name: "Netflix", mark: "Netflix", logo: "/logos/netflix.svg" },
+  { name: "Paxful / Echo Base", mark: "Echo Base / Paxful", logo: "/logos/echo-base-global-linkedin-logo.jpg" },
+  { name: "Veestro", mark: "Veestro", logo: "/logos/veestro.png", logoTone: "color-on-dark" },
+  { name: "Menlo Club / Five Four Group", mark: "Menlo Club", logo: "/logos/menlo-club-linkedin-logo.jpg" },
+  { name: "adMixt", mark: "adMixt", logo: "/logos/admixt-linkedin-logo.jpg" },
+  { name: "adParlor", mark: "adParlor", logo: "/logos/adparlor-logo.png", logoTone: "adparlor-legacy" },
+  { name: "Ocean / Yotpo", mark: "Ocean", logo: "/logos/ocean-yotpo-linkedin-logo.jpg" },
+  { name: "Jason of Beverly Hills", mark: "Jason of Beverly Hills", logo: "/logos/jason-of-beverly-hills.png", logoTone: "color-on-dark" },
+  { name: "Keith James", mark: "Keith James", logo: "/logos/keith-james.png" },
+  { name: "LSTN", mark: "LSTN", logo: "/logos/lstn-sound-co-linkedin-logo.jpg" },
 ];
 
 export const expertiseCards = [
@@ -111,7 +108,7 @@ export const expertiseCards = [
   },
   {
     title: "AI-Enabled Growth Systems",
-    body: "Use practical AI workflows to make growth teams faster and more consistent across analysis, reporting, CRM sequencing, PDP QA, and research.",
+    body: "Use practical AI workflows to speed up campaign analysis, creative testing, CRM sequencing, PDP/catalog QA, reporting automation, forecasting support, customer segmentation, competitive research, and internal tooling — without replacing strategic judgment.",
     levers: ["Codex workflows", "PDP QA", "Research automation"],
     leadsTo: "Faster analysis, repeatable workflows, and better operating consistency.",
   },
@@ -149,46 +146,34 @@ export const platformEcosystem = [
     group: "Commerce",
     items: [
       "Shopify",
-      "Amazon",
-      "Walmart",
+      "Amazon 1P/3P/MOD",
+      "Walmart / WFS",
       "Target+",
       "TikTok Shop",
-      "DTC",
-      "PDPs",
-      "Catalog QA",
-      "Merchandising",
-      "CRO",
-      "Product launches",
+      "PDP / Catalog QA",
     ],
   },
   {
     group: "Acquisition",
     items: [
-      "Meta",
+      "Meta / Facebook / Instagram",
       "Google",
       "Retail media",
       "Affiliate",
       "Influencer",
       "Partnerships",
-      "Paid social",
-      "Paid search",
       "Direct mail",
-      "PR",
     ],
   },
   {
-    group: "Lifecycle",
+    group: "Lifecycle & CRM",
     items: [
-      "CRM",
-      "Email/SMS",
-      "Klaviyo",
-      "Segmentation",
-      "Win-back",
+      "Email/SMS and CRM",
+      "Klaviyo flows",
+      "Customer segmentation",
       "Retention",
       "Reactivation",
       "Lifecycle testing",
-      "Churn reduction",
-      "Subscription",
     ],
   },
   {
@@ -197,28 +182,22 @@ export const platformEcosystem = [
       "GA4",
       "Dashboards",
       "CAC/LTV",
-      "MER",
-      "ROAS",
-      "tACOS",
+      "MER / ROAS / tACOS",
       "Forecasting",
-      "AOP planning",
       "Executive reporting",
-      "Pacing",
     ],
   },
   {
-    group: "AI Workflows",
+    group: "AI Systems",
     items: [
       "ChatGPT",
       "Codex",
-      "Automation",
+      "Reporting automation",
       "Campaign analysis",
       "CRM sequencing",
       "PDP QA",
-      "Executive reporting",
-      "Forecasting",
+      "Workflow automation",
       "Growth research",
-      "Workflow systems",
     ],
   },
 ];
@@ -297,142 +276,141 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: "netflix-shop",
     company: "Netflix.Shop",
-    title: "Scaling Netflix.Shop and Building a Global Acquisition Framework",
-    category: "DTC Commerce / Acquisition / CRO",
+    title: "Netflix Has A Shop!? Campaign",
+    category: "Brand Awareness / BFCM / Acquisition",
     summary:
-      "I built and scaled the Netflix.Shop growth function while advising broader Netflix teams on streaming acquisition, live experiences, lifecycle, and performance infrastructure.",
+      "I led a two-week BFCM awareness campaign across hero video, paid social, paid search, influencer seeding, direct mail, email, and organic social to educate fans that Netflix had an official shop and convert that attention into sales.",
     homepageContext:
-      "Built the growth function for a startup-like DTC commerce business inside Netflix.",
+      "BFCM brand awareness campaign for the official Netflix.Shop.",
     challenge:
-      "A startup-like DTC commerce business inside Netflix needed a growth function across acquisition, retention, CRO, product-launch marketing, and reporting.",
+      "Netflix.Shop needed to cut through BFCM noise, educate Netflix fans that the official shop existed, and turn awareness into traffic and sales.",
     role:
-      "I led growth for Netflix.Shop, with advisory and test-campaign work across broader Netflix acquisition and commerce initiatives.",
+      "I led the campaign with my team and agency partners across hero creative, channel planning, organic social, paid social, paid search, influencer seeding, direct mail, and email.",
     metrics: [
-      "Six-figure to eight-figure revenue growth",
-      "46% average CPA reduction in global streaming acquisition tests",
-      "3x-9x incremental ROAS",
-      "27% checkout conversion improvement",
+      "250% increase in reach",
+      "110% to BFCM sales goal",
+      "100% increase to ROAS during BFCM campaign",
     ],
     context:
-      "Netflix.Shop operated like a startup inside a much larger company, requiring practical growth leadership across acquisition, retention, product-launch marketing, experimentation, and reporting.",
+      "The campaign launched during the most competitive retail period of the year and needed to grow awareness of the shop while supporting sales conversion.",
     moves: [
-      "I built acquisition, retention, lifecycle, CRO, product-launch marketing, reporting, and experimentation systems.",
-      "I led acquisition across Meta, Google, influencer, affiliate, and partnerships.",
-      "I partnered with product, merchandising, creative, analytics, and operations teams on funnel experimentation and UX recommendations.",
-      "I helped establish test campaigns for broader Netflix streaming acquisition across global markets.",
+      "I led a three-video hero content series with supplementary assets for the two-week BFCM campaign.",
+      "I deployed organic social across Netflix and Netflix.Shop channels on YouTube, TikTok, and Instagram.",
+      "I coordinated paid social by funnel stage, Google Performance Max, influencer seeding, direct mail catalogues, and email.",
     ],
     outcome:
-      "I scaled Netflix.Shop to eight figures and helped produce a streaming acquisition framework that proved modern paid acquisition could support larger budgets.",
+      "The campaign deployed 30+ assets across multiple digital channels, reached more customers than prior efforts, lifted BFCM sales performance, improved ROAS, and earned organic editorial pickup.",
     services: [
-      "Growth Strategy & Revenue Planning",
-      "Paid Acquisition, Retail Media & Channel Strategy",
-      "CRO, Funnel Optimization & Testing",
+      "Paid social & search",
+      "Influencer seeding",
+      "Organic social & email",
     ],
     homepageOutcomes: [
       {
-        metric: "6-figure → 8-figure",
-        label: "Revenue scale",
+        metric: "250%",
+        label: "Increase in reach",
       },
       {
-        metric: "-46%",
-        label: "Avg. CPA reduction",
+        metric: "110%",
+        label: "To BFCM sales goal",
       },
       {
-        metric: "3x-9x",
-        label: "Incremental ROAS",
+        metric: "100%",
+        label: "Increase to ROAS",
       },
     ],
   },
   {
     slug: "five-four-menlo-club",
-    company: "Five Four / Menlo Club",
-    title: "From Acquisition Growth to a Better Subscription Business",
-    category: "Subscription / Retention / E-Commerce",
+    company: "Menlo Club / Five Four Group",
+    title: "Menlo Club Seasonal Subscription Launch",
+    category: "Subscription / Retention / BigCommerce",
     summary:
-      "I scaled the business from $8M to $65M+ and led the Premium Seasonal subscription launch to improve churn, LTV, customer experience, and monetization.",
+      "I acted as GM for a quarterly subscription launch that upgraded the apparel assortment, rebuilt the customer experience on BigCommerce, improved fulfillment and packaging, and introduced self-serve tools, personal stylists, and add-to-box shopping.",
     homepageContext:
-      "Scaled acquisition and helped reposition the subscription model around retention and LTV.",
+      "Quarterly subscription launch for a men's apparel brand.",
     challenge:
-      "A subscription and e-commerce business needed to move beyond acquisition-heavy growth and improve retention, customer value, and subscription experience.",
+      "Menlo Club needed to address quality and frequency complaints in the monthly subscription model while reducing churn, increasing LTV, and capturing a new target audience.",
     role:
-      "I led growth and served as GM-style lead for Premium Seasonal, spanning marketing, product, merchandising, logistics, and customer experience.",
+      "I acted as GM and coordinated Logistics, Merchandising, Customer Service, Product, Engineering, and Marketing across launch strategy, customer experience, and go-to-market execution.",
     metrics: [
-      "$8M to $65M+ revenue scale",
-      "52% churn reduction for Premium Seasonal",
-      "$90+ LTV increase",
+      "52% decrease in churn",
+      "$65 increase in AOV per customer",
       "10,000+ members in the first quarter",
     ],
     context:
-      "The business had grown quickly but needed to evolve from acquisition-heavy growth toward better retention, customer experience, subscription design, and broader operating discipline.",
+      "The business needed a more premium quarterly subscription model with better apparel, packaging, fulfillment, website experience, and service support.",
     moves: [
-      "I led paid social, paid search, affiliate, influencer, direct mail, CRM, and owned channels.",
-      "I built the go-to-market plan and owned P&L for the Premium Seasonal launch.",
-      "I partnered with merchandising, product, engineering, logistics, customer service, and marketing.",
-      "I helped build a new BigCommerce customer experience, self-service platform, and add-to-box portal.",
+      "I built the go-to-market plan across paid, organic, email, SMS, and influencer seeding.",
+      "I partnered on a rebuilt BigCommerce customer experience, self-service platform, and add-to-box portals.",
+      "I coordinated fulfillment, packaging, merchandising upgrades, customer service, and personal stylist support.",
     ],
     outcome:
-      "I helped shift the subscription model from discounted monthly boxes to a higher-value quarterly premium offering, improving churn, AOV, and the customer experience.",
+      "The launch delivered an upgraded quarterly subscription with custom packaging, improved fulfillment, a rebuilt website, a collection-preview magazine, personal stylists, and improved self-service tools.",
     services: [
-      "Lifecycle, CRM & Retention",
-      "Growth Strategy & Revenue Planning",
-      "CRO, Funnel Optimization & Testing",
+      "Subscription launch",
+      "BigCommerce rebuild",
+      "Lifecycle & retention",
     ],
     homepageOutcomes: [
       {
-        metric: "$8M → $65M+",
-        label: "Revenue scale",
+        metric: "52%",
+        label: "Decrease in churn",
       },
       {
-        metric: "-52%",
-        label: "Churn reduction",
+        metric: "$65",
+        label: "AOV increase",
       },
       {
-        metric: "+$90",
-        label: "LTV increase",
+        metric: "10,000+",
+        label: "Members in Q1",
       },
     ],
   },
   {
     slug: "veestro",
     company: "Veestro",
-    title: "Rebuilding Acquisition Economics for a Plant-Based Subscription Brand",
-    category: "Subscription / Acquisition / Brand Repositioning",
+    title: "Veestro's Plant Based Rebrand",
+    category: "Rebrand / CAC Reduction / Shopify 2.0",
     summary:
-      "I improved paid media economics, rebuilt acquisition and lifecycle foundations, and helped reposition the brand during a difficult post-iOS acquisition environment.",
+      "I led a plant-based repositioning from a vegan-first niche into a broader meal delivery audience, pairing new messaging and brand systems with Shopify 2.0, CRO improvements, paid and organic channel refreshes, affiliate, PR, and influencer support.",
     homepageContext:
-      "Rebuilt acquisition economics for a plant-based subscription brand.",
+      "Plant-based rebrand and Shopify 2.0 transition for a meal delivery brand.",
     challenge:
-      "A plant-based meal delivery subscription brand needed to expand beyond a saturated vegan-first audience while improving acquisition economics.",
+      "Veestro needed to expand beyond a saturated vegan-first audience, reduce climbing acquisition costs, and maintain healthy customer value while reaching a broader plant-based meal delivery market.",
     role:
-      "I led acquisition, segmentation, lifecycle testing, brand repositioning, and Shopify/CRO improvements as VP Marketing.",
+      "I led brand strategy, messaging pillars, paid test rollout, Shopify 2.0 transition, and a rebuilt marketing foundation with internal and agency partners.",
     metrics: [
-      "$300+ to $120 CPA in three months",
-      "One-month retention extension",
-      "15% sitewide conversion improvement from the current site case study",
+      "60% drop in CAC",
+      "15% increase in sitewide CVR",
+      "50%+ increase in engagement rate",
     ],
     context:
-      "The brand had saturated a vegan-first audience and needed to expand the customer base without weakening retention or the subscription value proposition.",
+      "The vegan-first audience was saturated, acquisition costs were rising, and the brand needed to widen its addressable market without weakening retention.",
     moves: [
-      "I helped reposition messaging from vegan-only to broader plant-based meal delivery.",
-      "I led customer segmentation, lifecycle testing, and acquisition channel optimization.",
-      "I partnered with the team to move the website and customer experience toward a more modern Shopify foundation.",
-      "I built tests across creative, landing page, affiliate, PR, and influencer angles.",
+      "I developed messaging pillars and a brand style guide from competitor and category research.",
+      "I introduced the rebrand through controlled paid media tests before rolling it out company-wide.",
+      "I supported the Shopify 2.0 transition and rebuilt paid, organic, affiliate, PR, and influencer foundations.",
     ],
     outcome:
-      "I improved acquisition economics while keeping the retention story intact, creating a healthier foundation for growth.",
+      "Within three months of launching the rebrand, customers remained loyal, site experience improved, acquisition costs dropped, and the new audience showed healthier click and conversion rates.",
     services: [
-      "Paid Acquisition, Retail Media & Channel Strategy",
-      "Lifecycle, CRM & Retention",
-      "CRO, Funnel Optimization & Testing",
+      "Brand repositioning",
+      "Shopify 2.0 & CRO",
+      "Paid, affiliate & influencer",
     ],
     homepageOutcomes: [
       {
-        metric: "$300+ → $120",
-        label: "CPA reduction",
+        metric: "60%",
+        label: "Drop in CAC",
       },
       {
-        metric: "+1 month",
-        label: "Retention extension",
+        metric: "15%",
+        label: "Sitewide CVR lift",
+      },
+      {
+        metric: "50%+",
+        label: "Engagement lift",
       },
     ],
   },
@@ -491,11 +469,11 @@ export const homepageAudiences = [
   {
     title: "For full-time leadership roles",
     subtitle: "Growth, E-Commerce, Marketplace Growth, or Marketing",
-    body: "For companies that need a senior operator to lead the broader growth system: revenue strategy, acquisition, retention, marketplace or digital commerce performance, forecasting, reporting, and cross-functional execution.",
+    body: "For companies hiring a full-time Growth, E-Commerce, Marketplace Growth, or Marketing leader to own the growth function, build the team and operating cadence, and scale revenue across acquisition, retention, marketplaces, reporting, and cross-functional execution.",
     bullets: [
       "VP, SVP, Head of Growth, E-Commerce, or Marketing scope",
       "Budget, team, revenue, or P&L influence",
-      "Consumer, marketplace, DTC, subscription, entertainment, or digital commerce complexity",
+      "Built for emerging brands creating the growth engine and established businesses ready for the next stage of scale.",
     ],
     cta: "View experience",
     href: "/experience",
@@ -503,14 +481,14 @@ export const homepageAudiences = [
   {
     title: "For fractional or advisory work",
     subtitle: "Senior support for strategic growth mandates",
-    body: "For brands that need senior support on strategic diagnosis, marketplace or e-commerce growth, reporting cadence, channel strategy, lifecycle planning, or project-based growth systems.",
+    body: "For brands that need senior growth support for a specific project, time period, or business constraint — from marketplace growth and acquisition efficiency to lifecycle planning, reporting systems, AI-enabled workflows, or interim Head of Growth support.",
     bullets: [
       "Growth audits, operating cadence, or revenue planning",
       "Marketplace, retail media, CRO, lifecycle, or acquisition projects",
       "AI-enabled workflows for analysis, reporting, QA, and team execution",
     ],
-    cta: "Discuss consulting",
-    href: "/services",
+    cta: "Discuss advisory work",
+    href: "/contact",
   },
 ];
 

@@ -10,15 +10,6 @@ export function ExpertiseCards() {
             <h3>{area.title}</h3>
             <p>{area.body}</p>
           </div>
-          <ul className="capability-levers">
-            {area.levers.map((lever) => (
-              <li key={lever}>{lever}</li>
-            ))}
-          </ul>
-          <div className="capability-result">
-            <span>Outcome</span>
-            <strong>{area.leadsTo}</strong>
-          </div>
         </div>
       ))}
     </div>
