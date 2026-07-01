@@ -16,6 +16,7 @@ function CompanyMark({
           alt={company.name}
           width={180}
           height={72}
+          loading="eager"
           sizes="180px"
         />
       ) : (

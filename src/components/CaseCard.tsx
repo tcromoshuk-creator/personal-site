@@ -97,6 +97,18 @@ export function CaseCard({
             </div>
           ))}
         </div>
+        <details className="mobile-outcomes">
+          <summary>View results</summary>
+          <div className="mobile-outcome-list" aria-label={`${study.company} outcomes`}>
+            {homepageOutcomes.slice(0, 3).map((outcome) => (
+              <div className="outcome-tile" key={`${study.slug}-${outcome.metric}-mobile`}>
+                <strong>{outcome.metric}</strong>
+                <span>{outcome.label}</span>
+                {outcome.context && <small>{outcome.context}</small>}
+              </div>
+            ))}
+          </div>
+        </details>
         <Link className="case-card-link" href={`/case-studies/${study.slug}`}>
           Read case study →
         </Link>
