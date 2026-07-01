@@ -1,0 +1,16 @@
+node_modules
+.next
+.next-*
+out
+.vercel
+.npm-cache
+.chrome-profile*
+
+.env
+.env*.local
+
+*.log
+*.tsbuildinfo
+tmp/
+.git.broken-placeholder-*
+.git.acl-broken-*
