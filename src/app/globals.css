@@ -1327,6 +1327,215 @@ p {
   margin-top: 0.85rem;
 }
 
+.about-narrative-grid {
+  align-items: stretch;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
+}
+
+.about-narrative-lede {
+  color: var(--ink-mid);
+  font-size: clamp(1.12rem, 1.75vw, 1.65rem);
+  line-height: 1.55;
+  max-width: 820px;
+}
+
+.about-narrative-card,
+.advisory-client-card {
+  display: grid;
+  gap: 1rem;
+  padding: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+.about-narrative-card p:last-child,
+.advisory-client-card p:last-child {
+  color: var(--ink-mid);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.career-chapter-list,
+.selected-role-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.career-chapter-card {
+  display: grid;
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(160px, 0.22fr) minmax(0, 1fr);
+  padding: clamp(1.45rem, 3vw, 2.45rem);
+}
+
+.career-chapter-index {
+  display: grid;
+  gap: 0.6rem;
+  align-content: start;
+}
+
+.career-chapter-index span,
+.selected-role-heading span {
+  color: var(--accent);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.career-chapter-index p,
+.selected-role-heading > p,
+.selected-role-heading span {
+  color: var(--muted);
+}
+
+.career-chapter-main {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.career-chapter-main p:last-child {
+  color: var(--ink-mid);
+  font-size: 1rem;
+  line-height: 1.65;
+  max-width: 760px;
+}
+
+.operating-principle-grid {
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.operating-principle {
+  border-left: 1px solid rgba(255, 255, 255, 0.14);
+  display: grid;
+  gap: 1rem;
+  min-height: 230px;
+  padding: clamp(1.2rem, 2.2vw, 2rem);
+}
+
+.operating-principle:first-child {
+  border-left: 0;
+}
+
+.operating-principle span {
+  color: var(--accent);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.operating-principle h3,
+.operating-principle p {
+  color: #ffffff;
+}
+
+.operating-principle h3 {
+  font-size: 1.2rem;
+}
+
+.operating-principle p {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.experience-metric-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.experience-expertise-grid {
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  overflow: hidden;
+}
+
+.experience-expertise-card {
+  background: rgba(255, 255, 255, 0.58);
+  border: 0;
+  border-radius: 0;
+  display: grid;
+  gap: 2rem;
+  min-height: 240px;
+  padding: clamp(1.45rem, 3vw, 2.35rem);
+}
+
+.experience-expertise-card h3 {
+  font-size: clamp(1.18rem, 1.6vw, 1.55rem);
+  line-height: 1.12;
+}
+
+.selected-role-card {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.6rem);
+  grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr) minmax(190px, 0.24fr);
+  padding: clamp(1.45rem, 3vw, 2.45rem);
+}
+
+.selected-role-heading,
+.selected-role-body,
+.selected-role-outcomes {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.selected-role-heading h3 {
+  font-size: clamp(1.55rem, 2.4vw, 2.25rem);
+}
+
+.selected-role-heading > p:not(.case-card-meta) {
+  color: var(--ink);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.selected-role-body > p {
+  color: var(--ink-mid);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.selected-role-body ul {
+  color: var(--muted);
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  padding-left: 1.05rem;
+}
+
+.selected-role-body li {
+  line-height: 1.55;
+}
+
+.selected-role-outcomes {
+  border-left: 1px solid var(--line);
+  padding-left: clamp(1rem, 2vw, 2rem);
+}
+
+.selected-role-outcomes strong {
+  color: var(--ink);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.05rem, 1.45vw, 1.35rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.advisory-client-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -1360,6 +1569,19 @@ p {
 
   .operating-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .experience-metric-grid,
+  .advisory-client-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .operating-principle-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .operating-principle:nth-child(3) {
+    border-left: 0;
   }
 
   .operating-card:nth-child(4) {
@@ -1423,6 +1645,9 @@ p {
   .three-col,
   .four-col,
   .case-card-compact,
+  .about-narrative-grid,
+  .career-chapter-card,
+  .selected-role-card,
   .service-item,
   .timeline-item {
     grid-template-columns: 1fr;
@@ -1470,6 +1695,18 @@ p {
 
   .platform-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-expertise-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .selected-role-outcomes {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    padding-left: 0;
+    padding-top: 1.25rem;
   }
 
   .platform-card:nth-child(5) {
@@ -1683,6 +1920,95 @@ p {
 
   .section-action {
     margin-top: 1.1rem;
+  }
+
+  .about-narrative-lede {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .about-narrative-card,
+  .career-chapter-card,
+  .advisory-client-card {
+    padding: 1.15rem;
+  }
+
+  .career-chapter-card {
+    gap: 1rem;
+  }
+
+  .career-chapter-main p:last-child,
+  .about-narrative-card p:last-child,
+  .advisory-client-card p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .operating-principle-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .operating-principle,
+  .operating-principle:nth-child(3) {
+    border-left: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.14);
+    min-height: auto;
+    padding: 1rem 0;
+  }
+
+  .operating-principle:first-child {
+    border-top: 0;
+  }
+
+  .experience-metric-grid,
+  .experience-expertise-grid,
+  .advisory-client-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-metric-grid .metric-card {
+    aspect-ratio: auto;
+    min-height: 165px;
+  }
+
+  .experience-expertise-card {
+    gap: 1.2rem;
+    min-height: auto;
+    padding: 1.15rem;
+  }
+
+  .selected-role-card {
+    gap: 1rem;
+    padding: 1.15rem;
+  }
+
+  .selected-role-heading {
+    gap: 0.65rem;
+  }
+
+  .selected-role-heading h3 {
+    font-size: 1.45rem;
+  }
+
+  .selected-role-heading > p:not(.case-card-meta),
+  .selected-role-body > p,
+  .selected-role-body li {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .selected-role-body ul {
+    gap: 0.5rem;
+  }
+
+  .selected-role-outcomes {
+    gap: 0.75rem;
+    grid-template-columns: 1fr;
+    padding-top: 1rem;
+  }
+
+  .selected-role-outcomes strong {
+    font-size: 1rem;
   }
 
   .case-proof-section,
