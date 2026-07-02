@@ -47,7 +47,9 @@ function CaseLogo({ study }: { study: CaseStudy }) {
 
   return (
     <span
-      className={`case-logo-mark${whiteLogoSlugs.has(study.slug) ? " case-logo-white-mark" : ""}`}
+      className={`case-logo-mark case-logo-${study.slug}${
+        whiteLogoSlugs.has(study.slug) ? " case-logo-white-mark" : ""
+      }`}
     >
       <Image src={logo} alt="" width={120} height={48} sizes="120px" />
     </span>

@@ -21,12 +21,27 @@ export function Hero({
   availability,
   showSystemMap = false,
 }: HeroProps) {
+  const useMobileHeroBreak = title === "Growth and e-commerce leadership for brands.";
+
   return (
     <section className={showSystemMap ? "section hero" : "page-hero"}>
       <div className={showSystemMap ? "section-inner hero-grid" : "section-inner"}>
         <div className="hero-heading">
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          <h1>{title}</h1>
+          <h1>
+            {useMobileHeroBreak ? (
+              <>
+                <span className="hero-title-desktop">{title}</span>
+                <span className="hero-title-mobile">
+                  Growth and e-commerce
+                  <br />
+                  leadership for brands.
+                </span>
+              </>
+            ) : (
+              title
+            )}
+          </h1>
         </div>
         <div className="hero-lower-copy">
           <p className="lede">{intro}</p>

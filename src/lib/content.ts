@@ -66,7 +66,12 @@ export const companyStrip = [
   { name: "Netflix", mark: "Netflix", logo: "/logos/netflix.svg" },
   { name: "Paxful / Echo Base", mark: "Echo Base / Paxful", logo: "/logos/echo-base-global-linkedin-logo.jpg" },
   { name: "Veestro", mark: "Veestro", logo: "/logos/veestro.png", logoTone: "color-on-dark" },
-  { name: "Menlo Club / Five Four Group", mark: "Menlo Club", logo: "/logos/menlo-club-linkedin-logo.jpg" },
+  {
+    name: "Menlo Club / Five Four Group",
+    mark: "Menlo Club",
+    logo: "/logos/menlo-club-linkedin-logo.jpg",
+    logoTone: "square-logo",
+  },
   { name: "adMixt", mark: "adMixt", logo: "/logos/admixt-linkedin-logo.jpg" },
   { name: "adParlor", mark: "adParlor", logo: "/logos/adparlor-logo.png", logoTone: "adparlor-legacy" },
   { name: "Ocean / Yotpo", mark: "Ocean", logo: "/logos/ocean-yotpo-linkedin-logo.jpg" },
@@ -180,7 +185,7 @@ export const platformEcosystem = [
     group: "Analytics",
     items: [
       "GA4",
-      "Dashboards",
+      "Power BI",
       "CAC/LTV",
       "MER / ROAS / tACOS",
       "Forecasting",
