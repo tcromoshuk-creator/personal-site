@@ -25,11 +25,22 @@ function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priori
           sizes={media.orientation === "portrait" ? "(max-width: 900px) 92vw, 420px" : "(max-width: 900px) 92vw, 900px"}
           priority={priority}
         />
-      ) : (
+      ) : media.type === "video" ? (
         <video controls muted playsInline preload="metadata" poster={media.poster}>
           <source src={media.src} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+      ) : (
+        <div className="case-pdf-frame">
+          <object data={media.src} type="application/pdf" aria-label={media.alt}>
+            <p>
+              <a href={media.src}>Open PDF</a>
+            </p>
+          </object>
+          <a className="case-pdf-link" href={media.src}>
+            Open PDF
+          </a>
+        </div>
       )}
       {media.caption && <figcaption>{media.caption}</figcaption>}
     </figure>
@@ -198,6 +209,20 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
                 ))}
               </div>
             </div>
+
+            {study.relevantLinks && study.relevantLinks.length > 0 && (
+              <div className="card case-links">
+                <h2>Relevant Links</h2>
+                <div className="case-link-list">
+                  {study.relevantLinks.map((link) => (
+                    <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
+                      <span>{link.label}</span>
+                      {link.note && <small>{link.note}</small>}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
           </aside>
         </div>
       </section>

@@ -1623,12 +1623,14 @@ p {
 
 .case-snapshot,
 .case-tools,
+.case-links,
 .contact-form-card {
   padding: clamp(1.15rem, 2.3vw, 1.7rem);
 }
 
 .case-snapshot h2,
-.case-tools h2 {
+.case-tools h2,
+.case-links h2 {
   font-size: clamp(1.3rem, 2vw, 1.8rem);
   margin-bottom: 1.2rem;
 }
@@ -1689,6 +1691,29 @@ p {
   display: block;
 }
 
+.case-pdf-frame {
+  background: var(--paper-soft);
+  display: grid;
+  gap: 0.8rem;
+  padding: 0.75rem;
+}
+
+.case-pdf-frame object {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  height: min(72vh, 720px);
+  width: 100%;
+}
+
+.case-pdf-link {
+  color: var(--ink);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
 .case-media figcaption {
   border-top: 1px solid var(--line);
   color: var(--muted);
@@ -1707,6 +1732,32 @@ p {
 .case-media-grid .case-media.portrait video {
   aspect-ratio: 9 / 16;
   object-fit: cover;
+}
+
+.case-media-grid .case-media.landscape {
+  grid-column: 1 / -1;
+}
+
+.case-link-list {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.case-link-list a {
+  border-top: 1px solid var(--line);
+  color: var(--ink);
+  display: grid;
+  gap: 0.2rem;
+  padding-top: 0.7rem;
+}
+
+.case-link-list span {
+  font-weight: 800;
+}
+
+.case-link-list small {
+  color: var(--muted);
+  line-height: 1.4;
 }
 
 .case-related-grid {
@@ -2900,6 +2951,7 @@ p {
   .case-index-card,
   .case-snapshot,
   .case-tools,
+  .case-links,
   .contact-form-card,
   .case-detail-cta {
     padding: 1.05rem;

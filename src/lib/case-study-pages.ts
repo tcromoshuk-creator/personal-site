@@ -5,7 +5,7 @@ export type CaseStudyMetric = {
 };
 
 export type CaseStudyMedia = {
-  type: "image" | "video";
+  type: "image" | "video" | "pdf";
   src: string;
   poster?: string;
   alt: string;
@@ -37,6 +37,11 @@ export type CaseStudyPageContent = {
   metrics: CaseStudyMetric[];
   heroMedia?: CaseStudyMedia;
   media?: CaseStudyMedia[];
+  relevantLinks?: {
+    label: string;
+    href: string;
+    note?: string;
+  }[];
   sections: CaseStudySection[];
   related: string[];
   seo: {
@@ -48,6 +53,9 @@ export type CaseStudyPageContent = {
 export const caseStudyAliases: Record<string, string> = {
   "mad-engine": "mad-engine-tiktok-shop",
   "five-four-menlo-club": "menlo-club",
+  "netflix-shop-case-study": "netflix-shop",
+  "menlo-club-case-study": "menlo-club",
+  "veestro-case-study": "veestro",
 };
 
 export const caseStudyPages: CaseStudyPageContent[] = [
@@ -56,13 +64,13 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     company: "Mad Engine Global",
     companyLabel: "Mad Engine / TikTok Shop",
     logo: "/logos/mad-engine-global.jpg",
-    headline: "Building TikTok Shop into a Creator-Led Growth Channel",
+    headline: "Scaling TikTok Shop into a meaningful marketplace channel",
     subhead:
-      "I took over TikTok Shop as an under-managed channel and helped turn it into a meaningful creator-led revenue engine without paid media.",
+      "I took over a mostly autopilot TikTok Shop channel and helped turn it into a creator-led marketplace growth engine before paid media was live.",
     indexSummary:
       "A social commerce build across creator activation, SKU expansion, storefront quality, fulfillment reliability, and executive reporting cadence.",
     role: "SVP, Growth",
-    timeframe: "2026",
+    timeframe: "Started Jan 2026",
     category: "Marketplace Growth / Social Commerce / Creator-Affiliate / TikTok Shop",
     platforms: [
       "TikTok Shop Seller Center",
@@ -76,12 +84,12 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     ],
     tags: ["TikTok Shop", "Social commerce", "Creator-led growth", "Marketplace operations"],
     metrics: [
-      { value: "6x", label: "Revenue run-rate growth" },
+      { value: "$120K -> $720K", label: "Revenue run-rate" },
       { value: "720%", label: "Of original AOP goal" },
-      { value: "9x", label: "SKU expansion" },
+      { value: "10K -> 90K", label: "SKU expansion" },
       { value: "100-200", label: "Creators activated monthly" },
-      { value: "+53%", label: "AOV increase" },
-      { value: "No paid media", label: "Creator-led growth" },
+      { value: "$17 -> $26", label: "AOV increase" },
+      { value: "No paid media", label: "Creator-led growth before paid media" },
     ],
     heroMedia: {
       type: "image",
@@ -120,8 +128,8 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         id: "overview",
         title: "Overview",
         body: [
-          "TikTok Shop was already live, but the channel was operating largely on autopilot and driving very little meaningful monthly sales when I took it over.",
-          "The business question was whether TikTok Shop could become a real revenue channel with efficient margin, rather than an experimental marketplace add-on. Mad Engine sells licensed apparel across major IP and brand portfolios, with top TikTok Shop sellers including Disney apparel such as Star Wars, Marvel, and Mickey Mouse.",
+          "TikTok Shop was already live when I took ownership, but it was operating largely on autopilot and driving almost no meaningful sales before active ownership.",
+          "The business problem was whether TikTok Shop could become a meaningful and margin-efficient revenue channel for a large licensed apparel portfolio. Mad Engine sells licensed apparel across major IP and entertainment brands, with top sellers including Disney apparel such as Star Wars, Marvel, and Mickey Mouse.",
         ],
       },
       {
@@ -144,24 +152,25 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         title: "Strategy",
         body: [
           "I treated TikTok Shop as a marketplace and social-commerce business, not a passive product feed. That meant connecting catalog expansion, creator activation, merchandising, storefront quality, fulfillment, and reporting into one operating system.",
-          "We prioritized high-demand licensed apparel categories, expanded product coverage so creators and shoppers had more relevant SKUs, partnered with TikTok to increase creator commissions from 10% to 25%, and used free shipping as a conversion lever.",
+          "We expanded the SKU feed from 10,000 products to 90,000 products, prioritized products and IP with organic creator-market fit, partnered with TikTok to increase creator commissions from 10% to 25%, added free shipping, and improved storefront, category, and PDP experiences.",
         ],
       },
       {
         id: "execution",
         title: "Execution / What I Did",
         body: [
-          "I owned the TikTok Shop sales channel at the executive level, created and led the strategy, and transferred an internal employee into the day-to-day TikTok Shop Manager role.",
-          "I partnered directly with the TikTok Shop team and coordinated cross-functionally with Sales, Merchandising, Ops, Data, Finance, and Growth. The work included product catalog expansion, SKU prioritization, affiliate and creator growth, storefront and PDP improvements, coupons and promotional planning, inventory coordination, and reporting cadence.",
-          "We also fixed fulfillment reliability by transitioning delivery to FedEx, reducing lost deliveries to almost 0% and getting orders to customers within 3 business days.",
+          "I owned TikTok Shop sales channel strategy, transferred an internal employee into the day-to-day TikTok Shop manager role, and led prioritization, reporting, resourcing, and cross-functional coordination.",
+          "The day-to-day manager handled execution with direct TikTok support while I partnered across Sales, Merchandising, Ops, Data, Finance, and Growth. The work included product catalog expansion, SKU prioritization, affiliate and creator growth, storefront and PDP improvements, coupons and promotional planning, inventory coordination, and weekly and monthly reporting.",
+          "We also fixed fulfillment issues from 2025 by transitioning delivery to FedEx, reducing lost deliveries to almost zero and getting deliveries to customers within three business days.",
         ],
       },
       {
         id: "results",
         title: "Results",
         body: [
-          "TikTok Shop moved from a sub-$100K to roughly $120K baseline to a forecasted 2026 GMV/revenue run rate of approximately $720K.",
-          "The channel reached 720% of the original $100K AOP goal, expanded SKU coverage from 10,000 products to 90,000 products, increased AOV from $17 to $26, and grew affiliate creator activation from roughly 5-10 creators per month to 100-200 creators per month.",
+          "TikTok Shop moved from a sub-$100K 2025 baseline, using $120K as the year-over-year baseline for growth calculation, to a $720K 2026 run-rate.",
+          "The channel reached 720% of the original $100K AOP goal, expanded SKU coverage from 10,000 products to 90,000 products, increased AOV from $17 to $26, and grew affiliate creators from roughly 5-10 per month to 100-200 per month.",
+          "The forecast moved from $0 to $100K to $500K, then outpaced that again. The next opportunity identified was scaling toward $1.5M with additional agency and paid media support, but these results were creator-led before paid media launched.",
         ],
       },
       {
@@ -185,85 +194,114 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     company: "Netflix.Shop",
     companyLabel: "Netflix.Shop",
     logo: "/logos/netflix.svg",
-    headline: "Cutting Through BFCM Noise for Netflix.Shop",
+    headline: "Netflix Has A Shop!? Campaign",
     subhead:
-      "A two-week awareness campaign built to teach fans that Netflix had an official shop and turn attention into traffic and sales.",
+      "A two-week BFCM campaign that turned a common fan reaction into a commerce hook for Netflix.Shop.",
     indexSummary:
-      "A BFCM campaign across hero video, paid social, paid search, PMAX, influencer seeding, direct mail, email, and organic social.",
+      "A BFCM campaign across hero video, paid social, Google PMax, influencer seeding, direct mail, email, affiliate, and organic social.",
     role: "Head of Growth, Netflix.Shop",
-    timeframe: "2023",
+    timeframe: "Planning started Aug 2023 / Campaign ran BFCM 2023",
     category: "DTC Commerce / Acquisition / BFCM",
     platforms: [
-      "Paid social",
-      "Paid search",
-      "Google PMAX",
-      "Influencer seeding",
-      "Direct mail",
-      "Email",
-      "Organic social",
-      "YouTube",
-      "TikTok",
+      "Facebook",
       "Instagram",
+      "TikTok",
+      "Google PMax",
+      "Klaviyo",
+      "Rakuten",
+      "PostPilot",
+      "GA4",
+      "Shopify",
+      "Influencer seeding",
+      "Organic social",
+      "Direct mail",
     ],
     tags: ["DTC commerce", "BFCM", "Paid social", "Influencer"],
     metrics: [
-      { value: "250%", label: "Increase in reach" },
-      { value: "110%", label: "To BFCM sales goal" },
-      { value: "100%", label: "Increase to ROAS" },
-      { value: "30+", label: "Campaign assets deployed" },
-      { value: "35-40", label: "Influencers seeded" },
+      { value: "13M+", label: "Consumers reached in two weeks" },
+      { value: "2.5M", label: "Visitors to Netflix.Shop" },
+      { value: "7 figures", label: "Revenue in two weeks" },
+      { value: "13.5%", label: "Average hero-video CTR" },
+      { value: "25,000", label: "Mini catalogues mailed" },
+      { value: "4x", label: "Mini catalogue ROAS" },
+    ],
+    heroMedia: {
+      type: "image",
+      src: "/case-studies/netflix-shop/netflix-shop-instagram-bfcm-stranger-things.png",
+      alt: "Netflix.Shop Instagram post from the Netflix Has A Shop campaign",
+      caption: "Social creative from the Netflix Has A Shop!? BFCM campaign.",
+      orientation: "landscape",
+    },
+    media: [
+      {
+        type: "image",
+        src: "/case-studies/netflix-shop/netflix-shop-instagram-girls-partnership.png",
+        alt: "Netflix.Shop influencer partnership Instagram post",
+        caption: "Influencer and partner content supported the campaign across social channels.",
+        orientation: "landscape",
+      },
+    ],
+    relevantLinks: [
+      {
+        label: "Instagram campaign example",
+        href: "https://www.instagram.com/p/Cz67prBJesC/",
+        note: "Use the screenshot on-site if the embed is unstable.",
+      },
     ],
     sections: [
       {
         id: "overview",
         title: "Overview",
         body: [
-          "The Netflix.Shop campaign started from a repeated customer insight: a lot of Netflix fans still did not know Netflix had an official shop.",
-          "BFCM created the right moment to make the shop visible, introduce the breadth of the product catalog, and connect attention to the strongest promotions of the year.",
+          "One of the most common reactions I heard while leading Netflix.Shop growth was, \"Netflix has a shop?\" Instead of treating that as a problem, I turned it into the creative hook for a BFCM campaign.",
+          "Planning started in August 2023, and the campaign ran for two weeks around BFCM. The goal was to make Netflix.Shop visible during the noisiest promotional window of the year while using the lowest prices of the year to turn fan attention into commerce demand.",
         ],
       },
       {
         id: "goals",
         title: "Goals",
         body: [
-          "The work had two core goals: increase awareness that Netflix.Shop existed and drive sales during a highly competitive retail window.",
+          "The work had two core goals: build awareness that Netflix.Shop was the official Netflix store and drive BFCM sales.",
         ],
         bullets: [
-          "Reach the broader Netflix demographic with a memorable awareness campaign.",
-          "Drive traffic to the shop during BFCM.",
-          "Convert attention into sales across discounted products tied to fan-favorite shows and movies.",
+          "Break through promotional noise during BFCM.",
+          "Increase site traffic and introduce fans to the shop assortment.",
+          "Use humor and fan familiarity to convert confusion into discovery.",
+          "Turn fan attention into measurable commerce demand.",
         ],
       },
       {
         id: "strategy",
         title: "Strategy",
         body: [
-          "I led my team and agency partners in building the campaign around a three-part hero video series, supported by supplementary content across the two-week BFCM period.",
-          "The channel plan connected organic social, paid social, paid search, PMAX, influencer seeding, direct mail, and email so the campaign could drive awareness and conversion at the same time.",
+          "The campaign was led by a hero video series built around the \"Netflix Has A Shop!?\" idea, then surrounded by supplementary content across paid, organic, influencer, email, affiliate, direct mail, and product-focused creative.",
+          "The strategy was to make the campaign feel native to Netflix fandom while still operating like a retail launch: tight creative sequencing, broad channel coverage, budget allocation by funnel stage, and active optimization as results came in.",
         ],
       },
       {
         id: "execution",
         title: "Execution / What I Did",
         body: [
-          "I led the campaign planning across Netflix and Netflix.Shop organic channels on YouTube, TikTok, and Instagram, with near-daily shop content during the campaign window.",
-          "Paid social was structured by funnel stage: video views at the top, link clicks in the middle, and purchases at the bottom. Paid search used Google-specific PMAX assets across awareness and sales objectives, leveraging the product catalog where applicable.",
-          "The team seeded roughly 35-40 influencers, created mini direct-mail catalogues for existing Netflix subscribers, and used email to push promotions and referrals to shoppers already familiar with the shop.",
+          "I owned strategy, channel planning, creative direction, agency coordination, merchandising coordination, budget allocation, execution, optimization, and reporting.",
+          "The campaign deployed 30+ assets across paid social on Facebook, Instagram, and TikTok; paid search through Google PMax; email through Klaviyo; affiliate through Rakuten; direct mail through PostPilot; organic social; and influencer seeding.",
+          "I managed internal and external teams to create and deploy the assets, then handled campaign execution and performance optimization as data came in.",
         ],
       },
       {
         id: "results",
         title: "Results",
         body: [
-          "During the two weeks the campaign was live, the team deployed more than 30 assets across multiple digital channels.",
-          "The campaign increased reach by 250%, reached 110% of the BFCM sales goal, increased ROAS by 100% during the BFCM campaign, and generated record CTRs, viewing time, time on site, and organic editorial pickup.",
+          "Over two weeks, the campaign deployed 30+ assets, reached more than 13M consumers, drove 2.5M visitors to Netflix.Shop, and produced seven-figure revenue at a 2.5x blended ROAS.",
+          "The hero video series averaged a 13.5% CTR with 15+ seconds of average viewing time. Nearly 40 influencers promoted Netflix.Shop, reaching more than 1M consumers.",
+          "The team mailed 25,000 mini catalogues that generated a 4x ROAS. The campaign also earned press in Vice and Daily Beast. Excluding brand and awareness assets, the sales-oriented campaign view reached roughly 3.5-4x ROAS.",
         ],
       },
       {
         id: "why-it-mattered",
         title: "Why It Mattered",
         body: [
-          "The campaign showed how a DTC commerce business inside a major entertainment brand could use the brand's own audience, product catalog, creators, paid channels, direct mail, and lifecycle messaging as one coordinated retail moment.",
+          "The campaign showed how a DTC commerce business inside a major entertainment brand could use fan culture, paid media, organic reach, creators, affiliate, email, direct mail, and merchandising as one coordinated retail moment.",
+          "It also turned an awareness gap into a creative advantage: people did not know Netflix had a shop, so the campaign made that discovery the point.",
         ],
       },
     ],
@@ -280,82 +318,111 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     companyLabel: "Menlo Club / Five Four Group",
     logo: "/logos/menlo-club-linkedin-logo.jpg",
     logoClass: "case-logo-square",
-    headline: "Relaunching Subscription Growth Around a Seasonal Model",
+    headline: "Menlo Club Premium Seasonal Subscription Launch",
     subhead:
-      "A quarterly subscription launch designed to reduce churn, increase LTV, and upgrade the customer experience.",
+      "A three-year business-model build that moved a monthly subscription into a premium seasonal commerce experience.",
     indexSummary:
-      "A subscription relaunch across BigCommerce, email/SMS, paid and organic channels, fulfillment, merchandising, packaging, and customer experience.",
-    role: "Director, Growth",
-    timeframe: "2020-2021",
+      "A subscription relaunch across BigCommerce, add-to-box commerce, packaging, shipping, merchandising, customer experience, and lifecycle marketing.",
+    role: "Director, Growth / GM of the launch",
+    timeframe: "Concepted Feb 2018 / MVP late 2018 / Full launch Q4 2020",
     category: "Subscription Growth / Retention / BigCommerce",
     platforms: [
       "BigCommerce",
+      "Sailthru",
+      "Facebook",
+      "Instagram",
+      "Pepperjam",
+      "Today's Business",
+      "Geckoboard",
+      "Google Analytics",
       "Email/SMS",
       "Paid social",
-      "Paid search",
-      "Influencer seeding",
-      "Direct mail",
-      "Customer experience",
-      "Fulfillment",
+      "Affiliate",
       "Merchandising",
+      "Product",
+      "Engineering",
+      "Logistics",
+      "Customer service",
     ],
-    tags: ["Subscription", "Retention", "BigCommerce", "Lifecycle"],
+    tags: ["Subscription", "Retention", "BigCommerce", "Launch GM"],
     metrics: [
-      { value: "52%", label: "Decrease in churn" },
+      { value: "25% -> 12%", label: "Churn rate improvement" },
       { value: "$65", label: "AOV increase" },
       { value: "10,000+", label: "Members in first quarter" },
+      { value: "3 years", label: "Concept to full launch" },
+      { value: "6 teams", label: "Departments coordinated" },
+      { value: "Add-to-box", label: "Hybrid commerce model" },
+    ],
+    media: [
+      {
+        type: "pdf",
+        src: "/case-studies/menlo-club/premium-seasonal-magazine.pdf",
+        alt: "Premium Seasonal digital magazine and lookbook PDF",
+        caption: "Premium Seasonal magazine/lookbook used to preview each collection and support the upgraded subscription experience.",
+        orientation: "landscape",
+      },
+    ],
+    relevantLinks: [
+      {
+        label: "Premium Seasonal launch video",
+        href: "https://www.youtube.com/watch?v=0mqC60QsVDo&ab_channel=MenloHouse",
+        note: "Launch video explaining the Premium Seasonal service.",
+      },
     ],
     sections: [
       {
         id: "overview",
         title: "Overview",
         body: [
-          "Menlo Club's monthly subscription had quality and frequency issues: customers were complaining about receiving clothes too often and not consistently getting the quality they expected.",
-          "The quarterly subscription launch was built to upgrade the assortment, improve customer experience, reduce churn, increase LTV, and create a stronger acquisition story.",
+          "Premium Seasonal was one of the biggest operating builds of my career: a new quarterly subscription and commerce model that took almost three years from concept to MVP to full launch.",
+          "The monthly subscription business was pressured by churn, customer fatigue, CAC, product frequency, and customer experience limitations. Premium Seasonal was built as a higher-value quarterly subscription and add-to-box commerce model that could give customers a better alternative to cancelling.",
         ],
       },
       {
         id: "goals",
         title: "Goals",
         body: [
-          "The business needed to improve subscription economics without losing the existing customer base.",
+          "The business needed to improve subscription economics without losing the existing customer base or relying only on more acquisition volume.",
         ],
         bullets: [
-          "Increase LTV through a higher-priced base subscription and add-to-box shopping.",
-          "Reduce churn by solving the core pain points of the monthly box.",
-          "Create a stronger acquisition offer with healthier margin and better customer-facing features.",
+          "Attract a more premium and elevated customer.",
+          "Give monthly subscribers an alternative to cancelling.",
+          "Increase LTV through a $99 subscription and add-to-box shopping.",
+          "Reduce churn and improve CAC economics.",
+          "Build a better subscription experience across product, shipping, customization, service, and merchandising.",
         ],
       },
       {
         id: "strategy",
         title: "Strategy",
         body: [
-          "Acting as the General Manager for the launch, I collaborated with Logistics, Merchandising, Customer Service, Product, Engineering, and Marketing to identify pain points and design the upgraded subscription experience.",
-          "The strategy connected the product experience, website experience, shipping, packaging, merchandising, and go-to-market plan instead of treating the launch as a campaign alone.",
+          "As the business owner and GM of the launch, I worked with leaders across Logistics, Merchandising, Customer Service, Product, Engineering, and Marketing to design a better subscription system.",
+          "The strategy moved the model from monthly to quarterly, added hybrid e-commerce through add-to-box, elevated product and packaging quality, rebuilt the website on BigCommerce, and gave customers more control through customization, subscription switching, interactive style guides, personal stylists, and a digital magazine/lookbook.",
         ],
       },
       {
         id: "execution",
         title: "Execution / What I Did",
         body: [
-          "I built a go-to-market plan across paid, organic, email, SMS, and influencer seeding to drive awareness, traffic, and conversion.",
-          "The team built a new BigCommerce experience, dedicated shopping and add-to-box portals, and self-service tools so customers could customize shipments more easily.",
-          "I negotiated with UPS to improve fulfillment timing, worked with packaging on a premium box, partnered with Merchandising on upgraded apparel categories and materials, and supported personal stylist service for order issues and future shipment customization.",
+          "I led development and launch across the organization while maintaining responsibility for the monthly subscription and sister e-commerce brands.",
+          "What launched included the quarterly subscription service, add-to-box commerce, an elevated product line, three new premium shipping boxes, USPS and UPS shipping options, a BigCommerce rebuild, interactive style guides, customization, subscription switching, digital magazine/lookbooks, and personal stylists assigned to customers.",
+          "The launch connected merchandising, fulfillment, customer service, product, engineering, marketing, paid media, lifecycle, influencer seeding, affiliate, and analytics into one operating plan.",
         ],
       },
       {
         id: "results",
         title: "Results",
         body: [
-          "The launch delivered a 52% decrease in churn, a $65 increase in AOV per customer, and more than 10,000 members within the first quarter.",
-          "The upgraded model included premium seasonal apparel, custom packaging, improved fulfillment, a rebuilt BigCommerce site, a collection-preview magazine, personal stylists, and improved self-service tools.",
+          "Premium Seasonal decreased overall churn from 25% to 12%, a 52% reduction. AOV increased by $65 per customer, lifting LTV because customers were charged more per box and could add incremental products.",
+          "The service reached more than 10,000 members within the first quarter and gave the business a higher-value model for customers who were burning out on monthly shipments.",
         ],
       },
       {
         id: "why-it-mattered",
         title: "Why It Mattered",
         body: [
-          "The project showed that subscription growth is not only acquisition. The business needed merchandising, fulfillment, customer service, product, packaging, and lifecycle systems working together to improve retention and customer value.",
+          "The project showed that subscription growth is not only acquisition. The business needed merchandising, fulfillment, customer service, product, packaging, website, lifecycle, and reporting systems working together to improve retention and customer value.",
+          "It also taught me how to run a business across functions, not only a marketing department.",
         ],
       },
     ],
@@ -372,15 +439,23 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     companyLabel: "Veestro",
     logo: "/logos/veestro-gray.png",
     logoClass: "case-logo-wide",
-    headline: "Repositioning a Plant-Based Subscription Brand for Efficient Growth",
+    headline: "Veestro Plant-Based Rebrand",
     subhead:
-      "A brand and performance reset that expanded the audience, improved conversion, and reduced acquisition costs.",
+      "A brand, website, acquisition, and lifecycle reset that moved Veestro from vegan-only positioning toward broader plant-based growth.",
     indexSummary:
-      "A plant-based rebrand and Shopify 2.0 rebuild across research, messaging, CRO, paid media, affiliate, PR, influencer, and organic channels.",
+      "A plant-based rebrand and Shopify 2.0 rebuild across research, messaging, CRO, paid media, affiliate, PR, influencer, lifecycle, and organic channels.",
     role: "VP, Marketing",
-    timeframe: "2021-2022",
+    timeframe: "Phased releases after roughly 60 days / Full rebrand after 5 months",
     category: "Rebrand / CAC Reduction / Shopify 2.0",
     platforms: [
+      "Meta",
+      "Google",
+      "Rakuten",
+      "Hotjar",
+      "Google Optimize",
+      "Google Analytics",
+      "Klaviyo",
+      "Attentive",
       "Shopify 2.0",
       "CRO",
       "Paid media",
@@ -393,61 +468,84 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     ],
     tags: ["Rebrand", "Shopify 2.0", "CRO", "Acquisition"],
     metrics: [
+      { value: "$300 -> $120", label: "CPA reduction" },
       { value: "60%", label: "CAC drop" },
       { value: "15%", label: "Sitewide CVR lift" },
-      { value: "50%+", label: "Engagement-rate lift" },
-      { value: "$300 -> $120", label: "CPA reduction" },
+      { value: "30-40%", label: "New email open rates" },
+      { value: "1-1.2%", label: "New email CTR" },
+      { value: "6 figures", label: "Monthly winback revenue" },
+    ],
+    media: [
+      {
+        type: "pdf",
+        src: "/case-studies/veestro/veestro-rebrand.pdf",
+        alt: "Veestro rebrand guide PDF",
+        caption: "Veestro rebrand guide and visual system for the plant-based positioning reset.",
+        orientation: "landscape",
+      },
+    ],
+    relevantLinks: [
+      {
+        label: "Veestro Shopify / CRO prototype",
+        href: "https://www.figma.com/proto/Qemu8swjttehhagGhhAGOc/Veestro---Shopify?node-id=1634-30047&starting-point-node-id=1634%3A30047",
+        note: "Figma prototype for Shopify rebuild direction.",
+      },
     ],
     sections: [
       {
         id: "overview",
         title: "Overview",
         body: [
-          "Veestro had built a following around being vegan-first, but rising CAC and reduced reach suggested that audience was becoming saturated.",
-          "I came in to overhaul the brand image, open up the total addressable market, reduce acquisition costs, and preserve customer value through stronger value-based messaging.",
+          "When I joined Veestro, the business was stuck in vegan-only positioning and an outdated brand aesthetic. That narrower message limited the audience at the same time iOS 14.5 had hurt paid media performance.",
+          "I led a rebrand and performance reset that shifted the brand toward broader plant-based eating, refreshed the website and creative system, rebuilt lifecycle flows, and reopened growth across paid, affiliate, PR, influencer, and organic channels.",
         ],
       },
       {
         id: "goals",
         title: "Goals",
         body: [
-          "The rebrand needed to expand the audience without alienating existing customers.",
+          "The rebrand needed to expand the audience without alienating existing customers, while improving the economics of acquisition and retention.",
         ],
         bullets: [
-          "Maintain or improve LTV by keeping current customers confident in the product quality.",
-          "Reduce CAC by shifting from vegan-first messaging toward broader plant-based benefits.",
-          "Improve conversion through a stronger website experience and clearer brand system.",
+          "Move from vegan-first to broader plant-based positioning.",
+          "Decrease CAC after the post-iOS 14.5 paid media disruption.",
+          "Increase LTV through email/SMS, loyalty, referrals, and winback flows.",
+          "Improve website conversion, checkout clarity, and product education.",
+          "Refresh paid, lifecycle, affiliate, influencer, PR, and organic channels.",
         ],
       },
       {
         id: "strategy",
         title: "Strategy",
         body: [
-          "I studied competitors and the broader meal delivery category to understand why customers were signing up and what plant-based eating offered beyond a vegan niche.",
-          "Using those learnings, I created new messaging pillars with internal and agency partners, then built an updated brand style guide for content, paid channels, organic channels, and the new website experience.",
+          "I moved Veestro from exclusionary vegan-first messaging toward a more inclusive plant-based voice. The strategy combined brand guide and messaging work with a phased website update, Shopify 2.0 direction, audience-specific landing pages, affiliate launch, paid channel refresh, and lifecycle rebuild.",
+          "We launched a 1.5 website update while building toward Shopify 2.0, simplified checkout, improved speed and menu/nutrition information, and created landing pages for different audiences so paid traffic could convert against more relevant messaging.",
         ],
       },
       {
         id: "execution",
         title: "Execution / What I Did",
         body: [
-          "I introduced the new assets in controlled paid media tests before rolling the rebrand out company-wide after five months as VP.",
-          "The team transitioned from an older Shopify experience to Shopify 2.0, applied CRO best practices, modernized subscription and e-commerce flows, rebuilt paid and organic creative, added an affiliate program, and seeded PR and influencer activity.",
+          "I led strategy directly as VP Marketing, working with my marketing team, co-founders, and agencies across repositioning, website/CRO, paid acquisition, lifecycle, affiliate, influencer, PR, and organic channel refreshes.",
+          "The execution included a brand guide and messaging system, Shopify 2.0 and CRO direction, landing page testing, paid social and paid search refreshes, Rakuten affiliate launch, and email/SMS rebuild in Klaviyo and Attentive.",
+          "Lifecycle work included rebuilding Welcome and Abandoned Cart flows and adding Abandoned Browse, Anniversary, and Winback Cancelled Customer flows.",
         ],
       },
       {
         id: "results",
         title: "Results",
         body: [
-          "Within three months of launching the rebrand, Veestro saw a 60% CAC drop, 15% lift in sitewide CVR, and 50%+ increase in engagement rate.",
-          "CPA dropped from about $300 to $120 as the new audience produced healthier click and conversion rates and benefited from improved conversion flows.",
+          "Within three months, CPA dropped from roughly $300 to $120, a 60% CAC reduction, while sitewide CVR increased by 15%. Paid CTR improved from 0.2-0.3% to 0.5-1%.",
+          "Email open rates improved from 20-25% to 30-40%, email CTR improved from 0.1-0.2% to 1-1.2%, and winback flows quickly drove six figures in monthly revenue.",
+          "The team onboarded 20+ influencers that promoted the food at little to no cost and drove hundreds of thousands in traffic over three months.",
         ],
       },
       {
         id: "why-it-mattered",
         title: "Why It Mattered",
         body: [
-          "The work widened the audience while keeping existing customers loyal. It connected brand positioning, channel economics, CRO, customer segmentation, and Shopify execution into one growth reset.",
+          "The work widened the audience while preserving the core product promise. It connected brand positioning, channel economics, CRO, lifecycle, customer segmentation, and Shopify execution into one growth reset.",
+          "It also showed how repositioning only matters commercially when it is paired with landing pages, paid media, lifecycle, affiliate, influencer, and site execution.",
         ],
       },
     ],
