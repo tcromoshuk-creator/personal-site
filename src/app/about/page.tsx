@@ -18,7 +18,18 @@ const careerChapters = [
     period: "2011-2016",
     company: "adParlor / adMixt",
     role: "Agency, paid media, and growth consulting foundation",
-    logo: "/logos/adparlor-logo.png",
+    logos: [
+      {
+        src: "/logos/adparlor-logo.png",
+        alt: "adParlor",
+        className: "timeline-logo-wide",
+      },
+      {
+        src: "/logos/admixt-linkedin-logo.jpg",
+        alt: "adMixt",
+        className: "timeline-logo-dark",
+      },
+    ],
     body:
       "Built the early operating muscle in paid acquisition, client strategy, optimization, reporting, and growth consulting across consumer, entertainment, fashion, food, and technology accounts.",
   },
@@ -26,7 +37,13 @@ const careerChapters = [
     period: "2016-2021",
     company: "Five Four Group / Menlo Club",
     role: "Subscription and e-commerce growth leadership",
-    logo: "/logos/menlo-club-linkedin-logo.jpg",
+    logos: [
+      {
+        src: "/logos/menlo-club-linkedin-logo.jpg",
+        alt: "Menlo Club",
+        className: "timeline-logo-menlo",
+      },
+    ],
     body:
       "Scaled from channel execution into broader growth leadership across acquisition, CRM, subscription economics, retention, e-commerce, team building, and operating cadence for a portfolio of DTC apparel companies.",
   },
@@ -34,7 +51,13 @@ const careerChapters = [
     period: "2021-2022",
     company: "Veestro",
     role: "VP Marketing, acquisition efficiency, and repositioning",
-    logo: "/logos/veestro.png",
+    logos: [
+      {
+        src: "/logos/veestro.png",
+        alt: "Veestro",
+        className: "timeline-logo-dark timeline-logo-veestro",
+      },
+    ],
     body:
       "Led a plant-based repositioning, rebuilt acquisition economics, improved segmentation, and strengthened the marketing foundation for a DTC food subscription business.",
   },
@@ -42,7 +65,13 @@ const careerChapters = [
     period: "2022-2024",
     company: "Netflix / Netflix.Shop",
     role: "DTC commerce, streaming acquisition, and global growth work",
-    logo: "/logos/netflix.svg",
+    logos: [
+      {
+        src: "/logos/netflix.svg",
+        alt: "Netflix",
+        className: "timeline-logo-wide",
+      },
+    ],
     body: [
       "Built and scaled the Netflix.Shop growth function, owning acquisition, lifecycle, CRO, product-launch marketing, reporting, and growth experimentation for Netflix's DTC commerce business.",
       "Also advised across Netflix Streaming, Live Experiences, Consumer Products, Tudum, and Payments. Helped develop the plan for relaunching global acquisition for Netflix Streaming, including an 11-country strategy across a $6M/month media budget.",
@@ -52,7 +81,13 @@ const careerChapters = [
     period: "2024-2025",
     company: "Echo Base / Paxful",
     role: "Fintech marketplace growth",
-    logo: "/logos/echo-base-global-linkedin-logo.jpg",
+    logos: [
+      {
+        src: "/logos/echo-base-global-linkedin-logo.jpg",
+        alt: "Echo Base",
+        className: "timeline-logo-dark timeline-logo-square",
+      },
+    ],
     body:
       "Joined after the Paxful marketplace had shut down and been revived under Echo Base, with a mandate to rebuild the marketing and growth foundation for a global P2P fintech marketplace. Led post-relaunch growth across acquisition, lifecycle, CRM, reactivation, compliance-sensitive messaging, and practical AI-enabled workflows.",
   },
@@ -60,7 +95,13 @@ const careerChapters = [
     period: "2025-Present",
     company: "Mad Engine Global",
     role: "Marketplace and e-commerce portfolio leadership",
-    logo: "/logos/mad-engine-global.jpg",
+    logos: [
+      {
+        src: "/logos/mad-engine-global.jpg",
+        alt: "Mad Engine Global",
+        className: "timeline-logo-square",
+      },
+    ],
     body:
       "Lead growth strategy and operating transformation across a $120M+ e-commerce portfolio spanning Amazon, Walmart, Target+, TikTok Shop, retail media, analytics, merchandising, catalog quality, and executive reporting. Built stronger operating cadence, clearer ownership, improved retail media efficiency, and marketplace growth systems across cross-functional teams.",
   },
@@ -71,7 +112,7 @@ export default function AboutPage() {
     <div className="about-page page-shell-compact">
       <Hero
         eyebrow="About"
-        title="A growth operator from scrappy startups to $100M+ commerce portfolios."
+        title="From scrappy startups to $100M+ commerce portfolios."
         intro="Over 15+ years, I've built profitable revenue engines across DTC, marketplace, subscription, entertainment, fintech, fashion, food, and retail media businesses - moving from hands-on acquisition into growth leadership, operating cadence, and P&L-level decision-making."
         primaryCta={{ href: "/experience", label: "View Experience" }}
         secondaryCta={{ href: "/contact", label: "Start a Conversation" }}
@@ -118,8 +159,12 @@ export default function AboutPage() {
               <div className="career-timeline-content card">
                 <div className="career-timeline-topline">
                   <p>{chapter.period}</p>
-                  <div className="career-timeline-logo">
-                    <Image src={chapter.logo} alt="" width={120} height={52} sizes="120px" />
+                  <div className="career-timeline-logos" aria-hidden="true">
+                    {chapter.logos.map((logo) => (
+                      <span className={`career-timeline-logo ${logo.className}`} key={logo.src}>
+                        <Image src={logo.src} alt={logo.alt} width={150} height={60} sizes="150px" />
+                      </span>
+                    ))}
                   </div>
                 </div>
                 <div className="career-chapter-main">

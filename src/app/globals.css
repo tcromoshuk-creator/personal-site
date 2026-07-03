@@ -1536,6 +1536,46 @@ p {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.advisory-client-card {
+  align-content: start;
+}
+
+.advisory-client-logo {
+  align-items: center;
+  display: inline-flex;
+  height: 52px;
+  justify-content: flex-start;
+}
+
+.advisory-client-logo img {
+  filter: none;
+  max-height: 42px;
+  max-width: 130px;
+  object-fit: contain;
+  width: auto;
+}
+
+.advisory-logo-wide img {
+  max-width: 160px;
+}
+
+.advisory-logo-square img {
+  max-height: 46px;
+  max-width: 46px;
+}
+
+.advisory-logo-dark {
+  background: #000000;
+  border-radius: 2px;
+  justify-content: center;
+  padding: 0.35rem 0.55rem;
+  width: fit-content;
+}
+
+.advisory-logo-dark img {
+  opacity: 1;
+}
+
 .page-shell-compact > .page-hero,
 .page-shell-compact > .section {
   padding-bottom: clamp(3.15rem, 6vw, 5.1rem);
@@ -1615,22 +1655,57 @@ p {
   font-weight: 700;
 }
 
+.career-timeline-logos {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-left: auto;
+}
+
 .career-timeline-logo {
   align-items: center;
-  background: rgba(255, 255, 255, 0.72);
-  border: 1px solid var(--line);
-  border-radius: 2px;
   display: inline-flex;
-  height: 50px;
   justify-content: center;
-  min-width: 86px;
-  padding: 0.45rem 0.65rem;
+  min-height: 44px;
 }
 
 .career-timeline-logo img {
-  max-height: 34px;
+  max-height: 42px;
+  max-width: 150px;
   object-fit: contain;
   width: auto;
+}
+
+.timeline-logo-wide img {
+  max-width: 150px;
+}
+
+.timeline-logo-square img {
+  max-height: 54px;
+  max-width: 54px;
+}
+
+.timeline-logo-menlo img {
+  max-height: 54px;
+  max-width: 150px;
+}
+
+.timeline-logo-veestro img {
+  max-height: 42px;
+  max-width: 170px;
+}
+
+.timeline-logo-dark {
+  background: #000000;
+  border-radius: 2px;
+  box-shadow: 0 12px 26px rgba(15, 27, 61, 0.08);
+  padding: 0.42rem 0.58rem;
+}
+
+.timeline-logo-dark img {
+  filter: none;
+  opacity: 1;
 }
 
 .career-chapter-main p + p {
@@ -1778,8 +1853,13 @@ p {
   line-height: 1.45;
 }
 
+.advisory-client-drawer > .advisory-client-logo {
+  margin: 0.95rem 1rem 0;
+}
+
 .advisory-client-drawer > p {
   border-top: 1px solid var(--line);
+  margin-top: 0.95rem;
   padding: 0.95rem 1rem 1rem;
 }
 

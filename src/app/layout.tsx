@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SiteHeader } from "@/components/SiteHeader";
 import { createMetadata } from "@/lib/seo";
 import "./globals.css";
 
@@ -24,40 +25,7 @@ export default function RootLayout({
         <a className="skip-link" href="#main">
           Skip to main content
         </a>
-        <header className="site-header">
-          <div className="site-header-inner">
-            <div className="brand-lockup">
-              <Link href="/" className="brand" aria-label="Tyrell Cromoshuk home">
-                Tyrell Cromoshuk
-              </Link>
-              <span className="header-status header-status-mobile">
-                Open to Leadership & Advisory
-              </span>
-            </div>
-            <nav className="main-nav" aria-label="Main navigation">
-              {navItems.map((item) => (
-                <Link key={item.href} href={item.href}>
-                  {item.label}
-                </Link>
-              ))}
-            </nav>
-            <span className="header-status header-status-desktop">
-              Open to Leadership & Advisory
-            </span>
-            <details className="mobile-menu">
-              <summary aria-label="Open main navigation">
-                <span>Menu</span>
-              </summary>
-              <nav className="mobile-nav" aria-label="Mobile navigation">
-                {navItems.map((item) => (
-                  <Link key={item.href} href={item.href}>
-                    {item.label}
-                  </Link>
-                ))}
-              </nav>
-            </details>
-          </div>
-        </header>
+        <SiteHeader navItems={navItems} />
         <main id="main">{children}</main>
         <footer className="site-footer">
           <p>© 2026 Tyrell Cromoshuk</p>

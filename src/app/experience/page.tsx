@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ExpertiseCards } from "@/components/ExpertiseCards";
 import { Hero } from "@/components/Hero";
@@ -42,13 +43,9 @@ const fullTimeRoles = [
     role: "SVP, Growth",
     dates: "Sept 2025 - Present",
     type: "Full-time leadership",
-    context:
-      "Mad Engine is a scaled licensed apparel and commerce business with marketplace complexity across Amazon, Walmart, Target+, TikTok Shop, retail media, merchandising, catalog quality, and analytics. I lead growth strategy and operating transformation across a $120M+ e-commerce portfolio, with a mandate to improve marketplace performance, retail media efficiency, ownership, reporting, and executive cadence. This is a full-time leadership role spanning direct reports and dotted-line contributors across cross-functional teams.",
-    responsibilities: [
-      "Improved MER from 7.5% to 6.9% while scaling marketing investment from $5M to $7.5M.",
-      "Drove Walmart to 120% of 2025 goal and Target+ to 130% of 2025 goal.",
-      "Scaled TikTok Shop run rate from $120K to approximately $720K.",
-      "Reduced agency costs by approximately $20K-$40K per month while building stronger internal cadence.",
+    context: [
+      "Mad Engine is a scaled licensed apparel and commerce business with marketplace complexity across Amazon, Walmart, Target+, TikTok Shop, retail media, merchandising, catalog quality, and analytics.",
+      "I lead the growth function as a full-time executive, owning marketplace growth strategy, retail media efficiency, executive reporting, team rhythm, and the operating cadence needed to align cross-functional teams around commerce performance.",
     ],
     outcomes: [
       { value: "$120M+", label: "E-commerce portfolio" },
@@ -62,13 +59,9 @@ const fullTimeRoles = [
     role: "VP, Growth",
     dates: "Jul 2024 - Mar 2025",
     type: "Full-time leadership",
-    context:
-      "Paxful is a global P2P fintech marketplace serving 150+ countries. I joined after the marketplace had shut down and been revived under Echo Base, with a mandate to rebuild the marketing and growth foundation after relaunch. This was a full-time VP Growth role across acquisition, lifecycle, CRM, reactivation, marketplace growth, and compliance-sensitive messaging.",
-    responsibilities: [
-      "Led paid acquisition, product-led growth, lifecycle, organic marketing, CRM, and dormant-user reactivation.",
-      "Managed a five-person growth team across performance, organic/product marketing, and lifecycle work.",
-      "Oversaw approximately $3M in cumulative paid media across the post-relaunch period.",
-      "Introduced AI-enabled workflows across copy, targeting, CRM sequencing, analysis, and recommendations.",
+    context: [
+      "Paxful is a global P2P fintech marketplace that was revived under Echo Base after a shutdown. I joined as VP Growth with a full-time mandate to rebuild the marketing and growth foundation after relaunch.",
+      "The role spanned acquisition, product-led growth, lifecycle, CRM, dormant-user reactivation, organic marketing, compliance-sensitive messaging, and practical AI-enabled workflows for a global marketplace environment.",
     ],
     outcomes: [
       { value: "150+", label: "Countries served" },
@@ -82,18 +75,14 @@ const fullTimeRoles = [
     role: "Head of Growth, Netflix.Shop",
     dates: "Mar 2022 - Jul 2024",
     type: "Full-time leadership",
-    context:
-      "Netflix.Shop is Netflix's DTC commerce business, operating inside a broader global entertainment company. I built and scaled the Netflix.Shop growth function, owning acquisition, lifecycle, CRO, product-launch marketing, reporting, and growth experimentation. In parallel, I advised across Netflix Streaming, Live Experiences, Consumer Products, Tudum, and Payments.",
-    responsibilities: [
-      "Scaled Netflix.Shop from six-figure annual revenue to eight figures.",
-      "Reduced average CPA by 46% across global streaming acquisition tests.",
-      "Drove 3x-9x incremental ROAS through acquisition and testing work.",
-      "Improved checkout conversion by 27% and helped write an 11-country global streaming acquisition strategy across a $6M/month media budget.",
+    context: [
+      "Netflix.Shop is Netflix's DTC commerce business, operating inside a broader global entertainment company. I built and scaled the Netflix.Shop growth function as an in-house growth leader.",
+      "I owned acquisition, lifecycle, CRO, product-launch marketing, reporting, and growth experimentation for the commerce business, while also advising across Netflix Streaming, Live Experiences, Consumer Products, Tudum, and Payments.",
     ],
     outcomes: [
       { value: "6-figure -> 8-figure", label: "Netflix.Shop revenue" },
       { value: "-46%", label: "Avg. CPA reduction" },
-      { value: "+27%", label: "Checkout conversion" },
+      { value: "3x-9x", label: "Incremental ROAS" },
     ],
     capabilities: ["DTC Commerce", "Global Acquisition", "CRO", "Lifecycle"],
   },
@@ -102,13 +91,9 @@ const fullTimeRoles = [
     role: "VP, Marketing",
     dates: "Aug 2021 - Jan 2022",
     type: "Full-time leadership",
-    context:
-      "Veestro was a plant-based meal delivery brand navigating the post-iOS 14.5 acquisition environment. I joined as VP Marketing to rebuild acquisition economics, broaden the brand beyond a saturated vegan-first audience, and strengthen the retention and conversion foundation. The mandate combined repositioning, paid media, Shopify/CRO work, segmentation, and channel refreshes.",
-    responsibilities: [
-      "Reduced CPA from $300+ to $120 within three months.",
-      "Extended customer retention by one month while widening the addressable audience.",
-      "Led brand repositioning, messaging pillars, segmentation, paid media testing, and channel optimization.",
-      "Supported Shopify 2.0 transition, CRO work, affiliate, PR, influencer, and organic channel refreshes.",
+    context: [
+      "Veestro was a plant-based meal delivery brand navigating the post-iOS 14.5 acquisition environment. I joined as VP Marketing to rebuild acquisition economics and broaden the brand beyond a saturated vegan-first audience.",
+      "The full-time mandate combined brand repositioning, paid media, Shopify/CRO work, segmentation, retention, affiliate, PR, influencer, and organic channel refreshes.",
     ],
     outcomes: [
       { value: "$300+ -> $120", label: "CPA reduction" },
@@ -122,13 +107,9 @@ const fullTimeRoles = [
     role: "Director, Growth",
     dates: "Jul 2016 - Aug 2021",
     type: "Full-time leadership",
-    context:
-      "Five Four Group / Menlo Club was a portfolio of DTC apparel businesses built around subscription, e-commerce, and paid acquisition. I moved from channel depth into broader growth leadership, owning acquisition, CRM, subscription economics, retention, funnel strategy, and team building. The role evolved from scaling acquisition to rebuilding the customer value and operating model behind the business.",
-    responsibilities: [
-      "Scaled subscription and e-commerce revenue from $8M to $65M+.",
-      "Reduced churn by 52% through the Premium Seasonal subscription model relaunch.",
-      "Increased LTV by $90+ while directing a $12M+ annual marketing budget.",
-      "Built the internal growth team and led acquisition, CRM, funnel strategy, creative testing, and retention work.",
+    context: [
+      "Five Four Group / Menlo Club was a portfolio of DTC apparel businesses built around subscription, e-commerce, and paid acquisition. I moved from channel depth into broader growth leadership inside the business.",
+      "I owned acquisition, CRM, subscription economics, retention, funnel strategy, creative testing, and team building while helping rebuild the customer value and operating model behind the business.",
     ],
     outcomes: [
       { value: "$8M -> $65M+", label: "Revenue scale" },
@@ -142,17 +123,14 @@ const fullTimeRoles = [
     role: "Growth Consultant",
     dates: "2014 - 2016",
     type: "Agency / consulting foundation",
-    context:
-      "adMixt was a growth agency environment where I built the consulting and paid acquisition foundation that later expanded into executive growth leadership. The work covered consumer brands, performance programs, reporting, optimization, client advisory, and hands-on acquisition strategy. It was agency-side work, not a full-time in-house growth leadership role.",
-    responsibilities: [
-      "Built acquisition strategies, reporting systems, test plans, and paid media optimization processes.",
-      "Worked across performance channels and client business problems that later shaped broader growth leadership.",
-      "Helped translate campaign performance into clearer client decisions and prioritization.",
+    context: [
+      "adMixt was a growth consulting environment focused on paid social, e-commerce acquisition, client strategy, reporting, optimization, and platform development.",
+      "I advised internal account teams and external businesses on paid social strategy while working closely with leadership and engineering on the FlightPlan self-serve platform.",
     ],
     outcomes: [
-      { value: "Agency", label: "Growth consulting" },
-      { value: "Paid media", label: "Acquisition depth" },
-      { value: "Reporting", label: "Client systems" },
+      { value: "$750K+", label: "Facebook revenue / month" },
+      { value: "2015", label: "Facebook innovation award" },
+      { value: "FlightPlan", label: "Self-serve platform" },
     ],
     capabilities: ["Agency", "Paid Acquisition", "Reporting", "Client Strategy"],
   },
@@ -161,17 +139,14 @@ const fullTimeRoles = [
     role: "Senior Account Manager",
     dates: "2011 - 2014",
     type: "Agency / paid media foundation",
-    context:
-      "adParlor was the early paid social and performance marketing foundation for my career. I worked across entertainment, consumer, technology, and commerce accounts, building the channel discipline behind budget management, optimization, reporting, and client communication. It established the technical acquisition depth that later supported broader growth leadership.",
-    responsibilities: [
-      "Managed paid social strategy, performance reporting, optimization, and client communication.",
-      "Built the channel depth that became the technical foundation for later growth leadership roles.",
-      "Developed a practical understanding of how media performance, creative, budgets, and reporting connect.",
+    context: [
+      "adParlor was the early paid social and performance marketing foundation for my career, spanning Fortune 500 brands, media agencies, direct-response campaigns, and brand/awareness programs.",
+      "I managed client strategy, campaign performance, reporting, RFI/RFP support, Twitter expansion, and ad management tool development that improved campaign management efficiency.",
     ],
     outcomes: [
-      { value: "Paid social", label: "Channel foundation" },
-      { value: "Optimization", label: "Performance depth" },
-      { value: "Client strategy", label: "Advisory base" },
+      { value: "$1.5M+", label: "Facebook/Twitter revenue / quarter" },
+      { value: "80%+", label: "KPI target attainment" },
+      { value: "Twitter CA", label: "Division foundation" },
     ],
     capabilities: ["Agency", "Paid Social", "Optimization", "Reporting"],
   },
@@ -180,23 +155,31 @@ const fullTimeRoles = [
 const advisoryClients = [
   {
     company: "Ocean / Yotpo",
+    logo: "/logos/ocean-yotpo-linkedin-logo.jpg",
+    logoClassName: "advisory-logo-dark",
     focus:
-      "Ocean is a subscription service offering free 2-day shipping across 10,000+ Shopify brands. I supported acquisition of new customers, retention of existing customers, and growth work across both B2B and DTC functions.",
+      "Ocean is a subscription platform offering free 2-day shipping across 10,000+ Shopify brands. I advised on acquisition, retention, and growth strategy across consumer-facing and merchant-facing motions, helping connect DTC customer growth with the broader Shopify ecosystem.",
   },
   {
     company: "Jason of Beverly Hills",
+    logo: "/logos/jason-of-beverly-hills.png",
+    logoClassName: "advisory-logo-dark advisory-logo-wide",
     focus:
-      "Luxury jewelry producer where I supported paid acquisition strategy, CRO, and rebuilds of homepage and landing page experiences.",
+      "Luxury jewelry brand where I supported paid acquisition strategy, conversion optimization, and homepage/landing page redevelopment to improve the path from brand discovery to digital commerce conversion.",
   },
   {
     company: "Keith James",
+    logo: "/logos/keith-james.png",
+    logoClassName: "advisory-logo-wide",
     focus:
-      "Luxury headwear brand selling in-store and online. I supported CRO, landing page development, marketing emails, CRM flows such as abandoned cart, and payment provider work.",
+      "Luxury headwear brand selling through retail and e-commerce. I advised across conversion optimization, landing page development, CRM/email flows, abandoned-cart recovery, and payment-provider improvements to strengthen the purchase journey.",
   },
   {
     company: "LSTN",
+    logo: "/logos/lstn-sound-co-linkedin-logo.jpg",
+    logoClassName: "advisory-logo-square",
     focus:
-      "Headphone and speaker brand that donates a portion of sales toward hearing aids for people in developing countries. I supported paid acquisition and landing page testing.",
+      "Mission-driven headphone and speaker brand that contributes a portion of sales toward hearing aids for people in developing countries. I supported paid acquisition and landing page testing while balancing commerce performance with social-impact positioning.",
   },
 ];
 
@@ -206,7 +189,7 @@ export default function ExperiencePage() {
       <Hero
         eyebrow="Experience"
         title="A deeper look at the growth systems I have led."
-        intro="A web version of my resume across full-time leadership roles, advisory work, and the operating systems I've built across growth, e-commerce, marketplaces, lifecycle, analytics, retail media, and AI-enabled workflows."
+        intro="A web version of my resume across full-time leadership roles, advisory work, and the operating systems I've built across my career."
         primaryCta={{ href: "/contact", label: "Start a Conversation" }}
         secondaryCta={{ href: site.linkedin, label: "View LinkedIn" }}
       />
@@ -248,12 +231,9 @@ export default function ExperiencePage() {
                 <span>{role.dates}</span>
               </div>
               <div className="selected-role-body">
-                <p>{role.context}</p>
-                <ul>
-                  {role.responsibilities.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                {role.context.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
                 <div className="case-card-capabilities">
                   {role.capabilities.map((capability) => (
                     <span className="mini-chip" key={capability}>
@@ -282,12 +262,9 @@ export default function ExperiencePage() {
                 <small>{role.role}</small>
               </summary>
               <div className="selected-role-drawer-body">
-                <p>{role.context}</p>
-                <ul>
-                  {role.responsibilities.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                {role.context.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
                 <div className="case-card-capabilities">
                   {role.capabilities.map((capability) => (
                     <span className="mini-chip" key={capability}>
@@ -317,6 +294,9 @@ export default function ExperiencePage() {
         <div className="advisory-client-grid advisory-client-grid-desktop">
           {advisoryClients.map((client) => (
             <article className="card advisory-client-card" key={client.company}>
+              <div className={`advisory-client-logo ${client.logoClassName}`} aria-hidden="true">
+                <Image src={client.logo} alt="" width={120} height={52} sizes="120px" />
+              </div>
               <p className="case-card-meta">{client.company}</p>
               <p>{client.focus}</p>
             </article>
@@ -328,6 +308,9 @@ export default function ExperiencePage() {
               <summary>
                 <strong>{client.company}</strong>
               </summary>
+              <div className={`advisory-client-logo ${client.logoClassName}`} aria-hidden="true">
+                <Image src={client.logo} alt="" width={120} height={52} sizes="120px" />
+              </div>
               <p>{client.focus}</p>
             </details>
           ))}
