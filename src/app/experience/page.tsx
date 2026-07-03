@@ -31,8 +31,8 @@ const proofMetrics = [
     support: "Consumer, entertainment, fintech, fashion, food, technology, DTC, and marketplaces.",
   },
   {
-    value: "$8M-$120M+",
-    label: "Commerce Scale Led",
+    value: "$8M–$120M+",
+    label: "Business Sizes Led",
     support:
       "From subscription revenue scale to marketplace portfolio leadership across apparel and commerce.",
   },
@@ -51,9 +51,9 @@ const fullTimeRoles = [
     outcomes: [
       { value: "$120K → ~$720K", label: "TikTok Shop run rate" },
       { value: "~8%", label: "MER improvement" },
-      { value: "120% / 130%", label: "Walmart / Target+ goals achieved" },
+      { value: "120% / 130%", label: "Walmart / Target+ revenue goals achieved" },
     ],
-    capabilities: ["Marketplace Growth", "Retail Media", "Operating Cadence", "Team Building"],
+    capabilities: ["Marketplace Growth", "Retail Media", "Marketplace Operations", "Team Building"],
   },
   {
     company: "Echo Base / Paxful",
@@ -65,7 +65,7 @@ const fullTimeRoles = [
       "The role spanned acquisition, product-led growth, lifecycle, CRM, dormant-user reactivation, organic marketing, compliance-sensitive messaging, and practical AI-enabled workflows for a global marketplace environment.",
     ],
     outcomes: [
-      { value: "Post-relaunch", label: "Growth foundation rebuilt" },
+      { value: "150+", label: "Countries served" },
       { value: "~$3M", label: "Cumulative paid media" },
       { value: "AI-enabled", label: "Copy, targeting, CRM, and analysis workflows" },
     ],
@@ -81,9 +81,9 @@ const fullTimeRoles = [
       "Beyond Netflix.Shop, I advised teams across Streaming, Live Experiences, Consumer Products, Tudum, and Payments, including helping establish the playbook for relaunching global acquisition for Netflix Streaming across 11 countries.",
     ],
     outcomes: [
-      { value: "6-figure → 8-figure", label: "Netflix.Shop revenue" },
-      { value: "$6M/mo", label: "Streaming budget across 11 countries" },
-      { value: "3-9x", label: "Incremental ROAS" },
+      { value: "6-fig → 8-fig", label: "Netflix.Shop revenue" },
+      { value: "$6M/mo", label: "Streaming media budget managed across 11 countries" },
+      { value: "3–9x", label: "Incremental ROAS" },
     ],
     capabilities: ["DTC Commerce", "Global Acquisition", "CRO", "Lifecycle"],
   },
@@ -99,7 +99,7 @@ const fullTimeRoles = [
     outcomes: [
       { value: "$300+ → $120", label: "CPA reduction" },
       { value: "+1 month", label: "Retention extension" },
-      { value: "90 days", label: "CPA and retention gains" },
+      { value: "<90 days", label: "CPA and retention gains realized" },
     ],
     capabilities: ["Food Subscription", "Acquisition", "Repositioning", "Retention"],
   },
@@ -130,10 +130,10 @@ const fullTimeRoles = [
     ],
     outcomes: [
       { value: "$750K+", label: "Monthly media spend managed" },
-      { value: "E-commerce", label: "Client portfolio" },
-      { value: "FlightPlan", label: "Self-serve platform input" },
+      { value: "5+", label: "E-commerce client accounts" },
+      { value: "2015", label: "Facebook Innovation of the Year" },
     ],
-    capabilities: ["Performance Marketing", "Paid Acquisition", "E-Commerce", "Media Strategy"],
+    capabilities: ["Performance Marketing", "Paid Acquisition", "Product Requirements", "Media Strategy"],
   },
   {
     company: "adParlor",
@@ -147,9 +147,9 @@ const fullTimeRoles = [
     outcomes: [
       { value: "$1.5M+", label: "Quarterly media spend managed" },
       { value: "80%+", label: "KPI targets achieved" },
-      { value: "Twitter CA", label: "Partnership expansion" },
+      { value: "20–25", label: "Clients managed at a time" },
     ],
-    capabilities: ["Paid Social", "Performance Marketing", "Twitter Ads", "Client Strategy"],
+    capabilities: ["Paid Social", "Performance Marketing", "Platform Partnerships", "Client Strategy"],
   },
 ];
 
@@ -163,8 +163,8 @@ const advisoryClients = [
   },
   {
     company: "Jason of Beverly Hills",
-    logo: "/logos/jason-of-beverly-hills-horizontal.png",
-    logoClassName: "advisory-logo-dark advisory-logo-jason",
+    logo: "/logos/jason-of-beverly-hills-square.png",
+    logoClassName: "advisory-logo-jason-square",
     focus:
       "Luxury jewelry brand where I supported paid acquisition strategy, conversion optimization, and homepage/landing page redevelopment to improve the path from brand discovery to digital commerce conversion.",
   },

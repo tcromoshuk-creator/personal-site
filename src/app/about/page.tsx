@@ -27,7 +27,7 @@ const careerChapters = [
       {
         src: "/logos/admixt-linkedin-logo.jpg",
         alt: "adMixt",
-        className: "timeline-logo-dark",
+        className: "timeline-logo-square",
       },
     ],
     body:
@@ -85,7 +85,7 @@ const careerChapters = [
       {
         src: "/logos/echo-base-global-linkedin-logo.jpg",
         alt: "Echo Base",
-        className: "timeline-logo-dark timeline-logo-echo",
+        className: "timeline-logo-square timeline-logo-echo",
       },
     ],
     body:
