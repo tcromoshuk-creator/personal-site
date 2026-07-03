@@ -34,7 +34,7 @@ const proofMetrics = [
     value: "$8M–$120M+",
     label: "Business Sizes Led",
     support:
-      "From subscription revenue scale to marketplace portfolio leadership across apparel and commerce.",
+      "Led growth across DTC, subscription, and marketplace businesses at multiple stages of scale.",
   },
 ];
 
@@ -101,7 +101,7 @@ const fullTimeRoles = [
       { value: "+1 month", label: "Retention extension" },
       { value: "<90 days", label: "CPA and retention gains realized" },
     ],
-    capabilities: ["Food Subscription", "Acquisition", "Repositioning", "Retention"],
+    capabilities: ["Food Subscription", "Acquisition", "Rebrand", "Retention"],
   },
   {
     company: "Five Four Group / Menlo Club",
@@ -123,7 +123,7 @@ const fullTimeRoles = [
     company: "adMixt",
     role: "Growth Consultant",
     dates: "2014 - 2016",
-    type: "Agency / consulting foundation",
+    type: "Full-time client management",
     context: [
       "adMixt was a performance-marketing agency where I worked across paid acquisition and media strategy for e-commerce and consumer clients.",
       "I managed $750K+ in monthly media spend while supporting strategy, optimization, reporting, and product/feature development for the FlightPlan self-serve platform.",
@@ -139,7 +139,7 @@ const fullTimeRoles = [
     company: "adParlor",
     role: "Senior Account Manager",
     dates: "2011 - 2014",
-    type: "Agency / paid media foundation",
+    type: "Full-time client management",
     context: [
       "adParlor was the first Facebook media agency in Canada and the early paid social foundation for my career, spanning Fortune 500 brands, media agencies, direct-response campaigns, and brand/awareness programs.",
       "I managed paid social across mobile app acquisition, online sales, and in-store visit campaigns, while also leading the expansion of our partnership with Twitter Canada and bringing Twitter ads into the client portfolio.",
@@ -147,7 +147,7 @@ const fullTimeRoles = [
     outcomes: [
       { value: "$1.5M+", label: "Quarterly media spend managed" },
       { value: "80%+", label: "KPI targets achieved" },
-      { value: "20–25", label: "Clients managed at a time" },
+      { value: "20–25", label: "Client book of business" },
     ],
     capabilities: ["Paid Social", "Performance Marketing", "Platform Partnerships", "Client Strategy"],
   },
@@ -245,7 +245,12 @@ export default function ExperiencePage() {
               </div>
               <div className="selected-role-outcomes" aria-label={`${role.company} outcomes`}>
                 {role.outcomes.map((outcome) => (
-                  <div className="selected-result-tile" key={outcome.label}>
+                  <div
+                    className={`selected-result-tile${
+                      outcome.value === "$300+ → $120" ? " result-nowrap" : ""
+                    }`}
+                    key={outcome.label}
+                  >
                     <strong>{outcome.value}</strong>
                     <span>{outcome.label}</span>
                   </div>
@@ -275,7 +280,12 @@ export default function ExperiencePage() {
                 </div>
                 <div className="selected-role-outcomes">
                   {role.outcomes.map((outcome) => (
-                    <div className="selected-result-tile" key={outcome.label}>
+                    <div
+                      className={`selected-result-tile${
+                        outcome.value === "$300+ → $120" ? " result-nowrap" : ""
+                      }`}
+                      key={outcome.label}
+                    >
                       <strong>{outcome.value}</strong>
                       <span>{outcome.label}</span>
                     </div>

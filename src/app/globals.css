@@ -1792,6 +1792,12 @@ p {
   line-height: 1;
 }
 
+.selected-result-tile.result-nowrap strong {
+  font-size: clamp(1.02rem, 1.28vw, 1.2rem);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
+}
+
 .selected-result-tile span {
   color: var(--muted);
   font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
@@ -2458,6 +2464,10 @@ p {
 
   .selected-result-tile strong {
     font-size: 1rem;
+  }
+
+  .selected-result-tile.result-nowrap strong {
+    font-size: 0.9rem;
   }
 
   .selected-result-tile span {
