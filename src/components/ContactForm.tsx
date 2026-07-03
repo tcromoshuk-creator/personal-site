@@ -3,11 +3,10 @@
 import { FormEvent, useState } from "react";
 
 const reasons = [
-  "Full-time role",
-  "Fractional consulting",
-  "Advisory",
-  "Project",
-  "Speaking/podcast",
+  "Full-time leadership role",
+  "Fractional/advisory work",
+  "Case study / project discussion",
+  "Speaking / podcast / media",
   "Other",
 ];
 
@@ -27,7 +26,6 @@ export function ContactForm() {
         `Name: ${payload.name || ""}`,
         `Email: ${payload.email || ""}`,
         `Company: ${payload.company || ""}`,
-        `Role/title: ${payload.role || ""}`,
         `Reason: ${payload.reason || ""}`,
         "",
         String(payload.message || ""),
@@ -75,29 +73,25 @@ export function ContactForm() {
           <input id="company" name="company" autoComplete="organization" />
         </div>
         <div className="form-field">
-          <label htmlFor="role">Role/title</label>
-          <input id="role" name="role" autoComplete="organization-title" />
-        </div>
-      </div>
-      <div className="form-field">
-        <label htmlFor="reason">Reason for reaching out</label>
-        <select id="reason" name="reason" required defaultValue="">
-          <option value="" disabled>
-            Select one
-          </option>
-          {reasons.map((reason) => (
-            <option key={reason} value={reason}>
-              {reason}
+          <label htmlFor="reason">Reason for reaching out</label>
+          <select id="reason" name="reason" required defaultValue="">
+            <option value="" disabled>
+              Select one
             </option>
-          ))}
-        </select>
+            {reasons.map((reason) => (
+              <option key={reason} value={reason}>
+                {reason}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
       <div className="form-field">
         <label htmlFor="message">Message</label>
         <textarea id="message" name="message" required />
       </div>
       <button className="button primary" type="submit">
-        Start a conversation
+        Start a Conversation
       </button>
       <p className="form-note">
         For launch, the form opens a pre-filled email unless a form endpoint is

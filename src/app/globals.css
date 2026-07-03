@@ -1329,6 +1329,492 @@ p {
   resize: vertical;
 }
 
+.case-index-layout {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  grid-template-columns: minmax(180px, 0.24fr) minmax(0, 1fr);
+}
+
+.case-index-toc,
+.case-detail-toc {
+  position: sticky;
+  top: 92px;
+}
+
+.case-index-toc p,
+.case-detail-toc p {
+  color: var(--ink);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  margin-bottom: 0.9rem;
+  text-transform: uppercase;
+}
+
+.case-index-toc nav,
+.case-detail-toc nav {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.case-index-toc a,
+.case-detail-toc a,
+.case-index-mobile-nav a,
+.case-mobile-jump a {
+  border: 1px solid transparent;
+  border-radius: 2px;
+  color: var(--muted);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.55rem 0.65rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease;
+}
+
+.case-index-toc a {
+  align-items: start;
+  display: grid;
+  gap: 0.5rem;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.case-index-toc a:hover,
+.case-detail-toc a:hover,
+.case-index-mobile-nav a:hover,
+.case-mobile-jump a:hover {
+  background: var(--paper);
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.case-index-main,
+.case-index-grid,
+.case-detail-main,
+.case-story-copy,
+.case-related,
+.contact-page-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-index-mobile-nav,
+.case-mobile-jump {
+  display: none;
+}
+
+.case-index-grid {
+  gap: 1rem;
+}
+
+.case-index-card {
+  scroll-margin-top: 92px;
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  grid-template-columns: minmax(0, 1fr);
+  padding: clamp(1.35rem, 2.8vw, 2.3rem);
+}
+
+.case-index-card.has-media {
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.36fr);
+}
+
+.case-index-card-top {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  grid-column: 1 / -1;
+  justify-content: space-between;
+}
+
+.case-index-logo,
+.case-detail-logo {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  display: inline-flex;
+  flex: 0 0 auto;
+  height: 54px;
+  justify-content: center;
+  min-width: 94px;
+  padding: 0.45rem 0.65rem;
+}
+
+.case-index-logo img,
+.case-detail-logo img {
+  max-height: 42px;
+  max-width: 160px;
+  object-fit: contain;
+  width: auto;
+}
+
+.case-logo-square img {
+  max-height: 38px;
+  max-width: 44px;
+}
+
+.case-logo-wide {
+  min-width: 150px;
+}
+
+.case-index-card-body {
+  display: grid;
+  gap: 1.15rem;
+}
+
+.case-index-card-body h2 {
+  font-size: clamp(1.85rem, 3.4vw, 3.15rem);
+  max-width: 760px;
+}
+
+.case-index-card-body p {
+  color: var(--ink-mid);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-top: 0.9rem;
+  max-width: 720px;
+}
+
+.case-index-results,
+.case-result-band {
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-result-band {
+  padding: 1rem;
+}
+
+.case-result-tile {
+  background: rgba(238, 242, 246, 0.76);
+  border: 1px solid var(--line);
+  border-radius: 2px;
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.85rem;
+}
+
+.case-result-tile strong {
+  color: var(--ink);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.15rem, 1.75vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.case-result-tile span {
+  color: var(--muted);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.case-result-tile p {
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.case-index-media {
+  align-self: stretch;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  display: grid;
+  grid-column: 2;
+  grid-row: 2 / span 3;
+  max-height: 520px;
+  min-height: 320px;
+  overflow: hidden;
+  place-items: center;
+}
+
+.case-index-media img {
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  width: 100%;
+}
+
+.case-index-media.portrait img {
+  object-fit: cover;
+}
+
+.case-detail-hero-grid {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.38fr);
+}
+
+.case-detail-hero-copy,
+.case-detail-company {
+  display: grid;
+  gap: 1rem;
+}
+
+.case-detail-company {
+  align-items: center;
+  display: flex;
+  gap: 0.85rem;
+}
+
+.case-detail-company p {
+  color: var(--muted);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.case-detail-layout {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  grid-template-columns: minmax(150px, 0.18fr) minmax(0, 1fr) minmax(240px, 0.28fr);
+}
+
+.case-story-section {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 1rem;
+  padding-top: clamp(1.6rem, 3vw, 2.2rem);
+  scroll-margin-top: 96px;
+}
+
+.case-story-copy p {
+  color: var(--ink-mid);
+  font-size: 1.04rem;
+  line-height: 1.75;
+}
+
+.case-story-copy ul {
+  color: var(--muted);
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.1rem;
+}
+
+.case-story-copy li {
+  line-height: 1.55;
+}
+
+.case-detail-sidebar {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 92px;
+}
+
+.case-snapshot,
+.case-tools,
+.contact-form-card {
+  padding: clamp(1.15rem, 2.3vw, 1.7rem);
+}
+
+.case-snapshot h2,
+.case-tools h2 {
+  font-size: clamp(1.3rem, 2vw, 1.8rem);
+  margin-bottom: 1.2rem;
+}
+
+.case-snapshot dl {
+  display: grid;
+  gap: 1rem;
+  margin: 0;
+}
+
+.case-snapshot div {
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 0.25rem;
+  padding-top: 0.8rem;
+}
+
+.case-snapshot dt {
+  color: var(--muted);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.case-snapshot dd {
+  color: var(--ink);
+  font-weight: 600;
+  margin: 0;
+}
+
+.case-media {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.case-media img,
+.case-media video {
+  background: var(--paper-soft);
+  height: auto;
+  width: 100%;
+}
+
+.case-detail-hero .case-media {
+  max-height: 650px;
+}
+
+.case-detail-hero .case-media img {
+  max-height: 650px;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.case-media video {
+  display: block;
+}
+
+.case-media figcaption {
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  padding: 0.8rem 0.9rem;
+}
+
+.case-media-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-media-grid .case-media.portrait img,
+.case-media-grid .case-media.portrait video {
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+}
+
+.case-related-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-related-card {
+  color: inherit;
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+  text-decoration: none;
+}
+
+.case-related-card h3 {
+  font-size: 1.35rem;
+}
+
+.case-related-card p {
+  color: var(--ink-mid);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-top: 0.5rem;
+}
+
+.case-related-card > span {
+  color: var(--accent);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.case-detail-cta {
+  align-items: center;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 0.42fr) auto;
+  padding: clamp(1.35rem, 3vw, 2rem);
+}
+
+.case-detail-cta h2 {
+  font-size: clamp(1.7rem, 3vw, 2.65rem);
+}
+
+.case-detail-cta p:not(.eyebrow) {
+  color: var(--ink-mid);
+  line-height: 1.6;
+}
+
+.contact-page-grid {
+  align-items: start;
+  display: grid;
+  gap: clamp(1.25rem, 3vw, 2.25rem);
+  grid-template-columns: minmax(0, 0.85fr) minmax(360px, 0.55fr);
+}
+
+.contact-page-copy h2 {
+  font-size: clamp(2rem, 4vw, 3.7rem);
+}
+
+.contact-page-copy > p {
+  color: var(--ink-mid);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 680px;
+}
+
+.contact-methods {
+  display: grid;
+  gap: 0.8rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.contact-method-card {
+  display: grid;
+  gap: 0.45rem;
+  padding: 1rem;
+  text-decoration: none;
+}
+
+.contact-method-card span {
+  color: var(--muted);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.contact-method-card strong {
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.contact-form .button {
+  width: 100%;
+}
+
+.form-note {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
 .faq-item {
   background: var(--paper);
   border: 1px solid var(--line);
@@ -2030,6 +2516,12 @@ p {
   .three-col,
   .four-col,
   .case-card-compact,
+  .case-index-layout,
+  .case-index-card.has-media,
+  .case-detail-hero-grid,
+  .case-detail-layout,
+  .case-detail-cta,
+  .contact-page-grid,
   .about-narrative-grid,
   .career-chapter-card,
   .selected-role-card,
@@ -2124,6 +2616,73 @@ p {
 
   .company-roster {
     gap: 1rem;
+  }
+
+  .case-index-toc,
+  .case-detail-toc {
+    display: none;
+  }
+
+  .case-index-mobile-nav,
+  .case-mobile-jump {
+    display: flex;
+    gap: 0.45rem;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    overflow-x: auto;
+    padding: 0 1rem 0.35rem;
+    scrollbar-width: none;
+  }
+
+  .case-index-mobile-nav::-webkit-scrollbar,
+  .case-mobile-jump::-webkit-scrollbar {
+    display: none;
+  }
+
+  .case-index-mobile-nav a,
+  .case-mobile-jump a {
+    background: rgba(255, 255, 255, 0.7);
+    border-color: var(--line);
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .case-index-card,
+  .case-index-card.has-media {
+    grid-template-columns: 1fr;
+  }
+
+  .case-index-card-top {
+    align-items: flex-start;
+    flex-direction: column-reverse;
+  }
+
+  .case-index-media {
+    grid-column: auto;
+    grid-row: auto;
+    max-height: 520px;
+    min-height: 0;
+  }
+
+  .case-detail-sidebar {
+    position: static;
+  }
+
+  .case-result-band {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .case-media-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-media-grid .case-media {
+    max-width: min(100%, 420px);
+  }
+
+  .case-related-grid,
+  .contact-methods {
+    grid-template-columns: 1fr;
   }
 
   .section-after {
@@ -2338,6 +2897,75 @@ p {
     margin-bottom: 1.65rem;
   }
 
+  .case-index-card,
+  .case-snapshot,
+  .case-tools,
+  .contact-form-card,
+  .case-detail-cta {
+    padding: 1.05rem;
+  }
+
+  .case-index-card-body h2 {
+    font-size: clamp(1.75rem, 9vw, 2.55rem);
+  }
+
+  .case-index-card-body p,
+  .case-story-copy p,
+  .contact-page-copy > p {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .case-index-results,
+  .case-result-band {
+    gap: 0.55rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0;
+  }
+
+  .case-result-tile {
+    padding: 0.72rem;
+  }
+
+  .case-result-tile strong {
+    font-size: clamp(1rem, 6.4vw, 1.35rem);
+  }
+
+  .case-result-tile span {
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
+  }
+
+  .case-detail-company {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .case-detail-hero .case-media {
+    max-height: 560px;
+  }
+
+  .case-story-section {
+    gap: 0.75rem;
+    padding-top: 1.35rem;
+  }
+
+  .case-story-copy ul {
+    gap: 0.45rem;
+  }
+
+  .case-detail-cta {
+    gap: 0.85rem;
+  }
+
+  .case-detail-cta .button {
+    width: 100%;
+  }
+
+  .contact-page-copy h2 {
+    font-size: clamp(1.85rem, 9vw, 2.65rem);
+  }
+
   .about-page > .page-hero h1 {
     font-size: clamp(1.72rem, 7.1vw, 2.35rem);
     line-height: 1.04;
@@ -2531,6 +3159,10 @@ p {
 
   .case-card-link {
     display: none;
+  }
+
+  .case-index-card .case-card-link {
+    display: inline-flex;
   }
 
   .case-button-row {
