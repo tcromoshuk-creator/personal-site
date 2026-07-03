@@ -36,9 +36,8 @@ function CaseLogo({ study }: { study: CaseStudy }) {
   const logos: Record<string, string> = {
     "netflix-shop": "/logos/netflix.svg",
     "five-four-menlo-club": "/logos/menlo-club-linkedin-logo.jpg",
-    veestro: "/logos/veestro.png",
+    veestro: "/logos/veestro-gray.png",
   };
-  const whiteLogoSlugs = new Set(["veestro"]);
   const logo = logos[study.slug];
 
   if (!logo) {
@@ -47,9 +46,7 @@ function CaseLogo({ study }: { study: CaseStudy }) {
 
   return (
     <span
-      className={`case-logo-mark case-logo-${study.slug}${
-        whiteLogoSlugs.has(study.slug) ? " case-logo-white-mark" : ""
-      }`}
+      className={`case-logo-mark case-logo-${study.slug}`}
     >
       <Image src={logo} alt="" width={120} height={48} sizes="120px" />
     </span>

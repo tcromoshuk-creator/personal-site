@@ -53,9 +53,9 @@ const careerChapters = [
     role: "VP Marketing, acquisition efficiency, and repositioning",
     logos: [
       {
-        src: "/logos/veestro.png",
+        src: "/logos/veestro-gray.png",
         alt: "Veestro",
-        className: "timeline-logo-dark timeline-logo-veestro",
+        className: "timeline-logo-veestro",
       },
     ],
     body:
@@ -74,7 +74,7 @@ const careerChapters = [
     ],
     body: [
       "Built and scaled the Netflix.Shop growth function, owning acquisition, lifecycle, CRO, product-launch marketing, reporting, and growth experimentation for Netflix's DTC commerce business.",
-      "Also advised across Netflix Streaming, Live Experiences, Consumer Products, Tudum, and Payments. Helped develop the plan for relaunching global acquisition for Netflix Streaming, including an 11-country strategy across a $6M/month media budget.",
+      "Also advised on growth strategy across Netflix Streaming, Live Experiences, Consumer Products, Tudum, and Payments. Helped write the playbook for relaunching global acquisition for Netflix Streaming, including an 11-country strategy across a $6M/month media budget.",
     ],
   },
   {
@@ -85,7 +85,7 @@ const careerChapters = [
       {
         src: "/logos/echo-base-global-linkedin-logo.jpg",
         alt: "Echo Base",
-        className: "timeline-logo-dark timeline-logo-square",
+        className: "timeline-logo-dark timeline-logo-echo",
       },
     ],
     body:
@@ -113,7 +113,7 @@ export default function AboutPage() {
       <Hero
         eyebrow="About"
         title="From scrappy startups to $100M+ commerce portfolios."
-        intro="Over 15+ years, I've built profitable revenue engines across DTC, marketplace, subscription, entertainment, fintech, fashion, food, and retail media businesses - moving from hands-on acquisition into growth leadership, operating cadence, and P&L-level decision-making."
+        intro="Over 15+ years, I've built profitable revenue engines across DTC, subscription, and marketplace brands — moving from hands-on acquisition into growth leadership and P&L-level decision-making."
         primaryCta={{ href: "/experience", label: "View Experience" }}
         secondaryCta={{ href: "/contact", label: "Start a Conversation" }}
       />

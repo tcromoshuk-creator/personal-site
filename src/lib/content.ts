@@ -65,7 +65,7 @@ export const companyStrip = [
   { name: "Mad Engine", mark: "Mad Engine", logo: "/logos/mad-engine-global.jpg" },
   { name: "Netflix", mark: "Netflix", logo: "/logos/netflix.svg" },
   { name: "Paxful / Echo Base", mark: "Echo Base / Paxful", logo: "/logos/echo-base-global-linkedin-logo.jpg" },
-  { name: "Veestro", mark: "Veestro", logo: "/logos/veestro.png", logoTone: "color-on-dark" },
+  { name: "Veestro", mark: "Veestro", logo: "/logos/veestro-gray.png", logoTone: "veestro-gray" },
   {
     name: "Menlo Club / Five Four Group",
     mark: "Menlo Club",

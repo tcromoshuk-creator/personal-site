@@ -620,6 +620,15 @@ p {
   opacity: 1;
 }
 
+.company-mark.veestro-gray {
+  min-width: 168px;
+}
+
+.company-mark.veestro-gray img {
+  max-height: 44px;
+  max-width: 184px;
+}
+
 .company-mark.adparlor-legacy {
   min-width: 178px;
 }
@@ -880,6 +889,15 @@ p {
 .case-logo-five-four-menlo-club img {
   max-height: 40px;
   max-width: 40px;
+}
+
+.case-logo-veestro {
+  width: 92px;
+}
+
+.case-logo-veestro img {
+  max-height: 34px;
+  max-width: 76px;
 }
 
 .case-company-mark {
@@ -1328,7 +1346,7 @@ p {
 }
 
 .about-narrative-grid {
-  align-items: stretch;
+  align-items: start;
   display: grid;
   gap: 1rem;
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.42fr);
@@ -1346,6 +1364,10 @@ p {
   display: grid;
   gap: 1rem;
   padding: clamp(1.35rem, 2.5vw, 2rem);
+}
+
+.about-narrative-card {
+  align-self: start;
 }
 
 .about-narrative-card p:last-child,
@@ -1564,6 +1586,15 @@ p {
   max-width: 46px;
 }
 
+.advisory-logo-jason {
+  padding: 0.34rem 0.48rem;
+}
+
+.advisory-logo-jason img {
+  max-height: 22px;
+  max-width: 136px;
+}
+
 .advisory-logo-dark {
   background: #000000;
   border-radius: 2px;
@@ -1588,6 +1619,14 @@ p {
 
 .about-page > .page-hero h1 {
   max-width: 1000px;
+}
+
+.about-page > .page-hero .lede {
+  max-width: 690px;
+}
+
+.experience-page > .page-hero .lede {
+  max-width: 680px;
 }
 
 .career-timeline-rail {
@@ -1686,14 +1725,19 @@ p {
   max-width: 54px;
 }
 
+.timeline-logo-echo img {
+  max-height: 58px;
+  max-width: 58px;
+}
+
 .timeline-logo-menlo img {
-  max-height: 54px;
-  max-width: 150px;
+  max-height: 58px;
+  max-width: 170px;
 }
 
 .timeline-logo-veestro img {
-  max-height: 42px;
-  max-width: 170px;
+  max-height: 58px;
+  max-width: 190px;
 }
 
 .timeline-logo-dark {
@@ -2209,6 +2253,15 @@ p {
 
   .company-mark.color-on-dark img {
     max-height: 28px;
+  }
+
+  .company-mark.veestro-gray {
+    min-width: 142px;
+  }
+
+  .company-mark.veestro-gray img {
+    max-height: 38px;
+    max-width: 150px;
   }
 
   .company-mark.adparlor-legacy {

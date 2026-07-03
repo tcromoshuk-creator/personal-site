@@ -31,9 +31,10 @@ const proofMetrics = [
     support: "Consumer, entertainment, fintech, fashion, food, technology, DTC, and marketplaces.",
   },
   {
-    value: "$120M+",
-    label: "Commerce Portfolio Leadership",
-    support: "Amazon, Walmart, Target+, TikTok Shop, retail media, analytics, and catalog work.",
+    value: "$8M-$120M+",
+    label: "Commerce Scale Led",
+    support:
+      "From subscription revenue scale to marketplace portfolio leadership across apparel and commerce.",
   },
 ];
 
@@ -45,14 +46,14 @@ const fullTimeRoles = [
     type: "Full-time leadership",
     context: [
       "Mad Engine is a scaled licensed apparel and commerce business with marketplace complexity across Amazon, Walmart, Target+, TikTok Shop, retail media, merchandising, catalog quality, and analytics.",
-      "I lead the growth function as a full-time executive, owning marketplace growth strategy, retail media efficiency, executive reporting, team rhythm, and the operating cadence needed to align cross-functional teams around commerce performance.",
+      "I lead the growth function as a full-time executive across a $120M+ e-commerce portfolio, with a mandate to improve marketplace performance, retail media efficiency, ownership, team rhythm, and the operating cadence needed to align cross-functional teams around commerce performance.",
     ],
     outcomes: [
-      { value: "$120M+", label: "E-commerce portfolio" },
-      { value: "7.5% -> 6.9%", label: "MER improvement" },
-      { value: "120% / 130%", label: "Walmart / Target+ goals" },
+      { value: "$120K → ~$720K", label: "TikTok Shop run rate" },
+      { value: "~8%", label: "MER improvement" },
+      { value: "120% / 130%", label: "Walmart / Target+ goals achieved" },
     ],
-    capabilities: ["Marketplace Commerce", "Retail Media", "Executive Reporting", "Team Building"],
+    capabilities: ["Marketplace Growth", "Retail Media", "Operating Cadence", "Team Building"],
   },
   {
     company: "Echo Base / Paxful",
@@ -60,13 +61,13 @@ const fullTimeRoles = [
     dates: "Jul 2024 - Mar 2025",
     type: "Full-time leadership",
     context: [
-      "Paxful is a global P2P fintech marketplace that was revived under Echo Base after a shutdown. I joined as VP Growth with a full-time mandate to rebuild the marketing and growth foundation after relaunch.",
+      "Paxful was a global P2P fintech marketplace that was revived under Echo Base after a shutdown. I joined as VP Growth with a full-time mandate to rebuild the marketing and growth foundation after relaunch.",
       "The role spanned acquisition, product-led growth, lifecycle, CRM, dormant-user reactivation, organic marketing, compliance-sensitive messaging, and practical AI-enabled workflows for a global marketplace environment.",
     ],
     outcomes: [
-      { value: "150+", label: "Countries served" },
+      { value: "Post-relaunch", label: "Growth foundation rebuilt" },
       { value: "~$3M", label: "Cumulative paid media" },
-      { value: "5-person", label: "Growth team" },
+      { value: "AI-enabled", label: "Copy, targeting, CRM, and analysis workflows" },
     ],
     capabilities: ["Fintech Marketplace", "Lifecycle", "Reactivation", "AI Workflows"],
   },
@@ -76,13 +77,13 @@ const fullTimeRoles = [
     dates: "Mar 2022 - Jul 2024",
     type: "Full-time leadership",
     context: [
-      "Netflix.Shop is Netflix's DTC commerce business, operating inside a broader global entertainment company. I built and scaled the Netflix.Shop growth function as an in-house growth leader.",
-      "I owned acquisition, lifecycle, CRO, product-launch marketing, reporting, and growth experimentation for the commerce business, while also advising across Netflix Streaming, Live Experiences, Consumer Products, Tudum, and Payments.",
+      "I was brought in to lead growth for Netflix's official DTC commerce business, owning acquisition, lifecycle, CRO, product-launch marketing, reporting, and experimentation for Netflix.Shop.",
+      "Beyond Netflix.Shop, I advised teams across Streaming, Live Experiences, Consumer Products, Tudum, and Payments, including helping establish the playbook for relaunching global acquisition for Netflix Streaming across 11 countries.",
     ],
     outcomes: [
-      { value: "6-figure -> 8-figure", label: "Netflix.Shop revenue" },
-      { value: "-46%", label: "Avg. CPA reduction" },
-      { value: "3x-9x", label: "Incremental ROAS" },
+      { value: "6-figure → 8-figure", label: "Netflix.Shop revenue" },
+      { value: "$6M/mo", label: "Streaming budget across 11 countries" },
+      { value: "3-9x", label: "Incremental ROAS" },
     ],
     capabilities: ["DTC Commerce", "Global Acquisition", "CRO", "Lifecycle"],
   },
@@ -96,9 +97,9 @@ const fullTimeRoles = [
       "The full-time mandate combined brand repositioning, paid media, Shopify/CRO work, segmentation, retention, affiliate, PR, influencer, and organic channel refreshes.",
     ],
     outcomes: [
-      { value: "$300+ -> $120", label: "CPA reduction" },
+      { value: "$300+ → $120", label: "CPA reduction" },
       { value: "+1 month", label: "Retention extension" },
-      { value: "3 months", label: "Time to impact" },
+      { value: "90 days", label: "CPA and retention gains" },
     ],
     capabilities: ["Food Subscription", "Acquisition", "Repositioning", "Retention"],
   },
@@ -108,11 +109,11 @@ const fullTimeRoles = [
     dates: "Jul 2016 - Aug 2021",
     type: "Full-time leadership",
     context: [
-      "Five Four Group / Menlo Club was a portfolio of DTC apparel businesses built around subscription, e-commerce, and paid acquisition. I moved from channel depth into broader growth leadership inside the business.",
-      "I owned acquisition, CRM, subscription economics, retention, funnel strategy, creative testing, and team building while helping rebuild the customer value and operating model behind the business.",
+      "I joined Five Four Group / Menlo Club as Growth Marketing Manager and was promoted to Director of Growth, moving from paid acquisition ownership into broader marketing and growth leadership for a portfolio of DTC apparel companies.",
+      "The role expanded across acquisition, CRM/lifecycle, retention, funnel strategy, creative testing, merchandising/customer experience, team building, and a major multi-year subscription relaunch where I served as GM of the monthly-to-quarterly model transition.",
     ],
     outcomes: [
-      { value: "$8M -> $65M+", label: "Revenue scale" },
+      { value: "$8M → $65M+", label: "Revenue scale" },
       { value: "-52%", label: "Churn reduction" },
       { value: "+$90", label: "LTV increase" },
     ],
@@ -124,15 +125,15 @@ const fullTimeRoles = [
     dates: "2014 - 2016",
     type: "Agency / consulting foundation",
     context: [
-      "adMixt was a growth consulting environment focused on paid social, e-commerce acquisition, client strategy, reporting, optimization, and platform development.",
-      "I advised internal account teams and external businesses on paid social strategy while working closely with leadership and engineering on the FlightPlan self-serve platform.",
+      "adMixt was a performance-marketing agency where I worked across paid acquisition and media strategy for e-commerce and consumer clients.",
+      "I managed $750K+ in monthly media spend while supporting strategy, optimization, reporting, and product/feature development for the FlightPlan self-serve platform.",
     ],
     outcomes: [
-      { value: "$750K+", label: "Facebook revenue / month" },
-      { value: "2015", label: "Facebook innovation award" },
-      { value: "FlightPlan", label: "Self-serve platform" },
+      { value: "$750K+", label: "Monthly media spend managed" },
+      { value: "E-commerce", label: "Client portfolio" },
+      { value: "FlightPlan", label: "Self-serve platform input" },
     ],
-    capabilities: ["Agency", "Paid Acquisition", "Reporting", "Client Strategy"],
+    capabilities: ["Performance Marketing", "Paid Acquisition", "E-Commerce", "Media Strategy"],
   },
   {
     company: "adParlor",
@@ -140,15 +141,15 @@ const fullTimeRoles = [
     dates: "2011 - 2014",
     type: "Agency / paid media foundation",
     context: [
-      "adParlor was the early paid social and performance marketing foundation for my career, spanning Fortune 500 brands, media agencies, direct-response campaigns, and brand/awareness programs.",
-      "I managed client strategy, campaign performance, reporting, RFI/RFP support, Twitter expansion, and ad management tool development that improved campaign management efficiency.",
+      "adParlor was the first Facebook media agency in Canada and the early paid social foundation for my career, spanning Fortune 500 brands, media agencies, direct-response campaigns, and brand/awareness programs.",
+      "I managed paid social across mobile app acquisition, online sales, and in-store visit campaigns, while also leading the expansion of our partnership with Twitter Canada and bringing Twitter ads into the client portfolio.",
     ],
     outcomes: [
-      { value: "$1.5M+", label: "Facebook/Twitter revenue / quarter" },
-      { value: "80%+", label: "KPI target attainment" },
-      { value: "Twitter CA", label: "Division foundation" },
+      { value: "$1.5M+", label: "Quarterly media spend managed" },
+      { value: "80%+", label: "KPI targets achieved" },
+      { value: "Twitter CA", label: "Partnership expansion" },
     ],
-    capabilities: ["Agency", "Paid Social", "Optimization", "Reporting"],
+    capabilities: ["Paid Social", "Performance Marketing", "Twitter Ads", "Client Strategy"],
   },
 ];
 
@@ -156,14 +157,14 @@ const advisoryClients = [
   {
     company: "Ocean / Yotpo",
     logo: "/logos/ocean-yotpo-linkedin-logo.jpg",
-    logoClassName: "advisory-logo-dark",
+    logoClassName: "advisory-logo-square",
     focus:
       "Ocean is a subscription platform offering free 2-day shipping across 10,000+ Shopify brands. I advised on acquisition, retention, and growth strategy across consumer-facing and merchant-facing motions, helping connect DTC customer growth with the broader Shopify ecosystem.",
   },
   {
     company: "Jason of Beverly Hills",
-    logo: "/logos/jason-of-beverly-hills.png",
-    logoClassName: "advisory-logo-dark advisory-logo-wide",
+    logo: "/logos/jason-of-beverly-hills-horizontal.png",
+    logoClassName: "advisory-logo-dark advisory-logo-jason",
     focus:
       "Luxury jewelry brand where I supported paid acquisition strategy, conversion optimization, and homepage/landing page redevelopment to improve the path from brand discovery to digital commerce conversion.",
   },
@@ -175,7 +176,7 @@ const advisoryClients = [
       "Luxury headwear brand selling through retail and e-commerce. I advised across conversion optimization, landing page development, CRM/email flows, abandoned-cart recovery, and payment-provider improvements to strengthen the purchase journey.",
   },
   {
-    company: "LSTN",
+    company: "LSTN Sound Co.",
     logo: "/logos/lstn-sound-co-linkedin-logo.jpg",
     logoClassName: "advisory-logo-square",
     focus:
@@ -308,9 +309,6 @@ export default function ExperiencePage() {
               <summary>
                 <strong>{client.company}</strong>
               </summary>
-              <div className={`advisory-client-logo ${client.logoClassName}`} aria-hidden="true">
-                <Image src={client.logo} alt="" width={120} height={52} sizes="120px" />
-              </div>
               <p>{client.focus}</p>
             </details>
           ))}
