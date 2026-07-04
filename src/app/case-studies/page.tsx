@@ -136,6 +136,18 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
   },
 };
 
+const caseStudyIndexOrder = [
+  "mad-engine-tiktok-shop",
+  "netflix-shop",
+  "menlo-club",
+  "veestro",
+  "scoops-ahoy",
+];
+
+const orderedCaseStudyPages = caseStudyIndexOrder.flatMap((slug) =>
+  caseStudyPages.filter((study) => study.slug === slug),
+);
+
 export default function CaseStudiesPage() {
   return (
     <div className="case-index-page page-shell-compact">
@@ -157,7 +169,7 @@ export default function CaseStudiesPage() {
           <aside className="case-index-toc" aria-label="Case study contents">
             <p>Case Studies</p>
             <nav>
-              {caseStudyPages.map((study, index) => (
+              {orderedCaseStudyPages.map((study, index) => (
                 <a href={`#${study.slug}`} key={study.slug}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
                   {study.companyLabel}
@@ -170,7 +182,7 @@ export default function CaseStudiesPage() {
             <div className="case-index-mobile-nav" aria-labelledby="case-study-menu-label">
               <p id="case-study-menu-label">Case study menu</p>
               <nav aria-label="Choose a case study">
-                {caseStudyPages.map((study, index) => (
+                {orderedCaseStudyPages.map((study, index) => (
                   <a href={`#${study.slug}`} key={`mobile-${study.slug}`}>
                     <span>{String(index + 1).padStart(2, "0")}</span>
                     {study.companyLabel}
@@ -180,7 +192,7 @@ export default function CaseStudiesPage() {
             </div>
 
             <div className="case-index-grid">
-              {caseStudyPages.map((study) => {
+              {orderedCaseStudyPages.map((study) => {
                 const override = caseStudyIndexOverrides[study.slug] ?? {};
                 const headline = override.headline ?? study.headline;
                 const indexSummary = override.indexSummary ?? study.indexSummary;
