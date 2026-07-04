@@ -197,7 +197,10 @@ export default function CaseStudiesPage() {
                       </div>
                       <div className="case-index-results" aria-label={`${study.companyLabel} outcomes`}>
                         {metrics.slice(0, 3).map((metric) => (
-                          <div className="case-result-tile" key={`${study.slug}-${metric.value}`}>
+                          <div
+                            className={`case-result-tile${metric.value.length > 10 ? " is-wide-metric" : ""}`}
+                            key={`${study.slug}-${metric.value}`}
+                          >
                             <strong style={{ whiteSpace: "nowrap" }}>{metric.value}</strong>
                             <span>{metric.label}</span>
                           </div>

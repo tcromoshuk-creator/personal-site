@@ -1541,6 +1541,11 @@ p {
   line-height: 1;
 }
 
+.case-result-tile.is-wide-metric strong {
+  font-size: clamp(0.98rem, 1.3vw, 1.2rem);
+  letter-spacing: -0.06em;
+}
+
 .case-result-tile span {
   color: var(--muted);
   font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
@@ -1555,6 +1560,16 @@ p {
   color: var(--muted);
   font-size: 0.78rem;
   line-height: 1.4;
+}
+
+.case-index-card-body .tag-list {
+  gap: 0.32rem;
+}
+
+.case-index-card-body .tag {
+  font-size: 0.56rem;
+  letter-spacing: 0.065em;
+  padding: 0.28rem 0.36rem;
 }
 
 .case-index-media {
