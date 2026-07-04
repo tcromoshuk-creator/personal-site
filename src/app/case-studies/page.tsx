@@ -37,6 +37,7 @@ type CaseStudyIndexOverride = {
   tags?: string[];
   heroMedia?: CaseStudyMedia;
   mediaStyle?: CSSProperties;
+  mediaFrameStyle?: CSSProperties;
 };
 
 const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
@@ -46,7 +47,7 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       "I took over TikTok Shop as an under-managed sales channel and helped turn it into a creator-led marketplace engine for licensed apparel. The work combined SKU expansion, creator activation, storefront and PDP optimization, fulfillment improvements, and weekly operating cadence to prove TikTok Shop could become a meaningful revenue channel before paid media was even introduced.",
     metrics: [
       { value: "$120K → $720K", label: "Revenue run-rate" },
-      { value: "720%", label: "Of original AOP goal" },
+      { value: "7.2x", label: "Against AOP goal" },
       { value: "10K → 90K", label: "SKU expansion" },
     ],
     tags: ["TikTok Shop", "Social Commerce", "Creator-Led Growth", "Marketplace Growth"],
@@ -54,14 +55,14 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       type: "image",
       src: "/case-studies/mad-engine-tiktok-shop/storefront-02.png",
       alt: "Mad Engine TikTok Shop storefront screenshot",
-      orientation: "portrait",
+      orientation: "landscape",
     },
     mediaStyle: { objectPosition: "top center" },
   },
   "netflix-shop": {
     headline: "Turning Netflix.Shop Awareness Into BFCM Sales",
     indexSummary:
-      "I turned the common reaction of ‘Netflix has a shop?’ into a BFCM campaign designed to build awareness and drive sales for Netflix.Shop. The campaign used a hero video series, paid social, Google PMax, influencer seeding, email, affiliate, direct mail, and organic social to convert fan attention into measurable commerce demand.",
+      "I turned the common reaction of 'Netflix has a shop?' into a BFCM campaign designed to build awareness and drive sales for Netflix.Shop. The campaign used a hero video series, paid social, Google PMax, influencer seeding, email, affiliate, direct mail, and organic social to convert fan attention into measurable commerce demand.",
     metrics: [
       { value: "13M+", label: "Consumers reached" },
       { value: "2.5M", label: "Visitors to Netflix.Shop" },
@@ -72,18 +73,20 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       type: "image",
       src: "/case-studies/netflix-shop/netflix-shop-influencer-01.jpg",
       alt: "Netflix.Shop creator video still from BFCM campaign",
-      orientation: "portrait",
+      orientation: "landscape",
     },
     mediaStyle: { objectPosition: "left center" },
   },
   "scoops-ahoy": {
+    indexSummary:
+      "I led performance and growth marketing for the Scoops Ahoy launch, helping translate a broader Netflix consumer-products campaign into measurable retail and digital demand. My work focused on traffic, paid social, paid search, organic support, influencer seeding, and commerce-oriented performance strategy, while also advising cross-functionally on the wider launch across Walmart, PR, activations, and product creative.",
     heroMedia: {
       type: "image",
-      src: "/case-studies/scoops-ahoy/scoops-ahoy-webby.jpg",
-      alt: "Scoops Ahoy campaign Webby Awards recognition screenshot",
-      orientation: "portrait",
+      src: "/case-studies/scoops-ahoy/scoops-ahoy-pint.jpg",
+      alt: "Scoops Ahoy ice cream product photography",
+      orientation: "landscape",
     },
-    mediaStyle: { objectPosition: "top center" },
+    mediaStyle: { objectPosition: "center center" },
   },
   "menlo-club": {
     headline: "Launching Menlo Club Premium Seasonal",
@@ -97,16 +100,16 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
     tags: ["Subscription", "Retention", "BigCommerce", "Business Model Launch"],
     heroMedia: {
       type: "image",
-      src: "/case-studies/menlo-club/menlo-premium-seasonal-catalog.jpg",
-      alt: "Menlo Club Premium Seasonal collection catalog page",
-      orientation: "portrait",
+      src: "/case-studies/menlo-club/menlo-premium-social-01.jpg",
+      alt: "Menlo Club Premium Seasonal packaging and product social post",
+      orientation: "landscape",
     },
-    mediaStyle: { objectPosition: "top center" },
+    mediaStyle: { objectPosition: "left center" },
   },
   veestro: {
     headline: "Rebranding Veestro for Plant-Based Growth",
     indexSummary:
-      "I led Veestro’s shift from vegan-first positioning to a broader plant-based brand while rebuilding the website, acquisition strategy, CRO program, and lifecycle engine. The work connected Shopify 2.0, landing page testing, paid media, affiliate, PR, influencer, Klaviyo, Attentive, and new brand systems to improve acquisition efficiency and conversion.",
+      "I led Veestro's shift from vegan-first positioning to a broader plant-based brand while rebuilding the website, acquisition strategy, CRO program, and lifecycle engine. The work connected Shopify 2.0, landing page testing, paid media, affiliate, PR, influencer, Klaviyo, Attentive, and new brand systems to improve acquisition efficiency and conversion.",
     metrics: [
       { value: "60%", label: "CAC drop" },
       { value: "15%", label: "Sitewide CVR lift" },
@@ -117,7 +120,7 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       type: "image",
       src: "/case-studies/veestro/veestro-lifestyle-box.jpg",
       alt: "Veestro plant-based meals and packaging lifestyle image",
-      orientation: "portrait",
+      orientation: "landscape",
     },
     mediaStyle: { objectPosition: "42% center" },
   },
@@ -212,12 +215,21 @@ export default function CaseStudiesPage() {
                       </Link>
                     </div>
                     {heroMedia && (
-                      <div className={`case-index-media ${heroMedia.orientation ?? "landscape"}`}>
+                      <div
+                        className="case-index-media square"
+                        style={{
+                          aspectRatio: "1 / 1",
+                          alignSelf: "start",
+                          minHeight: 0,
+                          maxHeight: "none",
+                          ...override.mediaFrameStyle,
+                        }}
+                      >
                         <Image
                           src={heroMedia.src}
                           alt={heroMedia.alt}
-                          width={heroMedia.orientation === "portrait" ? 560 : 920}
-                          height={heroMedia.orientation === "portrait" ? 920 : 560}
+                          width={720}
+                          height={720}
                           sizes="(max-width: 900px) 100vw, 360px"
                           style={override.mediaStyle}
                         />
