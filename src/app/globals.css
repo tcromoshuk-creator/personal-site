@@ -2719,7 +2719,47 @@ p {
     display: none;
   }
 
-  .case-index-mobile-nav,
+  .case-index-mobile-nav {
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.75rem;
+  }
+
+  .case-index-mobile-nav p {
+    color: var(--ink);
+    font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .case-index-mobile-nav nav {
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-index-mobile-nav a {
+    align-items: center;
+    background: var(--paper);
+    border-color: var(--line);
+    color: var(--ink);
+    display: grid;
+    gap: 0.55rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    min-height: 42px;
+    padding: 0.64rem 0.68rem;
+  }
+
+  .case-index-mobile-nav a span {
+    color: var(--accent);
+    font-size: 0.62rem;
+  }
+
   .case-mobile-jump {
     display: flex;
     gap: 0.45rem;
@@ -2730,12 +2770,10 @@ p {
     scrollbar-width: none;
   }
 
-  .case-index-mobile-nav::-webkit-scrollbar,
   .case-mobile-jump::-webkit-scrollbar {
     display: none;
   }
 
-  .case-index-mobile-nav a,
   .case-mobile-jump a {
     background: rgba(255, 255, 255, 0.7);
     border-color: var(--line);
@@ -2753,13 +2791,72 @@ p {
   }
 
   .case-index-company {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
     grid-column: auto;
     grid-row: 1;
   }
 
+  .case-index-company .case-index-logo {
+    height: 46px;
+    min-width: 74px;
+    padding: 0.36rem 0.5rem;
+  }
+
+  .case-index-company .case-index-logo img {
+    max-height: 34px;
+    max-width: 118px;
+  }
+
+  .case-index-company p {
+    line-height: 1.24;
+  }
+
   .case-index-card-body {
+    gap: 0.9rem;
     grid-column: auto;
     grid-row: 2;
+  }
+
+  .case-index-copy {
+    order: 1;
+  }
+
+  .case-index-results {
+    order: 2;
+  }
+
+  .case-index-card .case-card-link {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: #ffffff;
+    justify-content: center;
+    margin-top: 0.15rem;
+    min-height: 46px;
+    order: 3;
+    width: 100%;
+  }
+
+  .case-index-card .case-card-link:hover,
+  .case-index-card .case-card-link:focus-visible {
+    background: var(--ink-mid);
+    border-color: var(--ink-mid);
+    color: #ffffff;
+  }
+
+  .case-index-tags {
+    flex-wrap: nowrap;
+    margin-left: -0.15rem;
+    margin-right: -0.15rem;
+    order: 4;
+    overflow-x: auto;
+    padding: 0 0.15rem 0.15rem;
+    scrollbar-width: none;
+  }
+
+  .case-index-tags::-webkit-scrollbar {
+    display: none;
   }
 
   .case-index-card-top {
@@ -2768,10 +2865,7 @@ p {
   }
 
   .case-index-media {
-    grid-column: auto;
-    grid-row: 3;
-    max-height: 520px;
-    min-height: 0;
+    display: none;
   }
 
   .case-detail-sidebar {
@@ -3016,6 +3110,20 @@ p {
     padding: 1.05rem;
   }
 
+  .case-index-mobile-nav {
+    gap: 0.5rem;
+    padding: 0.68rem;
+  }
+
+  .case-index-mobile-nav nav {
+    grid-template-columns: 1fr;
+  }
+
+  .case-index-mobile-nav a {
+    min-height: 40px;
+    padding: 0.58rem 0.62rem;
+  }
+
   .case-index-card-body h2 {
     font-size: clamp(1.75rem, 9vw, 2.55rem);
   }
@@ -3027,10 +3135,15 @@ p {
     line-height: 1.55;
   }
 
-  .case-index-results,
   .case-result-band {
     gap: 0.55rem;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0;
+  }
+
+  .case-index-results {
+    gap: 0.38rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     padding: 0;
   }
 
@@ -3038,8 +3151,24 @@ p {
     padding: 0.72rem;
   }
 
+  .case-index-results .case-result-tile {
+    gap: 0.28rem;
+    min-width: 0;
+    padding: 0.52rem 0.36rem;
+    text-align: center;
+  }
+
   .case-result-tile strong {
     font-size: clamp(1rem, 6.4vw, 1.35rem);
+  }
+
+  .case-index-results .case-result-tile strong {
+    font-size: clamp(0.82rem, 4vw, 1.08rem);
+    letter-spacing: -0.05em;
+  }
+
+  .case-index-results .case-result-tile.is-wide-metric strong {
+    font-size: clamp(0.74rem, 3.3vw, 0.9rem);
   }
 
   .case-result-tile span {
@@ -3047,9 +3176,30 @@ p {
     letter-spacing: 0.08em;
   }
 
+  .case-index-results .case-result-tile span {
+    font-size: 0.43rem;
+    letter-spacing: 0.055em;
+    line-height: 1.15;
+  }
+
+  .case-index-tags {
+    gap: 0.3rem;
+  }
+
+  .case-index-card-body .case-index-tags .tag {
+    font-size: 0.5rem;
+    letter-spacing: 0.055em;
+    padding: 0.24rem 0.32rem;
+  }
+
   .case-detail-company {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .case-index-company {
+    align-items: center;
+    flex-direction: row;
   }
 
   .case-detail-hero .case-media {

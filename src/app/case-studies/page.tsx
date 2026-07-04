@@ -167,12 +167,16 @@ export default function CaseStudiesPage() {
           </aside>
 
           <div className="case-index-main">
-            <div className="case-index-mobile-nav" aria-label="Case study jump menu">
-              {caseStudyPages.map((study) => (
-                <a href={`#${study.slug}`} key={`mobile-${study.slug}`}>
-                  {study.companyLabel}
-                </a>
-              ))}
+            <div className="case-index-mobile-nav" aria-labelledby="case-study-menu-label">
+              <p id="case-study-menu-label">Case study menu</p>
+              <nav aria-label="Choose a case study">
+                {caseStudyPages.map((study, index) => (
+                  <a href={`#${study.slug}`} key={`mobile-${study.slug}`}>
+                    <span>{String(index + 1).padStart(2, "0")}</span>
+                    {study.companyLabel}
+                  </a>
+                ))}
+              </nav>
             </div>
 
             <div className="case-index-grid">
@@ -191,7 +195,7 @@ export default function CaseStudiesPage() {
                     key={study.slug}
                   >
                     <div className="case-index-card-body">
-                      <div>
+                      <div className="case-index-copy">
                         <h2>{headline}</h2>
                         <p>{indexSummary}</p>
                       </div>
@@ -206,7 +210,7 @@ export default function CaseStudiesPage() {
                           </div>
                         ))}
                       </div>
-                      <div className="tag-list">
+                      <div className="tag-list case-index-tags">
                         {tags.slice(0, 4).map((tag) => (
                           <span className="tag" key={tag}>
                             {tag}
