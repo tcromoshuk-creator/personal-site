@@ -72,7 +72,7 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       { value: "7 figures", label: "Revenue" },
     ],
     tags: ["DTC Commerce", "BFCM", "Paid Social", "Influencer"],
-    logoImageStyle: { maxHeight: 34, maxWidth: 126 },
+    logoImageStyle: { maxHeight: 30, maxWidth: 112 },
     heroMedia: {
       type: "image",
       src: "/case-studies/netflix-shop/netflix-shop-floating-characters-square.png",
@@ -95,6 +95,7 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       alt: "Scoops Ahoy ice cream product photography",
       orientation: "landscape",
     },
+    logoImageStyle: { maxHeight: 30, maxWidth: 112 },
     mediaStyle: { objectPosition: "center center" },
   },
   "menlo-club": {
