@@ -16,15 +16,17 @@ export const metadata: Metadata = createMetadata({
 function CaseStudyIndexLogo({
   logo,
   logoClass,
+  imageStyle,
   label,
 }: {
   logo: string;
   logoClass?: string;
+  imageStyle?: CSSProperties;
   label: string;
 }) {
   return (
     <span className={`case-index-logo ${logoClass ?? ""}`}>
-      <Image src={logo} alt="" width={180} height={70} sizes="180px" />
+      <Image src={logo} alt="" width={180} height={70} sizes="180px" style={imageStyle} />
       <span className="sr-only">{label}</span>
     </span>
   );
@@ -36,6 +38,7 @@ type CaseStudyIndexOverride = {
   metrics?: CaseStudyMetric[];
   tags?: string[];
   heroMedia?: CaseStudyMedia;
+  logoImageStyle?: CSSProperties;
   mediaStyle?: CSSProperties;
   mediaFrameStyle?: CSSProperties;
 };
@@ -69,17 +72,23 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       { value: "7 figures", label: "Revenue" },
     ],
     tags: ["DTC Commerce", "BFCM", "Paid Social", "Influencer"],
+    logoImageStyle: { maxHeight: 34, maxWidth: 126 },
     heroMedia: {
       type: "image",
-      src: "/case-studies/netflix-shop/netflix-shop-influencer-01.jpg",
-      alt: "Netflix.Shop creator video still from BFCM campaign",
+      src: "/case-studies/netflix-shop/netflix-shop-floating-characters-square.png",
+      alt: "Netflix.Shop BFCM campaign characters floating over a city skyline",
       orientation: "landscape",
     },
-    mediaStyle: { objectPosition: "left center" },
+    mediaStyle: { objectPosition: "center center" },
   },
   "scoops-ahoy": {
     indexSummary:
       "I led performance and growth marketing for the Scoops Ahoy launch, helping translate a broader Netflix consumer-products campaign into measurable retail and digital demand. My work focused on traffic, paid social, paid search, organic support, influencer seeding, and commerce-oriented performance strategy, while also advising cross-functionally on the wider launch across Walmart, PR, activations, and product creative.",
+    metrics: [
+      { value: "93M+", label: "Consumers reached" },
+      { value: "2.1M+", label: "Walmart visitors" },
+      { value: "$0.37", label: "Cost per visit" },
+    ],
     heroMedia: {
       type: "image",
       src: "/case-studies/scoops-ahoy/scoops-ahoy-pint.jpg",
@@ -185,6 +194,7 @@ export default function CaseStudiesPage() {
                         <CaseStudyIndexLogo
                           logo={study.logo}
                           logoClass={study.logoClass}
+                          imageStyle={override.logoImageStyle}
                           label={study.companyLabel}
                         />
                         <p>{study.companyLabel}</p>
