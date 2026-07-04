@@ -189,17 +189,6 @@ export default function CaseStudiesPage() {
                     id={study.slug}
                     key={study.slug}
                   >
-                    <div className="case-index-card-top">
-                      <div className="case-detail-company">
-                        <CaseStudyIndexLogo
-                          logo={study.logo}
-                          logoClass={study.logoClass}
-                          imageStyle={override.logoImageStyle}
-                          label={study.companyLabel}
-                        />
-                        <p>{study.companyLabel}</p>
-                      </div>
-                    </div>
                     <div className="case-index-card-body">
                       <div>
                         <h2>{headline}</h2>
@@ -224,27 +213,38 @@ export default function CaseStudiesPage() {
                         Read Case Study
                       </Link>
                     </div>
-                    {heroMedia && (
-                      <div
-                        className="case-index-media square"
-                        style={{
-                          aspectRatio: "1 / 1",
-                          alignSelf: "start",
-                          minHeight: 0,
-                          maxHeight: "none",
-                          ...override.mediaFrameStyle,
-                        }}
-                      >
-                        <Image
-                          src={heroMedia.src}
-                          alt={heroMedia.alt}
-                          width={720}
-                          height={720}
-                          sizes="(max-width: 900px) 100vw, 360px"
-                          style={override.mediaStyle}
+                    <div className="case-index-side">
+                      <div className="case-detail-company case-index-company">
+                        <CaseStudyIndexLogo
+                          logo={study.logo}
+                          logoClass={study.logoClass}
+                          imageStyle={override.logoImageStyle}
+                          label={study.companyLabel}
                         />
+                        <p>{study.companyLabel}</p>
                       </div>
-                    )}
+                      {heroMedia && (
+                        <div
+                          className="case-index-media square"
+                          style={{
+                            aspectRatio: "1 / 1",
+                            alignSelf: "start",
+                            minHeight: 0,
+                            maxHeight: "none",
+                            ...override.mediaFrameStyle,
+                          }}
+                        >
+                          <Image
+                            src={heroMedia.src}
+                            alt={heroMedia.alt}
+                            width={720}
+                            height={720}
+                            sizes="(max-width: 900px) 100vw, 360px"
+                            style={override.mediaStyle}
+                          />
+                        </div>
+                      )}
+                    </div>
                   </article>
                 );
               })}
