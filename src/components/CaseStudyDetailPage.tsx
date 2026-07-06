@@ -50,15 +50,16 @@ function MobileCaseContext({ study }: { study: CaseStudyPageContent }) {
   return (
     <div className="case-mobile-context" aria-label="Case study context">
       <details className="case-mobile-drawer">
-        <summary>Case Details</summary>
-        <div className="case-snapshot">
-          <CaseDetailsList study={study} />
-        </div>
-      </details>
-      <details className="case-mobile-drawer">
-        <summary>Platforms / Tools</summary>
-        <div className="case-tools">
-          <PlatformTags study={study} />
+        <summary>Details &amp; Tools</summary>
+        <div className="case-mobile-context-grid">
+          <div className="case-snapshot">
+            <h2>Details</h2>
+            <CaseDetailsList study={study} />
+          </div>
+          <div className="case-tools">
+            <h2>Platforms / Tools</h2>
+            <PlatformTags study={study} />
+          </div>
         </div>
       </details>
     </div>
@@ -140,9 +141,13 @@ function MobileMediaAssets({ study, mediaAssets }: { study: CaseStudyPageContent
 }
 
 function ResultsBand({ study }: { study: CaseStudyPageContent }) {
+  const metrics = study.metrics.filter(
+    (metric) => !(study.slug === "mad-engine-tiktok-shop" && metric.value === "No paid media"),
+  );
+
   return (
     <div className="case-result-band card" aria-label={`${study.companyLabel} results`}>
-      {study.metrics.slice(0, 6).map((metric) => (
+      {metrics.slice(0, 6).map((metric) => (
         <div className="case-result-tile" key={`${study.slug}-${metric.value}-${metric.label}`}>
           <strong>{metric.value}</strong>
           <span>{metric.label}</span>
@@ -150,6 +155,39 @@ function ResultsBand({ study }: { study: CaseStudyPageContent }) {
         </div>
       ))}
     </div>
+  );
+}
+
+function MadEngineRunRateChart() {
+  return (
+    <figure className="case-run-rate-chart card" aria-labelledby="mad-engine-run-rate-title">
+      <div className="case-run-rate-chart-copy">
+        <h3 id="mad-engine-run-rate-title">Revenue run-rate comparison</h3>
+        <p>Annualized view comparing the prior baseline to the 2026 TikTok Shop run-rate.</p>
+      </div>
+      <div className="case-run-rate-chart-visual">
+        <svg viewBox="0 0 360 180" role="img" aria-label="Baseline run-rate of $120K compared with new run-rate of $720K">
+          <line className="chart-grid-line" x1="48" x2="312" y1="136" y2="136" />
+          <line className="chart-grid-line" x1="48" x2="312" y1="42" y2="42" />
+          <line className="chart-growth-line" x1="76" x2="284" y1="128" y2="44" />
+          <circle className="chart-point baseline" cx="76" cy="128" r="6" />
+          <circle className="chart-point current" cx="284" cy="44" r="7" />
+          <text className="chart-value" x="76" y="112" textAnchor="middle">
+            $120K
+          </text>
+          <text className="chart-label" x="76" y="151" textAnchor="middle">
+            baseline
+          </text>
+          <text className="chart-value" x="284" y="30" textAnchor="middle">
+            $720K
+          </text>
+          <text className="chart-label" x="284" y="67" textAnchor="middle">
+            run-rate
+          </text>
+        </svg>
+      </div>
+      <p className="case-run-rate-chart-callout">6x revenue run-rate growth</p>
+    </figure>
   );
 }
 
@@ -229,6 +267,7 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
               <section className="case-story-section" id={section.id} key={section.id}>
                 <p className="eyebrow">{section.title}</p>
                 {section.id === "results" && <ResultsBand study={study} />}
+                {section.id === "results" && study.slug === "mad-engine-tiktok-shop" && <MadEngineRunRateChart />}
                 <div className="case-story-copy">
                   {section.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>

@@ -86,11 +86,11 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     ],
     tags: ["TikTok Shop", "Social commerce", "Creator-led growth", "Marketplace operations"],
     metrics: [
-      { value: "$120K -> $720K", label: "Revenue run-rate" },
+      { value: "$120K → $720K", label: "Revenue run-rate" },
       { value: "720%", label: "Of original AOP goal" },
-      { value: "10K -> 90K", label: "SKU expansion" },
+      { value: "10K → 90K", label: "SKU expansion" },
       { value: "100-200", label: "Creators activated monthly" },
-      { value: "$17 -> $26", label: "AOV increase" },
+      { value: "$17 → $26", label: "AOV increase" },
       { value: "No paid media", label: "Creator-led growth before paid media" },
     ],
     heroMedia: {
@@ -524,7 +524,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     ],
     tags: ["Subscription", "Retention", "BigCommerce", "Launch GM"],
     metrics: [
-      { value: "25% -> 12%", label: "Churn rate improvement" },
+      { value: "25% → 12%", label: "Churn rate improvement" },
       { value: "$65", label: "AOV increase" },
       { value: "10,000+", label: "Members in first quarter" },
       { value: "3 years", label: "Concept to full launch" },
@@ -688,7 +688,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     ],
     tags: ["Rebrand", "Shopify 2.0", "CRO", "Acquisition"],
     metrics: [
-      { value: "$300 -> $120", label: "CPA reduction" },
+      { value: "$300 → $120", label: "CPA reduction" },
       { value: "60%", label: "CAC drop" },
       { value: "15%", label: "Sitewide CVR lift" },
       { value: "30-40%", label: "New email open rates" },
