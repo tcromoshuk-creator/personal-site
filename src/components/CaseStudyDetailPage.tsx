@@ -88,7 +88,8 @@ function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; rel
 }
 
 export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) {
-  const mediaAssets = [study.heroMedia, ...(study.media ?? [])].filter(Boolean) as CaseStudyMedia[];
+  const heroMediaAsset = study.slug === "mad-engine-tiktok-shop" ? undefined : study.heroMedia;
+  const mediaAssets = [heroMediaAsset, ...(study.media ?? [])].filter(Boolean) as CaseStudyMedia[];
 
   return (
     <article className="case-detail-page page-shell-compact">
