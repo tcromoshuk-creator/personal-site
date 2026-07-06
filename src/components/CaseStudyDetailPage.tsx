@@ -156,6 +156,17 @@ const netflixInvasionVideos = [
 ];
 
 function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] }) {
+  const campaignSocialMedia = mediaAssets.filter((media) =>
+    ["netflix-shop-instagram-bfcm-stranger-things", "netflix-shop-bfcm-product-grid"].some((asset) =>
+      media.src.includes(asset),
+    ),
+  );
+  const creatorSupportMedia = mediaAssets.filter((media) =>
+    ["netflix-shop-instagram-girls-partnership", "netflix-shop-influencer-01", "netflix-shop-influencer-02"].some(
+      (asset) => media.src.includes(asset),
+    ),
+  );
+
   return (
     <div className="case-netflix-media-showcase">
       <div className="case-netflix-media-group">
@@ -181,13 +192,26 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
         </div>
       </div>
 
-      {mediaAssets.length > 0 && (
+      {campaignSocialMedia.length > 0 && (
         <div className="case-netflix-media-group">
           <div className="case-netflix-media-heading">
-            <h3>Influencer and social support</h3>
+            <h3>Campaign social creative</h3>
           </div>
-          <div className="case-media-grid case-netflix-support-grid">
-            {mediaAssets.map((media) => (
+          <div className="case-media-grid case-netflix-campaign-grid">
+            {campaignSocialMedia.map((media) => (
+              <MediaBlock media={media} key={media.src} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {creatorSupportMedia.length > 0 && (
+        <div className="case-netflix-media-group">
+          <div className="case-netflix-media-heading">
+            <h3>Influencer &amp; creator support</h3>
+          </div>
+          <div className="case-media-grid case-netflix-creator-grid">
+            {creatorSupportMedia.map((media) => (
               <MediaBlock media={media} key={media.src} />
             ))}
           </div>

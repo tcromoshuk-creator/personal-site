@@ -2036,16 +2036,31 @@ p {
   letter-spacing: 0;
 }
 
-.case-netflix-support-grid {
+.case-netflix-campaign-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.case-netflix-support-grid .case-media.landscape {
+.case-netflix-creator-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-netflix-campaign-grid .case-media.landscape,
+.case-netflix-creator-grid .case-media.landscape {
   grid-column: auto;
 }
 
-.case-netflix-support-grid .case-media img {
+.case-netflix-campaign-grid .case-media img,
+.case-netflix-creator-grid .case-media img {
+  background: var(--paper-soft);
   object-fit: contain;
+}
+
+.case-netflix-campaign-grid .case-media img {
+  aspect-ratio: 16 / 10;
+}
+
+.case-netflix-creator-grid .case-media img {
+  aspect-ratio: 1 / 1;
 }
 
 .case-link-list {
@@ -3323,11 +3338,13 @@ p {
   }
 
   .case-vimeo-grid,
-  .case-netflix-support-grid {
+  .case-netflix-campaign-grid,
+  .case-netflix-creator-grid {
     grid-template-columns: 1fr;
   }
 
-  .case-netflix-support-grid .case-media {
+  .case-netflix-campaign-grid .case-media,
+  .case-netflix-creator-grid .case-media {
     max-width: 100%;
   }
 
@@ -3406,6 +3423,16 @@ p {
 
   .footer-links {
     justify-content: flex-start;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .case-netflix-campaign-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-netflix-creator-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
