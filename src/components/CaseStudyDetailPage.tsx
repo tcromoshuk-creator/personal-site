@@ -158,35 +158,115 @@ function ResultsBand({ study }: { study: CaseStudyPageContent }) {
   );
 }
 
+const madEngineChartMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const madEngineBaselineCumulative = [
+  2437.36, 4267.87, 8315.55, 16257.96, 25515.51, 35204.9, 45939.73, 58112.04, 71852.52, 87030.48, 103123.2,
+  120000,
+];
+const madEngineActualForecastCumulative = [
+  14624.13, 25607.21, 49893.3, 97547.77, 153093.06, 211229.39, 275638.37, 348672.25, 431115.1, 522182.86,
+  618739.18, 720000,
+];
+const madEngineChartMax = 720000;
+const madEngineChartLeft = 52;
+const madEngineChartRight = 652;
+const madEngineChartTop = 38;
+const madEngineChartBottom = 246;
+
+function getMadEngineChartPoint(value: number, index: number) {
+  const x =
+    madEngineChartLeft + (index * (madEngineChartRight - madEngineChartLeft)) / (madEngineChartMonths.length - 1);
+  const y = madEngineChartBottom - (value / madEngineChartMax) * (madEngineChartBottom - madEngineChartTop);
+
+  return { x, y };
+}
+
+function getMadEngineChartPath(values: number[], startIndex = 0) {
+  return values
+    .map((value, valueIndex) => {
+      const { x, y } = getMadEngineChartPoint(value, startIndex + valueIndex);
+      return `${valueIndex === 0 ? "M" : "L"} ${x.toFixed(1)} ${y.toFixed(1)}`;
+    })
+    .join(" ");
+}
+
 function MadEngineRunRateChart() {
+  const baselinePath = getMadEngineChartPath(madEngineBaselineCumulative);
+  const actualPath = getMadEngineChartPath(madEngineActualForecastCumulative.slice(0, 5));
+  const forecastPath = getMadEngineChartPath(madEngineActualForecastCumulative.slice(4), 4);
+  const forecastStartPoint = getMadEngineChartPoint(madEngineActualForecastCumulative[5], 5);
+  const baselineEndPoint = getMadEngineChartPoint(madEngineBaselineCumulative[11], 11);
+  const forecastEndPoint = getMadEngineChartPoint(madEngineActualForecastCumulative[11], 11);
+
   return (
     <figure className="case-run-rate-chart card" aria-labelledby="mad-engine-run-rate-title">
       <div className="case-run-rate-chart-copy">
-        <h3 id="mad-engine-run-rate-title">Revenue run-rate comparison</h3>
-        <p>Annualized view comparing the prior baseline to the 2026 TikTok Shop run-rate.</p>
+        <h3 id="mad-engine-run-rate-title">TikTok Shop revenue vs. prior baseline</h3>
+        <p>
+          2026 cumulative GMV using Jan-May actuals and revised Jun-Dec forecast, compared with a seasonally weighted
+          $120K prior baseline.
+        </p>
       </div>
       <div className="case-run-rate-chart-visual">
-        <svg viewBox="0 0 360 180" role="img" aria-label="Baseline run-rate of $120K compared with new run-rate of $720K">
-          <line className="chart-grid-line" x1="48" x2="312" y1="136" y2="136" />
-          <line className="chart-grid-line" x1="48" x2="312" y1="42" y2="42" />
-          <line className="chart-growth-line" x1="76" x2="284" y1="128" y2="44" />
-          <circle className="chart-point baseline" cx="76" cy="128" r="6" />
-          <circle className="chart-point current" cx="284" cy="44" r="7" />
-          <text className="chart-value" x="76" y="112" textAnchor="middle">
-            $120K
+        <svg
+          viewBox="0 0 720 320"
+          role="img"
+          aria-label="Twelve-month cumulative GMV chart showing a seasonally weighted prior baseline ending at $120K and actual plus forecast ending at $720K"
+        >
+          <line className="chart-axis-line" x1={madEngineChartLeft} x2={madEngineChartRight} y1={madEngineChartBottom} y2={madEngineChartBottom} />
+          <line className="chart-axis-line" x1={madEngineChartLeft} x2={madEngineChartLeft} y1={madEngineChartTop} y2={madEngineChartBottom} />
+          {[0, 360000, 720000].map((value) => {
+            const y = getMadEngineChartPoint(value, 0).y;
+
+            return (
+              <g key={value}>
+                <line className="chart-grid-line" x1={madEngineChartLeft} x2={madEngineChartRight} y1={y} y2={y} />
+                <text className="chart-axis-label" x="40" y={y + 4} textAnchor="end">
+                  {value === 0 ? "$0" : `$${value / 1000}K`}
+                </text>
+              </g>
+            );
+          })}
+          <path className="chart-baseline-line" d={baselinePath} />
+          <path className="chart-actual-line" d={actualPath} />
+          <path className="chart-forecast-line" d={forecastPath} />
+          {madEngineActualForecastCumulative.map((value, index) => {
+            const { x, y } = getMadEngineChartPoint(value, index);
+
+            return <circle className="chart-point chart-point-small" cx={x} cy={y} key={`forecast-${madEngineChartMonths[index]}`} r="3.2" />;
+          })}
+          {madEngineBaselineCumulative.map((value, index) => {
+            const { x, y } = getMadEngineChartPoint(value, index);
+
+            return <circle className="chart-point chart-point-baseline" cx={x} cy={y} key={`baseline-${madEngineChartMonths[index]}`} r="2.4" />;
+          })}
+          {madEngineChartMonths.map((month, index) => {
+            const { x } = getMadEngineChartPoint(0, index);
+
+            return (
+              <text className="chart-month-label" x={x} y="274" key={month} textAnchor="middle">
+                {month}
+              </text>
+            );
+          })}
+          <g className="chart-forecast-marker">
+            <line x1={forecastStartPoint.x} x2={forecastStartPoint.x} y1="58" y2="246" />
+            <text x={forecastStartPoint.x + 8} y="68">
+              Forecast begins
+            </text>
+          </g>
+          <text className="chart-end-label chart-end-label-baseline" x={baselineEndPoint.x - 8} y={baselineEndPoint.y + 22} textAnchor="end">
+            $120K baseline
           </text>
-          <text className="chart-label" x="76" y="151" textAnchor="middle">
-            baseline
-          </text>
-          <text className="chart-value" x="284" y="30" textAnchor="middle">
-            $720K
-          </text>
-          <text className="chart-label" x="284" y="67" textAnchor="middle">
-            run-rate
+          <text className="chart-end-label chart-end-label-forecast" x={forecastEndPoint.x - 6} y={forecastEndPoint.y - 12} textAnchor="end">
+            $720K revised forecast
           </text>
         </svg>
       </div>
-      <p className="case-run-rate-chart-callout">6x revenue run-rate growth</p>
+      <p className="case-run-rate-chart-callout">6x full-year GMV vs. prior baseline</p>
+      <p className="case-run-rate-chart-note">
+        Baseline is seasonally weighted for comparison and does not represent actual 2025 monthly performance.
+      </p>
     </figure>
   );
 }
