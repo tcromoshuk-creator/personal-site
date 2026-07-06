@@ -201,11 +201,7 @@ function MadEngineRunRateChart() {
   return (
     <figure className="case-run-rate-chart card" aria-labelledby="mad-engine-run-rate-title">
       <div className="case-run-rate-chart-copy">
-        <h3 id="mad-engine-run-rate-title">TikTok Shop revenue vs. prior baseline</h3>
-        <p>
-          2026 cumulative GMV using Jan-May actuals and revised Jun-Dec forecast, compared with a seasonally weighted
-          $120K prior baseline.
-        </p>
+        <h3 id="mad-engine-run-rate-title">TikTok Shop 2026 forecast vs. pacing</h3>
       </div>
       <div className="case-run-rate-chart-visual">
         <svg
@@ -264,9 +260,6 @@ function MadEngineRunRateChart() {
         </svg>
       </div>
       <p className="case-run-rate-chart-callout">6x full-year GMV vs. prior baseline</p>
-      <p className="case-run-rate-chart-note">
-        Baseline is seasonally weighted for comparison and does not represent actual 2025 monthly performance.
-      </p>
     </figure>
   );
 }

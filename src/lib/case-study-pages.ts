@@ -88,7 +88,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     metrics: [
       { value: "$120K → $720K", label: "Revenue run-rate" },
       { value: "720%", label: "Of original AOP goal" },
-      { value: "10K → 90K", label: "SKU expansion" },
+      { value: "10K → 90K+", label: "SKU expansion" },
       { value: "100-200", label: "Creators activated monthly" },
       { value: "$17 → $26", label: "AOV increase" },
       { value: "No paid media", label: "Creator-led growth before paid media" },
@@ -97,7 +97,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       type: "image",
       src: "/case-studies/mad-engine-tiktok-shop/storefront-02.png",
       alt: "Mad Engine TikTok Shop storefront screenshot",
-      caption: "TikTok Shop storefront experience for Mad Engine licensed apparel.",
+      caption: "The Mad Engine shopping experience on TikTok Shop.",
       orientation: "portrait",
     },
     media: [
@@ -143,7 +143,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         bullets: [
           "Scale revenue efficiently without paid media first.",
           "Increase product catalog coverage.",
-          "Build a creator and affiliate engine around brand-relevant products.",
+          "Build a creator and affiliate engine around evergreen IP like Spider-Man, Mickey Mouse, and Star Wars, while supporting launch moments tied to new movies, TV releases, and franchise drops.",
           "Improve storefront, category, and PDP shopping experience.",
           "Build weekly cross-functional reporting and monthly executive reporting.",
           "Improve fulfillment reliability after prior delivery and shipment issues.",
@@ -154,7 +154,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         title: "Strategy",
         body: [
           "I treated TikTok Shop as a marketplace and social-commerce business, not a passive product feed. That meant connecting catalog expansion, creator activation, merchandising, storefront quality, fulfillment, and reporting into one operating system.",
-          "We expanded the SKU feed from 10,000 products to 90,000 products, prioritized products and IP with organic creator-market fit, partnered with TikTok to increase creator commissions from 10% to 25%, added free shipping, and improved storefront, category, and PDP experiences.",
+          "We expanded the SKU feed from 10,000 products to 90,000+ products, prioritized evergreen IP and launch moments with organic creator-market fit, partnered with TikTok to increase creator incentives through aggressive commission boosts, used free-shipping thresholds as a conversion lever, and improved storefront, category, and PDP experiences.",
         ],
       },
       {
@@ -171,7 +171,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         title: "Results",
         body: [
           "TikTok Shop moved from a sub-$100K 2025 baseline, using $120K as the year-over-year baseline for growth calculation, to a $720K 2026 run-rate.",
-          "The channel reached 720% of the original $100K AOP goal, expanded SKU coverage from 10,000 products to 90,000 products, increased AOV from $17 to $26, and grew affiliate creators from roughly 5-10 per month to 100-200 per month.",
+          "The channel reached 720% of the original $100K AOP goal, expanded SKU coverage from 10,000 products to 90,000+ products, increased AOV from $17 to $26, and grew affiliate creators from roughly 5-10 per month to 100-200 per month.",
           "The forecast moved from $0 to $100K to $500K, then outpaced that again. The next opportunity identified was scaling toward $1.5M with additional agency and paid media support, but these results were creator-led before paid media launched.",
         ],
       },
