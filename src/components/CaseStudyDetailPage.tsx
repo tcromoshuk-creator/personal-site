@@ -47,6 +47,20 @@ function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priori
   );
 }
 
+function ResultsBand({ study }: { study: CaseStudyPageContent }) {
+  return (
+    <div className="case-result-band card" aria-label={`${study.companyLabel} results`}>
+      {study.metrics.slice(0, 6).map((metric) => (
+        <div className="case-result-tile" key={`${study.slug}-${metric.value}-${metric.label}`}>
+          <strong>{metric.value}</strong>
+          <span>{metric.label}</span>
+          {metric.support && <p>{metric.support}</p>}
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; related: string[] }) {
   const relatedStudies = related
     .map((slug) => caseStudyPages.find((study) => study.slug === slug))
@@ -74,27 +88,14 @@ function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; rel
 }
 
 export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) {
+  const mediaAssets = [study.heroMedia, ...(study.media ?? [])].filter(Boolean) as CaseStudyMedia[];
+
   return (
     <article className="case-detail-page page-shell-compact">
       <section className="case-detail-hero page-hero">
-        <div className="section-inner case-detail-hero-grid">
-          <div className="case-detail-hero-copy">
-            <div className="case-detail-company">
-              <CaseStudyLogo study={study} />
-              <p>{study.companyLabel}</p>
-            </div>
-            <h1>{study.headline}</h1>
-            <p className="lede">{study.subhead}</p>
-            <div className="button-row">
-              <Link className="button primary" href="/contact">
-                Start a Conversation
-              </Link>
-              <Link className="button secondary" href="/case-studies">
-                View All Case Studies
-              </Link>
-            </div>
-          </div>
-          {study.heroMedia && <MediaBlock media={study.heroMedia} priority />}
+        <div className="section-inner case-detail-hero-copy">
+          <h1>{study.headline}</h1>
+          <p className="lede">{study.subhead}</p>
         </div>
       </section>
 
@@ -120,19 +121,10 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
               ))}
             </div>
 
-            <section className="case-result-band card" aria-label={`${study.companyLabel} results`}>
-              {study.metrics.slice(0, 6).map((metric) => (
-                <div className="case-result-tile" key={`${study.slug}-${metric.value}-${metric.label}`}>
-                  <strong>{metric.value}</strong>
-                  <span>{metric.label}</span>
-                  {metric.support && <p>{metric.support}</p>}
-                </div>
-              ))}
-            </section>
-
             {study.sections.map((section) => (
               <section className="case-story-section" id={section.id} key={section.id}>
                 <p className="eyebrow">{section.title}</p>
+                {section.id === "results" && <ResultsBand study={study} />}
                 <div className="case-story-copy">
                   {section.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
@@ -148,11 +140,11 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
               </section>
             ))}
 
-            {study.media && study.media.length > 0 && (
+            {mediaAssets.length > 0 && (
               <section className="case-story-section">
                 <p className="eyebrow">Media / Campaign Assets</p>
                 <div className="case-media-grid">
-                  {study.media.map((media) => (
+                  {mediaAssets.map((media) => (
                     <MediaBlock media={media} key={media.src} />
                   ))}
                 </div>
@@ -161,17 +153,12 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
 
             <RelatedCaseStudies currentSlug={study.slug} related={study.related} />
 
-            <section className="case-detail-cta card">
-              <div>
-                <p className="eyebrow">Start a Conversation</p>
-                <h2>Have a growth problem that needs an operator?</h2>
-              </div>
-              <p>
-                Reach out about full-time leadership roles, selective advisory work, or a
-                specific growth mandate.
-              </p>
+            <section className="case-end-actions" aria-label="Case study actions">
               <Link className="button primary" href="/contact">
                 Start a Conversation
+              </Link>
+              <Link className="button secondary" href="/case-studies">
+                View All Case Studies
               </Link>
             </section>
           </div>
@@ -185,7 +172,7 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
                   <dd>{study.company}</dd>
                 </div>
                 <div>
-                  <dt>Role</dt>
+                  <dt>My Role</dt>
                   <dd>{study.role}</dd>
                 </div>
                 <div>
