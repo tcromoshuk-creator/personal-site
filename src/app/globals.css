@@ -2138,7 +2138,23 @@ p {
   width: 100%;
 }
 
-.case-menlo-lookbook-cover span,
+.case-menlo-lookbook-actions {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.case-menlo-lookbook-trigger {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.case-menlo-lookbook-trigger,
 .case-menlo-pdf-link {
   color: var(--accent);
   font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;

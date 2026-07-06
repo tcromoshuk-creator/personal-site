@@ -107,15 +107,26 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
               height={1100}
               sizes="(max-width: 900px) 82vw, 320px"
             />
-            <span>View Lookbook</span>
           </button>
+          <div className="case-menlo-lookbook-actions">
+            <button
+              className="case-menlo-lookbook-trigger"
+              type="button"
+              onClick={() => {
+                setActivePageIndex(0);
+                setIsLookbookOpen(true);
+              }}
+            >
+              View Lookbook
+            </button>
+            <a className="case-menlo-pdf-link" href="/case-studies/menlo-club/premium-seasonal-magazine.pdf" target="_blank" rel="noreferrer">
+              Open PDF
+            </a>
+          </div>
           <figcaption>
             Premium Seasonal magazine/lookbook used to preview each collection and support the upgraded subscription
             experience.
           </figcaption>
-          <a className="case-menlo-pdf-link" href="/case-studies/menlo-club/premium-seasonal-magazine.pdf" target="_blank" rel="noreferrer">
-            Open PDF
-          </a>
         </figure>
       </div>
 
