@@ -538,7 +538,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       { value: "10,000+", label: "Members in first quarter" },
       { value: "3 years", label: "Concept to full launch" },
       { value: "6 teams", label: "Departments coordinated" },
-      { value: "Add-to-box", label: "Hybrid commerce model" },
+      { value: "$99", label: "Premium quarterly subscription" },
     ],
     heroMedia: {
       type: "image",
@@ -550,23 +550,11 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     media: [
       {
         type: "image",
-        src: "/case-studies/menlo-club/achievement-deck-page-03.png",
-        alt: "Premium Seasonal launch overview from achievement deck",
-        caption: "Launch overview slide covering the subscription model, role, goals, and cross-functional build.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/menlo-club/achievement-deck-page-04.png",
-        alt: "Premium Seasonal results from achievement deck",
-        caption: "Results slide covering churn reduction, AOV lift, member adoption, and launch assets.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
         src: "/case-studies/menlo-club/menlo-premium-social-01.jpg",
         alt: "Menlo Club Premium Seasonal product social creative",
         caption: "Premium Seasonal product creative helped position the launch as a higher-value subscription experience.",
+        width: 1406,
+        height: 897,
         orientation: "landscape",
       },
       {
@@ -574,6 +562,8 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         src: "/case-studies/menlo-club/menlo-premium-video-still.jpg",
         alt: "Menlo Club Premium Seasonal launch video still",
         caption: "Launch video and social content explained the upgraded seasonal model.",
+        width: 1276,
+        height: 719,
         orientation: "landscape",
       },
       {
@@ -581,21 +571,19 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         src: "/case-studies/menlo-club/menlo-premium-seasonal-catalog.jpg",
         alt: "Menlo Club Premium Seasonal collection catalog page",
         caption: "Seasonal merchandising and collection previews supported the upgraded subscription experience.",
+        width: 667,
+        height: 836,
         orientation: "portrait",
-      },
-      {
-        type: "pdf",
-        src: "/case-studies/menlo-club/premium-seasonal-magazine.pdf",
-        alt: "Premium Seasonal digital magazine and lookbook PDF",
-        caption: "Premium Seasonal magazine/lookbook used to preview each collection and support the upgraded subscription experience.",
-        orientation: "landscape",
       },
     ],
     relevantLinks: [
       {
-        label: "Premium Seasonal launch video",
+        label: "Launch video",
         href: "https://www.youtube.com/watch?v=0mqC60QsVDo&ab_channel=MenloHouse",
-        note: "Launch video explaining the Premium Seasonal service.",
+      },
+      {
+        label: "Premium Seasonal magazine/lookbook",
+        href: "/case-studies/menlo-club/premium-seasonal-magazine.pdf",
       },
     ],
     sections: [
@@ -642,7 +630,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         id: "results",
         title: "Results",
         body: [
-          "Premium Seasonal decreased overall churn from 25% to 12%, a 52% reduction. AOV increased by $65 per customer, lifting LTV because customers were charged more per box and could add incremental products.",
+          "Premium Seasonal decreased overall churn from 25% to 12%, a 52% reduction. AOV increased by $65 per customer as members moved into a higher-value quarterly box and could add incremental products before shipment, letting them shape the value they received each season.",
           "The service reached more than 10,000 members within the first quarter and gave the business a higher-value model for customers who were burning out on monthly shipments.",
         ],
       },
@@ -651,7 +639,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         title: "Why It Mattered",
         body: [
           "The project showed that subscription growth is not only acquisition. The business needed merchandising, fulfillment, customer service, product, packaging, website, lifecycle, and reporting systems working together to improve retention and customer value.",
-          "It also taught me how to run a business across functions, not only a marketing department.",
+          "It also changed how I thought about growth leadership. This was the project that pushed me from growth marketer into business operator: solving across product, merchandising, logistics, customer service, engineering, lifecycle, acquisition, and finance, then tying those decisions back to the broader business strategy. It showed me that growth does not sit beside the rest of the business; it depends on every function, and every function shapes the growth outcome.",
         ],
       },
     ],

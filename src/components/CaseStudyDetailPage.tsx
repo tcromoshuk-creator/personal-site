@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { MenloClubMediaShowcase } from "@/components/MenloClubMediaShowcase";
 import type { CaseStudyMedia, CaseStudyPageContent } from "@/lib/case-study-pages";
 import { caseStudyPages } from "@/lib/case-study-pages";
 
@@ -440,7 +441,9 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
             {mediaAssets.length > 0 && (
               <section className="case-story-section" id="media-campaign-assets">
                 <p className="eyebrow">Media / Campaign Assets</p>
-                {study.slug === "netflix-shop" ? (
+                {study.slug === "menlo-club" ? (
+                  <MenloClubMediaShowcase mediaAssets={mediaAssets} />
+                ) : study.slug === "netflix-shop" ? (
                   <NetflixShopMediaAssets mediaAssets={mediaAssets} />
                 ) : (
                   <>
