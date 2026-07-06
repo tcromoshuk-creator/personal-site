@@ -97,7 +97,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       type: "image",
       src: "/case-studies/mad-engine-tiktok-shop/storefront-02.png",
       alt: "Mad Engine TikTok Shop storefront screenshot",
-      caption: "The Mad Engine shopping experience on TikTok Shop.",
+      caption: "TikTok Shop storefront experience for Mad Engine licensed apparel.",
       orientation: "portrait",
     },
     media: [
@@ -105,7 +105,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         type: "image",
         src: "/case-studies/mad-engine-tiktok-shop/storefront-01.png",
         alt: "Mad Engine TikTok Shop product grid screenshot",
-        caption: "Storefront product coverage and shopping modules.",
+        caption: "The Mad Engine shopping experience on TikTok Shop.",
         orientation: "portrait",
       },
       {
