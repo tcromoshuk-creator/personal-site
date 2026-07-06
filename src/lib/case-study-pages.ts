@@ -10,6 +10,8 @@ export type CaseStudyMedia = {
   poster?: string;
   alt: string;
   caption?: string;
+  width?: number;
+  height?: number;
   orientation?: "landscape" | "portrait";
 };
 
@@ -232,28 +234,18 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       src: "/case-studies/netflix-shop/netflix-shop-instagram-bfcm-stranger-things.png",
       alt: "Netflix.Shop Instagram post from the Netflix Has A Shop campaign",
       caption: "Social creative from the Netflix Has A Shop!? BFCM campaign.",
+      width: 1477,
+      height: 1222,
       orientation: "landscape",
     },
     media: [
       {
         type: "image",
-        src: "/case-studies/netflix-shop/achievement-deck-page-07.png",
-        alt: "Netflix Has A Shop campaign overview from achievement deck",
-        caption: "Campaign overview slide showing the core BFCM creative hook and channel plan.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/netflix-shop/achievement-deck-page-08.png",
-        alt: "Netflix Has A Shop campaign results from achievement deck",
-        caption: "Campaign results slide with reach, revenue, ROAS, influencer, and direct-mail performance.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
         src: "/case-studies/netflix-shop/netflix-shop-bfcm-product-grid.jpg",
         alt: "Netflix.Shop BFCM product grid social creative",
         caption: "BFCM social creative connected Netflix fandom to the promotional retail moment.",
+        width: 1417,
+        height: 895,
         orientation: "landscape",
       },
       {
@@ -261,6 +253,8 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         src: "/case-studies/netflix-shop/netflix-shop-instagram-girls-partnership.png",
         alt: "Netflix.Shop influencer partnership Instagram post",
         caption: "Influencer and partner content supported the campaign across social channels.",
+        width: 1722,
+        height: 1222,
         orientation: "landscape",
       },
       {
@@ -268,21 +262,36 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         src: "/case-studies/netflix-shop/netflix-shop-influencer-01.jpg",
         alt: "Netflix.Shop influencer content example",
         caption: "Influencer content helped translate awareness into discovery and site traffic.",
-        orientation: "portrait",
+        width: 672,
+        height: 599,
+        orientation: "landscape",
       },
       {
         type: "image",
         src: "/case-studies/netflix-shop/netflix-shop-influencer-02.jpg",
         alt: "Netflix.Shop creator content example",
         caption: "Creator-led content expanded the campaign beyond paid and owned channels.",
-        orientation: "portrait",
+        width: 1001,
+        height: 895,
+        orientation: "landscape",
       },
     ],
     relevantLinks: [
       {
+        label: "The Invasion Series Part One",
+        href: "https://vimeo.com/961414740?share=copy",
+      },
+      {
+        label: "The Invasion Series Part Two",
+        href: "https://vimeo.com/961414677?share=copy",
+      },
+      {
+        label: "The Invasion Series Part Three",
+        href: "https://vimeo.com/961414591?share=copy",
+      },
+      {
         label: "Instagram campaign example",
         href: "https://www.instagram.com/p/Cz67prBJesC/",
-        note: "Use the screenshot on-site if the embed is unstable.",
       },
     ],
     sections: [

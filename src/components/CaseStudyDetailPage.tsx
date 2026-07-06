@@ -75,8 +75,8 @@ function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priori
         <Image
           src={media.src}
           alt={media.alt}
-          width={media.orientation === "portrait" ? 760 : 1280}
-          height={media.orientation === "portrait" ? 1400 : 760}
+          width={media.width ?? (media.orientation === "portrait" ? 760 : 1280)}
+          height={media.height ?? (media.orientation === "portrait" ? 1400 : 760)}
           sizes={media.orientation === "portrait" ? "(max-width: 900px) 92vw, 420px" : "(max-width: 900px) 92vw, 900px"}
           priority={priority}
         />
@@ -135,6 +135,63 @@ function MobileMediaAssets({ study, mediaAssets }: { study: CaseStudyPageContent
             ))}
           </div>
         </details>
+      )}
+    </div>
+  );
+}
+
+const netflixInvasionVideos = [
+  {
+    label: "Part One",
+    src: "https://player.vimeo.com/video/961414740?title=0&byline=0&portrait=0",
+  },
+  {
+    label: "Part Two",
+    src: "https://player.vimeo.com/video/961414677?title=0&byline=0&portrait=0",
+  },
+  {
+    label: "Part Three",
+    src: "https://player.vimeo.com/video/961414591?title=0&byline=0&portrait=0",
+  },
+];
+
+function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] }) {
+  return (
+    <div className="case-netflix-media-showcase">
+      <div className="case-netflix-media-group">
+        <div className="case-netflix-media-heading">
+          <h3>The Invasion Series</h3>
+          <p>The three-part hero video series used as the core creative hook for the Netflix.Shop BFCM campaign.</p>
+        </div>
+        <div className="case-vimeo-grid">
+          {netflixInvasionVideos.map((video) => (
+            <article className="case-vimeo-card" key={video.src}>
+              <div className="case-vimeo-frame">
+                <iframe
+                  src={video.src}
+                  title={`Netflix.Shop Invasion Series ${video.label}`}
+                  loading="lazy"
+                  allow="fullscreen; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+              <h4>{video.label}</h4>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      {mediaAssets.length > 0 && (
+        <div className="case-netflix-media-group">
+          <div className="case-netflix-media-heading">
+            <h3>Influencer and social support</h3>
+          </div>
+          <div className="case-media-grid case-netflix-support-grid">
+            {mediaAssets.map((media) => (
+              <MediaBlock media={media} key={media.src} />
+            ))}
+          </div>
+        </div>
       )}
     </div>
   );
@@ -359,12 +416,18 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
             {mediaAssets.length > 0 && (
               <section className="case-story-section" id="media-campaign-assets">
                 <p className="eyebrow">Media / Campaign Assets</p>
-                <div className="case-media-grid case-media-grid-desktop">
-                  {mediaAssets.map((media) => (
-                    <MediaBlock media={media} key={media.src} />
-                  ))}
-                </div>
-                <MobileMediaAssets study={study} mediaAssets={mediaAssets} />
+                {study.slug === "netflix-shop" ? (
+                  <NetflixShopMediaAssets mediaAssets={mediaAssets} />
+                ) : (
+                  <>
+                    <div className="case-media-grid case-media-grid-desktop">
+                      {mediaAssets.map((media) => (
+                        <MediaBlock media={media} key={media.src} />
+                      ))}
+                    </div>
+                    <MobileMediaAssets study={study} mediaAssets={mediaAssets} />
+                  </>
+                )}
               </section>
             )}
 

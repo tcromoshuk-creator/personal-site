@@ -1979,6 +1979,75 @@ p {
   grid-column: 1 / -1;
 }
 
+.case-netflix-media-showcase {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.case-netflix-media-group {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.case-netflix-media-heading {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.case-netflix-media-heading h3 {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.case-netflix-media-heading p {
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.case-vimeo-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-vimeo-card {
+  display: grid;
+  gap: 0.65rem;
+  min-width: 0;
+}
+
+.case-vimeo-frame {
+  aspect-ratio: 9 / 16;
+  background: var(--paper-soft);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.case-vimeo-frame iframe {
+  border: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.case-vimeo-card h4 {
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.case-netflix-support-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-netflix-support-grid .case-media.landscape {
+  grid-column: auto;
+}
+
+.case-netflix-support-grid .case-media img {
+  object-fit: contain;
+}
+
 .case-link-list {
   display: grid;
   gap: 0.7rem;
@@ -3251,6 +3320,15 @@ p {
 
   .case-media-grid .case-media {
     max-width: min(100%, 420px);
+  }
+
+  .case-vimeo-grid,
+  .case-netflix-support-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .case-netflix-support-grid .case-media {
+    max-width: 100%;
   }
 
   .case-media-grid-desktop {
