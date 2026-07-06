@@ -11,6 +11,60 @@ function CaseStudyLogo({ study }: { study: CaseStudyPageContent }) {
   );
 }
 
+function CaseDetailsList({ study }: { study: CaseStudyPageContent }) {
+  return (
+    <dl>
+      <div>
+        <dt>Company</dt>
+        <dd>{study.company}</dd>
+      </div>
+      <div>
+        <dt>My Role</dt>
+        <dd>{study.role}</dd>
+      </div>
+      <div>
+        <dt>Year / Timeframe</dt>
+        <dd>{study.timeframe}</dd>
+      </div>
+      <div>
+        <dt>Category</dt>
+        <dd>{study.category}</dd>
+      </div>
+    </dl>
+  );
+}
+
+function PlatformTags({ study }: { study: CaseStudyPageContent }) {
+  return (
+    <div className="tag-list">
+      {study.platforms.map((platform) => (
+        <span className="tag" key={platform}>
+          {platform}
+        </span>
+      ))}
+    </div>
+  );
+}
+
+function MobileCaseContext({ study }: { study: CaseStudyPageContent }) {
+  return (
+    <div className="case-mobile-context" aria-label="Case study context">
+      <details className="case-mobile-drawer">
+        <summary>Case Details</summary>
+        <div className="case-snapshot">
+          <CaseDetailsList study={study} />
+        </div>
+      </details>
+      <details className="case-mobile-drawer">
+        <summary>Platforms / Tools</summary>
+        <div className="case-tools">
+          <PlatformTags study={study} />
+        </div>
+      </details>
+    </div>
+  );
+}
+
 function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priority?: boolean }) {
   const className = `case-media ${media.orientation === "portrait" ? "portrait" : "landscape"}`;
 
@@ -47,6 +101,44 @@ function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priori
   );
 }
 
+function getMobileFeaturedMediaIndex(study: CaseStudyPageContent, mediaAssets: CaseStudyMedia[]) {
+  if (study.slug === "mad-engine-tiktok-shop") {
+    const redTeeIndex = mediaAssets.findIndex((media) => media.src.includes("creator-video-02"));
+    return redTeeIndex >= 0 ? redTeeIndex : 0;
+  }
+
+  if (study.slug === "menlo-club") {
+    const launchVisualIndex = mediaAssets.findIndex((media) => media.src.includes("menlo-premium-video-still"));
+    return launchVisualIndex >= 0 ? launchVisualIndex : 0;
+  }
+
+  return 0;
+}
+
+function MobileMediaAssets({ study, mediaAssets }: { study: CaseStudyPageContent; mediaAssets: CaseStudyMedia[] }) {
+  if (!mediaAssets.length) return null;
+
+  const featuredIndex = getMobileFeaturedMediaIndex(study, mediaAssets);
+  const featuredMedia = mediaAssets[featuredIndex] ?? mediaAssets[0];
+  const additionalMedia = mediaAssets.filter((_, index) => index !== featuredIndex);
+
+  return (
+    <div className="case-mobile-media">
+      <MediaBlock media={featuredMedia} priority />
+      {additionalMedia.length > 0 && (
+        <details className="case-mobile-drawer case-mobile-media-drawer">
+          <summary>More campaign assets</summary>
+          <div className="case-mobile-media-list">
+            {additionalMedia.map((media) => (
+              <MediaBlock media={media} key={`mobile-${media.src}`} />
+            ))}
+          </div>
+        </details>
+      )}
+    </div>
+  );
+}
+
 function ResultsBand({ study }: { study: CaseStudyPageContent }) {
   return (
     <div className="case-result-band card" aria-label={`${study.companyLabel} results`}>
@@ -69,7 +161,7 @@ function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; rel
   if (!relatedStudies.length) return null;
 
   return (
-    <section className="case-related">
+    <section className="case-related" id="related-case-studies">
       <p className="eyebrow">Related Case Studies</p>
       <div className="case-related-grid">
         {relatedStudies.map((study) => (
@@ -90,6 +182,11 @@ function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; rel
 export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) {
   const heroMediaAsset = study.slug === "mad-engine-tiktok-shop" ? undefined : study.heroMedia;
   const mediaAssets = [heroMediaAsset, ...(study.media ?? [])].filter(Boolean) as CaseStudyMedia[];
+  const mobileMenuItems = [
+    ...study.sections.map((section) => ({ href: `#${section.id}`, label: section.title })),
+    ...(mediaAssets.length > 0 ? [{ href: "#media-campaign-assets", label: "Media / Campaign Assets" }] : []),
+    ...(study.related.length > 0 ? [{ href: "#related-case-studies", label: "Related Case Studies" }] : []),
+  ];
 
   return (
     <article className="case-detail-page page-shell-compact">
@@ -114,12 +211,18 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
           </aside>
 
           <div className="case-detail-main">
-            <div className="case-mobile-jump" aria-label="Case study jump menu">
-              {study.sections.map((section) => (
-                <a href={`#${section.id}`} key={`mobile-${section.id}`}>
-                  {section.title}
+            <MobileCaseContext study={study} />
+
+            <div className="case-mobile-section-menu" aria-label="Case study sections">
+              <p>Jump to Section</p>
+              <nav>
+                {mobileMenuItems.map((item, index) => (
+                <a href={item.href} key={item.href}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  {item.label}
                 </a>
               ))}
+              </nav>
             </div>
 
             {study.sections.map((section) => (
@@ -142,13 +245,14 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
             ))}
 
             {mediaAssets.length > 0 && (
-              <section className="case-story-section">
+              <section className="case-story-section" id="media-campaign-assets">
                 <p className="eyebrow">Media / Campaign Assets</p>
-                <div className="case-media-grid">
+                <div className="case-media-grid case-media-grid-desktop">
                   {mediaAssets.map((media) => (
                     <MediaBlock media={media} key={media.src} />
                   ))}
                 </div>
+                <MobileMediaAssets study={study} mediaAssets={mediaAssets} />
               </section>
             )}
 
@@ -167,35 +271,12 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
           <aside className="case-detail-sidebar">
             <div className="card case-snapshot">
               <h2>Details</h2>
-              <dl>
-                <div>
-                  <dt>Company</dt>
-                  <dd>{study.company}</dd>
-                </div>
-                <div>
-                  <dt>My Role</dt>
-                  <dd>{study.role}</dd>
-                </div>
-                <div>
-                  <dt>Year / Timeframe</dt>
-                  <dd>{study.timeframe}</dd>
-                </div>
-                <div>
-                  <dt>Category</dt>
-                  <dd>{study.category}</dd>
-                </div>
-              </dl>
+              <CaseDetailsList study={study} />
             </div>
 
             <div className="card case-tools">
               <h2>Platforms / Tools</h2>
-              <div className="tag-list">
-                {study.platforms.map((platform) => (
-                  <span className="tag" key={platform}>
-                    {platform}
-                  </span>
-                ))}
-              </div>
+              <PlatformTags study={study} />
             </div>
 
             {study.relevantLinks && study.relevantLinks.length > 0 && (

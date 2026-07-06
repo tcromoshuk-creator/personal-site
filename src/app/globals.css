@@ -1406,7 +1406,10 @@ p {
 }
 
 .case-index-mobile-nav,
-.case-mobile-jump {
+.case-mobile-jump,
+.case-mobile-context,
+.case-mobile-section-menu,
+.case-mobile-media {
   display: none;
 }
 
@@ -1749,6 +1752,7 @@ p {
   border-radius: 0;
   display: grid;
   gap: 0.6rem;
+  margin: 0;
   overflow: visible;
 }
 
@@ -1816,6 +1820,11 @@ p {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.case-mobile-media-list {
+  display: grid;
+  gap: 1rem;
 }
 
 .case-media-grid .case-media.portrait img,
@@ -2845,6 +2854,118 @@ p {
     font-size: 0.62rem;
   }
 
+  .case-mobile-context {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .case-mobile-drawer,
+  .case-mobile-section-menu {
+    background: rgba(255, 255, 255, 0.72);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    min-width: 0;
+  }
+
+  .case-mobile-drawer summary {
+    align-items: center;
+    color: var(--ink);
+    cursor: pointer;
+    display: flex;
+    font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.72rem;
+    font-weight: 800;
+    gap: 0.75rem;
+    justify-content: space-between;
+    letter-spacing: 0.13em;
+    list-style: none;
+    min-height: 46px;
+    padding: 0.82rem 0.9rem;
+    text-transform: uppercase;
+  }
+
+  .case-mobile-drawer summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .case-mobile-drawer summary::after {
+    color: var(--accent);
+    content: "+";
+    flex: 0 0 auto;
+    font-size: 1rem;
+    line-height: 1;
+  }
+
+  .case-mobile-drawer[open] summary::after {
+    content: "-";
+  }
+
+  .case-mobile-drawer .case-snapshot,
+  .case-mobile-drawer .case-tools {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0 0.9rem 0.9rem;
+  }
+
+  .case-mobile-drawer .case-snapshot dl {
+    gap: 0.65rem;
+  }
+
+  .case-mobile-drawer .case-snapshot div {
+    padding-top: 0.6rem;
+  }
+
+  .case-mobile-drawer .case-tools .tag-list {
+    gap: 0.4rem;
+  }
+
+  .case-mobile-section-menu {
+    display: grid;
+    gap: 0.55rem;
+    padding: 0.75rem;
+  }
+
+  .case-mobile-section-menu p {
+    color: var(--ink);
+    font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .case-mobile-section-menu nav {
+    display: grid;
+    gap: 0.4rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .case-mobile-section-menu a {
+    align-items: center;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 2px;
+    color: var(--ink);
+    display: grid;
+    font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    gap: 0.55rem;
+    grid-template-columns: auto minmax(0, 1fr);
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    min-height: 42px;
+    min-width: 0;
+    padding: 0.64rem 0.68rem;
+    text-transform: uppercase;
+  }
+
+  .case-mobile-section-menu a span {
+    color: var(--accent);
+    font-size: 0.62rem;
+  }
+
   .case-mobile-jump {
     display: flex;
     flex-wrap: wrap;
@@ -2951,6 +3072,11 @@ p {
     position: static;
   }
 
+  .case-detail-sidebar .case-snapshot,
+  .case-detail-sidebar .case-tools {
+    display: none;
+  }
+
   .case-result-band {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
@@ -2961,6 +3087,47 @@ p {
 
   .case-media-grid .case-media {
     max-width: min(100%, 420px);
+  }
+
+  .case-media-grid-desktop {
+    display: none;
+  }
+
+  .case-mobile-media {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .case-mobile-media .case-media {
+    max-width: min(100%, 420px);
+    width: 100%;
+  }
+
+  .case-mobile-media .case-media.landscape {
+    max-width: min(100%, 680px);
+  }
+
+  .case-mobile-media .case-media.portrait img,
+  .case-mobile-media .case-media.portrait video {
+    aspect-ratio: 9 / 16;
+    object-fit: cover;
+  }
+
+  .case-mobile-media-drawer {
+    background: transparent;
+  }
+
+  .case-mobile-media-drawer summary {
+    background: rgba(255, 255, 255, 0.72);
+    border-radius: var(--radius);
+  }
+
+  .case-mobile-media-list {
+    padding-top: 0.85rem;
+  }
+
+  .case-story-copy {
+    gap: 0.75rem;
   }
 
   .case-related-grid,
@@ -3197,16 +3364,19 @@ p {
     padding: 1.05rem;
   }
 
-  .case-index-mobile-nav {
+  .case-index-mobile-nav,
+  .case-mobile-section-menu {
     gap: 0.5rem;
     padding: 0.68rem;
   }
 
-  .case-index-mobile-nav nav {
+  .case-index-mobile-nav nav,
+  .case-mobile-section-menu nav {
     grid-template-columns: 1fr;
   }
 
-  .case-index-mobile-nav a {
+  .case-index-mobile-nav a,
+  .case-mobile-section-menu a {
     min-height: 40px;
     padding: 0.58rem 0.62rem;
   }
@@ -3284,6 +3454,14 @@ p {
     flex-direction: column;
   }
 
+  .case-detail-hero {
+    padding-bottom: 1.55rem;
+  }
+
+  .case-detail-section {
+    padding-top: 1.35rem;
+  }
+
   .case-index-company {
     align-items: center;
     flex-direction: row;
@@ -3300,6 +3478,35 @@ p {
 
   .case-story-copy ul {
     gap: 0.45rem;
+  }
+
+  .case-mobile-drawer summary {
+    min-height: 44px;
+    padding: 0.76rem 0.78rem;
+  }
+
+  .case-mobile-drawer .case-snapshot,
+  .case-mobile-drawer .case-tools {
+    padding: 0 0.78rem 0.78rem;
+  }
+
+  .case-media figcaption {
+    font-size: 0.72rem;
+    padding: 0.62rem 0.68rem;
+  }
+
+  .case-related-card {
+    gap: 0.55rem;
+    padding: 0.78rem;
+  }
+
+  .case-related-card .case-detail-logo {
+    width: 84px;
+  }
+
+  .case-end-actions .button {
+    justify-content: center;
+    width: 100%;
   }
 
   .case-detail-cta {
