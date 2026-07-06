@@ -34,9 +34,7 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
   const supportingAssets = useMemo(
     () =>
       mediaAssets.filter((media) =>
-        ["menlo-premium-social-02", "menlo-premium-social-01", "menlo-premium-seasonal-catalog"].some((asset) =>
-          media.src.includes(asset),
-        ),
+        ["menlo-premium-social-02", "menlo-premium-social-01"].some((asset) => media.src.includes(asset)),
       ),
     [mediaAssets],
   );
