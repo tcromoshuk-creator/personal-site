@@ -1744,16 +1744,18 @@ p {
 }
 
 .case-media {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
+  background: transparent;
+  border: 0;
+  border-radius: 0;
   display: grid;
-  overflow: hidden;
+  gap: 0.6rem;
+  overflow: visible;
 }
 
 .case-media img,
 .case-media video {
   background: var(--paper-soft);
+  border-radius: var(--radius);
   height: auto;
   justify-self: stretch;
   width: 100%;
@@ -1865,18 +1867,27 @@ p {
   text-decoration: none;
 }
 
-.case-related-card .case-detail-logo {
-  height: 34px;
-  justify-self: start;
-  max-width: 118px;
+.case-related-brand-row {
+  align-items: center;
+  display: flex;
+  gap: 0.65rem;
   min-width: 0;
-  padding: 0.25rem 0.45rem;
-  width: 118px;
+}
+
+.case-related-card .case-detail-logo {
+  background: transparent;
+  border: 0;
+  height: 30px;
+  justify-self: start;
+  max-width: 96px;
+  min-width: 0;
+  padding: 0;
+  width: 96px;
 }
 
 .case-related-card .case-detail-logo img {
   height: auto;
-  max-height: 24px;
+  max-height: 26px;
   max-width: 100%;
   object-fit: contain;
   width: auto;
@@ -1885,13 +1896,14 @@ p {
 .case-related-card h3 {
   font-size: 1.05rem;
   line-height: 1.12;
+  min-width: 0;
 }
 
 .case-related-card p {
   color: var(--ink-mid);
   font-size: 0.8rem;
   line-height: 1.38;
-  margin-top: 0.28rem;
+  margin-top: 0;
 }
 
 .case-related-card > span {

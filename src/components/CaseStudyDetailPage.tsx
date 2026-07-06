@@ -74,11 +74,11 @@ function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; rel
       <div className="case-related-grid">
         {relatedStudies.map((study) => (
           <Link className="card case-related-card" href={`/case-studies/${study.slug}`} key={`${currentSlug}-${study.slug}`}>
-            <CaseStudyLogo study={study} />
-            <div>
+            <div className="case-related-brand-row">
+              <CaseStudyLogo study={study} />
               <h3>{study.companyLabel}</h3>
-              <p>{study.indexSummary}</p>
             </div>
+            <p>{study.indexSummary}</p>
             <span>Read Case Study</span>
           </Link>
         ))}
