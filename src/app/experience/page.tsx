@@ -122,7 +122,7 @@ const fullTimeRoles = [
   {
     company: "adMixt",
     role: "Growth Consultant",
-    dates: "2014 - 2016",
+    dates: "Feb 2015 - Jul 2016",
     type: "Full-time client management",
     context: [
       "adMixt was a performance-marketing agency where I worked across paid acquisition and media strategy for e-commerce and consumer clients.",
@@ -138,7 +138,7 @@ const fullTimeRoles = [
   {
     company: "adParlor",
     role: "Senior Account Manager",
-    dates: "2011 - 2014",
+    dates: "Nov 2011 - Dec 2014",
     type: "Full-time client management",
     context: [
       "adParlor was the first Facebook media agency in Canada and the early paid social foundation for my career, spanning Fortune 500 brands, media agencies, direct-response campaigns, and brand/awareness programs.",
