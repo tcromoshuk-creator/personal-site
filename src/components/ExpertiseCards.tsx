@@ -1,10 +1,12 @@
 import { expertiseCards } from "@/lib/content";
 
-export function ExpertiseCards() {
+type ExpertiseCard = (typeof expertiseCards)[number];
+
+export function ExpertiseCards({ items = expertiseCards }: { items?: ExpertiseCard[] }) {
   return (
     <>
       <div className="capability-architecture">
-        {expertiseCards.map((area, index) => (
+        {items.map((area, index) => (
           <div className="capability-card" key={area.title}>
             <span className="capability-index">{String(index + 1).padStart(2, "0")}</span>
             <div className="capability-main">
@@ -15,7 +17,7 @@ export function ExpertiseCards() {
         ))}
       </div>
       <div className="capability-mobile-accordion" aria-label="Growth functions">
-        {expertiseCards.map((area, index) => (
+        {items.map((area, index) => (
           <details className="capability-drawer" key={area.title}>
             <summary>
               <span>{String(index + 1).padStart(2, "0")}</span>

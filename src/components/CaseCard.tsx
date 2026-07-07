@@ -34,6 +34,7 @@ function CompanyMark({ company }: { company: string }) {
 
 function CaseLogo({ study }: { study: CaseStudy }) {
   const logos: Record<string, string> = {
+    "mad-engine-tiktok-shop": "/logos/mad-engine-global.jpg",
     "netflix-shop": "/logos/netflix.svg",
     "five-four-menlo-club": "/logos/menlo-club-linkedin-logo.jpg",
     veestro: "/logos/veestro-gray.png",

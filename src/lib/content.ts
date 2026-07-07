@@ -148,17 +148,6 @@ export const operatingSystemSteps = [
 
 export const platformEcosystem = [
   {
-    group: "Commerce",
-    items: [
-      "Shopify",
-      "Amazon 1P/3P/MOD",
-      "Walmart / WFS",
-      "Target+",
-      "TikTok Shop",
-      "PDP / Catalog QA",
-    ],
-  },
-  {
     group: "Acquisition",
     items: [
       "Meta / Facebook / Instagram",
@@ -173,8 +162,8 @@ export const platformEcosystem = [
   {
     group: "Lifecycle & CRM",
     items: [
-      "Email/SMS and CRM",
-      "Klaviyo flows",
+      "Klaviyo",
+      "Attentive",
       "Customer segmentation",
       "Retention",
       "Reactivation",
@@ -205,6 +194,18 @@ export const platformEcosystem = [
       "Growth research",
     ],
   },
+  {
+    group: "Commerce",
+    items: [
+      "Shopify",
+      "BigCommerce",
+      "Amazon 1P/3P/MOD",
+      "Walmart / WFS",
+      "Target+",
+      "TikTok Shop",
+      "PDP / Catalog QA",
+    ],
+  },
 ];
 
 export type CaseStudy = {
@@ -230,61 +231,59 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
-    slug: "mad-engine",
-    company: "Mad Engine",
-    title: "Building the Growth Foundation for a $120M+ Marketplace Portfolio",
-    category: "Marketplace Growth / Retail Media / Operating Cadence",
+    slug: "mad-engine-tiktok-shop",
+    company: "Mad Engine / TikTok Shop",
+    title: "Scaling TikTok Shop for Licensed Apparel",
+    category: "Marketplace Growth / Social Commerce / Creator-Affiliate / TikTok Shop",
     summary:
-      "I led growth strategy and operating transformation across Amazon, Walmart, Target+, TikTok Shop, retail media, analytics, content optimization, merchandising, and cross-functional teams.",
+      "I took over TikTok Shop as an under-managed sales channel and helped turn it into a creator-led marketplace growth engine for licensed apparel before paid media was live.",
     homepageContext:
-      "Marketplace growth and operating cadence across a $120M+ e-commerce portfolio.",
+      "Creator-led marketplace growth for licensed apparel on TikTok Shop.",
     challenge:
-      "A large marketplace business needed stronger growth levers, better reporting, clearer ownership, and improved retail media efficiency.",
+      "Mad Engine needed to prove TikTok Shop could become a meaningful and margin-efficient revenue channel for a large licensed apparel portfolio.",
     role:
-      "I led growth strategy, marketplace commerce, retail media, analytics, catalog optimization, and cross-functional operating cadence as SVP.",
+      "I led the TikTok Shop growth system across SKU expansion, creator activation, storefront and PDP optimization, fulfillment improvements, and weekly operating cadence.",
     metrics: [
-      "$120M+ e-commerce portfolio",
-      "MER improved from 7.5% to 6.9%",
-      "Walmart 120% of goal; Target+ 130%",
-      "$20K-$40K monthly agency cost reduction",
+      "$120K → $720K revenue run-rate",
+      "10K → 90K SKU expansion",
+      "$17 → $26 AOV increase",
     ],
     context:
-      "The business had meaningful marketplace scale but needed a stronger growth foundation across acquisition, product detail pages, catalog experience, reporting, and operating discipline.",
+      "TikTok Shop was live but operating largely on autopilot before active ownership.",
     moves: [
-      "I built the growth plan across marketing efficiency, PDP/catalog quality, and analytics infrastructure.",
-      "I helped establish reporting, forecasting, budget planning, retail media testing, PDP optimization, and channel-review cadence.",
-      "I partnered with analytics and engineering teams to scope executive and day-to-day dashboard requirements.",
-      "I improved internal ownership across a six-person direct team and 15+ dotted-line contributors.",
+      "I built a creator and affiliate engine around evergreen IP and launch moments.",
+      "I expanded SKU coverage and improved storefront, category, and PDP shopping experience.",
+      "I established weekly cross-functional reporting and operating cadence.",
     ],
     outcome:
-      "I helped the e-commerce business exceed its goal in 2025 and 4 of the first 5 months in 2026, pacing 9.8% above plan while marketplace and retail media performance improved.",
+      "TikTok Shop moved from $100K GMV in 2025 to a $720K GMV run-rate in 2026.",
     services: [
-      "E-Commerce & Marketplace Growth",
-      "Executive Reporting, Forecasting & Operating Cadence",
-      "Paid Acquisition, Retail Media & Channel Strategy",
+      "TikTok Shop",
+      "Social commerce",
+      "Creator-led growth",
     ],
     homepageOutcomes: [
       {
-        metric: "$120M+",
-        label: "E-commerce portfolio",
+        metric: "$120K → $720K",
+        label: "Revenue run-rate",
       },
       {
-        metric: "7.5% → 6.9%",
-        label: "MER improvement",
+        metric: "10K → 90K",
+        label: "SKU expansion",
       },
       {
-        metric: "120% / 130%",
-        label: "Walmart / Target+ goal attainment",
+        metric: "$17 → $26",
+        label: "AOV increase",
       },
     ],
   },
   {
     slug: "netflix-shop",
     company: "Netflix.Shop",
-    title: "Netflix Has A Shop!? Campaign",
+    title: "Turning Netflix.Shop Awareness Into BFCM Sales",
     category: "Brand Awareness / BFCM / Acquisition",
     summary:
-      "I led a two-week BFCM awareness campaign across hero video, paid social, paid search, influencer seeding, direct mail, email, and organic social to educate fans that Netflix had an official shop and convert that attention into sales.",
+      "I turned the common reaction of 'Netflix has a shop?' into a BFCM campaign designed to build awareness and drive sales for Netflix.Shop across hero video, paid social, Google PMax, influencer seeding, email, affiliate, direct mail, and organic social.",
     homepageContext:
       "BFCM brand awareness campaign for the official Netflix.Shop.",
     challenge:
@@ -292,9 +291,9 @@ export const caseStudies: CaseStudy[] = [
     role:
       "I led the campaign with my team and agency partners across hero creative, channel planning, organic social, paid social, paid search, influencer seeding, direct mail, and email.",
     metrics: [
-      "250% increase in reach",
-      "110% to BFCM sales goal",
-      "100% increase to ROAS during BFCM campaign",
+      "13M+ consumers reached",
+      "2.5M visitors to Netflix.Shop",
+      "7 figures revenue",
     ],
     context:
       "The campaign launched during the most competitive retail period of the year and needed to grow awareness of the shop while supporting sales conversion.",
@@ -312,26 +311,26 @@ export const caseStudies: CaseStudy[] = [
     ],
     homepageOutcomes: [
       {
-        metric: "250%",
-        label: "Increase in reach",
+        metric: "13M+",
+        label: "Consumers reached",
       },
       {
-        metric: "110%",
-        label: "To BFCM sales goal",
+        metric: "2.5M",
+        label: "Visitors to Netflix.Shop",
       },
       {
-        metric: "100%",
-        label: "Increase to ROAS",
+        metric: "7 figures",
+        label: "Revenue",
       },
     ],
   },
   {
     slug: "five-four-menlo-club",
     company: "Menlo Club / Five Four Group",
-    title: "Menlo Club Seasonal Subscription Launch",
+    title: "Launching Menlo Club Premium Seasonal",
     category: "Subscription / Retention / BigCommerce",
     summary:
-      "I acted as GM for a quarterly subscription launch that upgraded the apparel assortment, rebuilt the customer experience on BigCommerce, improved fulfillment and packaging, and introduced self-serve tools, personal stylists, and add-to-box shopping.",
+      "I acted as GM for Menlo Club Premium Seasonal, a three-year business-model shift from monthly subscription fatigue into a higher-value quarterly service across BigCommerce, add-to-box commerce, packaging, shipping, digital magazine, personal stylists, and cross-functional execution.",
     homepageContext:
       "Quarterly subscription launch for a men's apparel brand.",
     challenge:
@@ -339,9 +338,9 @@ export const caseStudies: CaseStudy[] = [
     role:
       "I acted as GM and coordinated Logistics, Merchandising, Customer Service, Product, Engineering, and Marketing across launch strategy, customer experience, and go-to-market execution.",
     metrics: [
-      "52% decrease in churn",
-      "$65 increase in AOV per customer",
-      "10,000+ members in the first quarter",
+      "25% → 12% churn rate improvement",
+      "+$65 AOV increase",
+      "+$90 LTV per user",
     ],
     context:
       "The business needed a more premium quarterly subscription model with better apparel, packaging, fulfillment, website experience, and service support.",
@@ -359,26 +358,26 @@ export const caseStudies: CaseStudy[] = [
     ],
     homepageOutcomes: [
       {
-        metric: "52%",
-        label: "Decrease in churn",
+        metric: "25% → 12%",
+        label: "Churn rate improvement",
       },
       {
-        metric: "$65",
+        metric: "+$65",
         label: "AOV increase",
       },
       {
-        metric: "10,000+",
-        label: "Members in Q1",
+        metric: "+$90",
+        label: "LTV per user",
       },
     ],
   },
   {
     slug: "veestro",
     company: "Veestro",
-    title: "Veestro's Plant Based Rebrand",
+    title: "Rebranding Veestro for Plant-Based Growth",
     category: "Rebrand / CAC Reduction / Shopify 2.0",
     summary:
-      "I led a plant-based repositioning from a vegan-first niche into a broader meal delivery audience, pairing new messaging and brand systems with Shopify 2.0, CRO improvements, paid and organic channel refreshes, affiliate, PR, and influencer support.",
+      "I led Veestro's shift from vegan-first positioning to a broader plant-based brand while rebuilding the website, acquisition strategy, CRO program, lifecycle engine, paid media, affiliate, PR, influencer, Klaviyo, Attentive, and new brand systems.",
     homepageContext:
       "Plant-based rebrand and Shopify 2.0 transition for a meal delivery brand.",
     challenge:
@@ -388,7 +387,7 @@ export const caseStudies: CaseStudy[] = [
     metrics: [
       "60% drop in CAC",
       "15% increase in sitewide CVR",
-      "50%+ increase in engagement rate",
+      "6 figures/mo winback revenue",
     ],
     context:
       "The vegan-first audience was saturated, acquisition costs were rising, and the brand needed to widen its addressable market without weakening retention.",
@@ -414,8 +413,8 @@ export const caseStudies: CaseStudy[] = [
         label: "Sitewide CVR lift",
       },
       {
-        metric: "50%+",
-        label: "Engagement lift",
+        metric: "6 figures/mo",
+        label: "Winback revenue",
       },
     ],
   },
