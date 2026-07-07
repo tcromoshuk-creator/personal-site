@@ -22,12 +22,14 @@ function EmailIcon() {
 
 function LinkedInIcon() {
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24">
-      <path d="M6.5 9.75v7.5" />
-      <path d="M10.75 17.25v-7.5" />
-      <path d="M10.75 13.25c0-2.1 1.05-3.5 3-3.5 1.75 0 2.75 1.15 2.75 3.25v4.25" />
-      <path d="M6.5 6.75h.01" />
-      <path d="M4.75 3.75h14.5v16.5H4.75z" />
+    <svg aria-hidden="true" viewBox="0 0 100 100">
+      <rect fill="#0a66c2" height="100" rx="17" width="100" />
+      <circle cx="29" cy="27" fill="#ffffff" r="10" />
+      <rect fill="#ffffff" height="43" rx="3" width="15" x="21.5" y="43" />
+      <path
+        d="M45 43h14v6.1c2-3.6 6.1-7.1 13-7.1 13.8 0 16.5 9.1 16.5 20.8V86h-15V65.4c0-5.1-.1-11.6-7.1-11.6-7.1 0-8.2 5.5-8.2 11.2V86H45z"
+        fill="#ffffff"
+      />
     </svg>
   );
 }
@@ -50,14 +52,13 @@ export default function ContactPage() {
         <div className="section-inner contact-page-grid">
           <div className="contact-page-copy">
             <div>
-              <h2>Tell me what you&apos;re trying to grow.</h2>
+              <h2>Let&apos;s talk growth.</h2>
             </div>
             <p>
-              Whether you&apos;re hiring for a full-time growth, e-commerce,
-              marketplace, or marketing leader, or looking for senior advisory
-              support on a specific growth problem, the best conversations
-              usually start with the business goal, the constraint, and what
-              needs to change.
+              Whether you&apos;re hiring for a full-time growth/marketing leader
+              or looking for senior advisory support on a specific growth
+              problem, I&apos;m always open to chatting. Reach out with the form
+              to help set the context of what you&apos;d like to talk about.
             </p>
             <div className="contact-methods">
               <a
@@ -78,7 +79,7 @@ export default function ContactPage() {
                 className="card contact-method-card"
                 href={site.linkedin}
               >
-                <span className="contact-method-icon">
+                <span className="contact-method-icon contact-method-icon-linkedin">
                   <LinkedInIcon />
                 </span>
                 <span className="contact-method-text">

@@ -2700,6 +2700,18 @@ p {
   width: 22px;
 }
 
+.contact-method-icon-linkedin {
+  background: transparent;
+  border: 0;
+}
+
+.contact-method-icon-linkedin svg {
+  fill: none;
+  height: 42px;
+  stroke: none;
+  width: 42px;
+}
+
 .contact-method-text {
   display: grid;
   gap: 0.3rem;
