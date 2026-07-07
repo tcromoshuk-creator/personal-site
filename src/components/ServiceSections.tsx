@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 
 const problemCards = [
   {
@@ -224,7 +227,7 @@ const serviceAreas = [
 
 const proofTiles = [
   {
-    company: "Mad Engine / TikTok Shop",
+    company: "Mad Engine Global",
     href: "/case-studies/mad-engine-tiktok-shop",
     metrics: [
       { value: "$120K → $720K", label: "Revenue run-rate" },
@@ -232,9 +235,9 @@ const proofTiles = [
       { value: "$17 → $26", label: "AOV increase" },
     ],
     problems: [
-      { label: "Channel underperformance", href: "#problem-channels" },
-      { label: "Launch / channel expansion", href: "#problem-launches" },
-      { label: "Marketplace growth", href: "#problem-channels" },
+      { label: "Commerce, Marketplace & Channel Growth", href: "#commerce-marketplace" },
+      { label: "Acquisition, Media & Demand Generation", href: "#acquisition-demand" },
+      { label: "Analytics, Forecasting & Operating Cadence", href: "#analytics-cadence" },
     ],
   },
   {
@@ -246,9 +249,9 @@ const proofTiles = [
       { value: "7 figures", label: "Revenue" },
     ],
     problems: [
-      { label: "Acquisition / demand generation", href: "#problem-acquisition" },
-      { label: "Campaign launch", href: "#problem-launches" },
-      { label: "DTC awareness", href: "#problem-acquisition" },
+      { label: "Acquisition, Media & Demand Generation", href: "#acquisition-demand" },
+      { label: "Growth Strategy & Revenue Planning", href: "#growth-strategy" },
+      { label: "CRO, Funnel Optimization & Testing", href: "#cro-testing" },
     ],
   },
   {
@@ -260,9 +263,9 @@ const proofTiles = [
       { value: "+$90", label: "LTV per user" },
     ],
     problems: [
-      { label: "Retention not compounding", href: "#problem-retention" },
-      { label: "Business model launch", href: "#problem-launches" },
-      { label: "Subscription growth", href: "#problem-retention" },
+      { label: "Lifecycle, CRM & Retention", href: "#lifecycle-retention" },
+      { label: "Growth Strategy & Revenue Planning", href: "#growth-strategy" },
+      { label: "Commerce, Marketplace & Channel Growth", href: "#commerce-marketplace" },
     ],
   },
   {
@@ -274,10 +277,9 @@ const proofTiles = [
       { value: "6 figures/mo", label: "Winback revenue" },
     ],
     problems: [
-      { label: "Traffic not converting", href: "#problem-conversion" },
-      { label: "Acquisition efficiency", href: "#problem-acquisition" },
-      { label: "Lifecycle / retention", href: "#problem-retention" },
-      { label: "Repositioning", href: "#problem-growth-priorities" },
+      { label: "CRO, Funnel Optimization & Testing", href: "#cro-testing" },
+      { label: "Lifecycle, CRM & Retention", href: "#lifecycle-retention" },
+      { label: "Acquisition, Media & Demand Generation", href: "#acquisition-demand" },
     ],
   },
 ];
@@ -329,43 +331,89 @@ export function ServiceNavigator() {
 }
 
 export function ServiceSections() {
+  const [activeServiceId, setActiveServiceId] = useState(serviceAreas[0].id);
+
   return (
-    <div className="service-area-grid">
-      {serviceAreas.map((service) => (
-        <article className="service-area-card card" id={service.id} key={service.id}>
-          <div className="service-area-heading">
-            <p className="case-card-meta">Service area</p>
-            <h3>{service.title}</h3>
-            <p>{service.positioning}</p>
-          </div>
-          <div className="service-area-details">
-            <div>
-              <span>Business problem</span>
-              <p>{service.problem}</p>
-            </div>
-            <div>
-              <span>When it fits</span>
-              <p>{service.fit}</p>
-            </div>
-            <div>
-              <span>What I do</span>
-              <p>{service.action}</p>
-            </div>
-          </div>
-          <div className="service-output-block">
-            <span>Typical outputs</span>
-            <ul className="service-output-list">
-              {service.outputs.map((output) => (
-                <li key={output}>{output}</li>
-              ))}
-            </ul>
-          </div>
-          <Link className="service-card-cta" href="/contact">
-            Discuss this service →
-          </Link>
-        </article>
-      ))}
+    <div className="service-explorer">
+      <div className="service-explorer-desktop">
+        <div className="service-tab-list" aria-label="Core service areas" role="tablist">
+          {serviceAreas.map((service, index) => (
+            <button
+              aria-controls={`${service.id}-panel`}
+              aria-selected={service.id === activeServiceId}
+              className="service-tab-button"
+              id={service.id}
+              key={service.id}
+              onClick={() => setActiveServiceId(service.id)}
+              role="tab"
+              type="button"
+            >
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{service.title}</strong>
+            </button>
+          ))}
+        </div>
+        <div className="service-panel-stack">
+          {serviceAreas.map((service) => (
+            <article
+              aria-labelledby={service.id}
+              className="service-panel card"
+              hidden={service.id !== activeServiceId}
+              id={`${service.id}-panel`}
+              key={service.id}
+              role="tabpanel"
+            >
+              <ServiceDetail service={service} />
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="service-mobile-accordion">
+        {serviceAreas.map((service, index) => (
+          <details className="service-accordion-item card" key={service.id} open={index === 0}>
+            <summary>{service.title}</summary>
+            <ServiceDetail service={service} />
+          </details>
+        ))}
+      </div>
     </div>
+  );
+}
+
+function ServiceDetail({ service }: { service: (typeof serviceAreas)[number] }) {
+  return (
+    <>
+      <div className="service-area-heading">
+        <h3>{service.title}</h3>
+        <p>{service.positioning}</p>
+      </div>
+      <div className="service-area-details">
+        <div>
+          <span>Business problem</span>
+          <p>{service.problem}</p>
+        </div>
+        <div>
+          <span>When it fits</span>
+          <p>{service.fit}</p>
+        </div>
+        <div>
+          <span>What I do</span>
+          <p>{service.action}</p>
+        </div>
+      </div>
+      <div className="service-output-block">
+        <span>Typical outputs</span>
+        <ul className="service-output-list">
+          {service.outputs.map((output) => (
+            <li key={output}>{output}</li>
+          ))}
+        </ul>
+      </div>
+      <Link className="service-card-cta" href="/contact">
+        Discuss this service →
+      </Link>
+    </>
   );
 }
 
@@ -374,7 +422,10 @@ export function ServiceProofTiles() {
     <div className="service-proof-grid">
       {proofTiles.map((tile) => (
         <article className="service-proof-tile card" key={tile.company}>
-          <h3>{tile.company}</h3>
+          <div className="service-proof-company">
+            <span>Company</span>
+            <h3>{tile.company}</h3>
+          </div>
           <div className="service-proof-metrics">
             {tile.metrics.map((metric) => (
               <div key={`${tile.company}-${metric.label}`}>
@@ -384,7 +435,7 @@ export function ServiceProofTiles() {
             ))}
           </div>
           <div className="service-proof-problems">
-            <span>Relevant problems</span>
+            <span>Service Areas</span>
             <ul>
               {tile.problems.map((problem) => (
                 <li key={`${tile.company}-${problem.label}`}>
@@ -393,7 +444,7 @@ export function ServiceProofTiles() {
               ))}
             </ul>
           </div>
-          <Link className="service-card-cta" href={tile.href}>
+          <Link className="service-proof-cta" href={tile.href}>
             View case study →
           </Link>
         </article>

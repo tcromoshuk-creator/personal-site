@@ -1402,6 +1402,7 @@ p {
 .service-output-block > span,
 .service-card-cta,
 .service-proof-metrics span,
+.service-proof-company span,
 .service-proof-problems > span {
   color: var(--accent);
   font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
@@ -1445,6 +1446,89 @@ p {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.service-explorer {
+  display: grid;
+  gap: 1rem;
+}
+
+.service-explorer-desktop {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: minmax(230px, 0.34fr) minmax(0, 1fr);
+}
+
+.service-mobile-accordion {
+  display: none;
+}
+
+.service-tab-list {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.service-tab-button {
+  align-items: baseline;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  gap: 0.65rem;
+  grid-template-columns: auto minmax(0, 1fr);
+  padding: 0.85rem 0.95rem;
+  text-align: left;
+  transition:
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 180ms ease;
+}
+
+.service-tab-button:hover,
+.service-tab-button:focus-visible,
+.service-tab-button[aria-selected="true"] {
+  border-color: var(--line-strong);
+  box-shadow: var(--shadow);
+}
+
+.service-tab-button[aria-selected="true"] {
+  transform: translateX(2px);
+}
+
+.service-tab-button span {
+  color: var(--accent);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+
+.service-tab-button strong {
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  line-height: 1.1;
+}
+
+.service-panel,
+.service-accordion-item {
+  display: grid;
+  gap: 1.15rem;
+  padding: clamp(1.15rem, 2.2vw, 1.85rem);
+}
+
+.service-panel[hidden] {
+  display: none;
+}
+
+.service-accordion-item summary {
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.08rem, 4.8vw, 1.28rem);
+  font-weight: 700;
+  line-height: 1.1;
 }
 
 .service-area-card {
@@ -1538,6 +1622,11 @@ p {
   font-size: clamp(1.15rem, 1.7vw, 1.45rem);
 }
 
+.service-proof-company {
+  display: grid;
+  gap: 0.35rem;
+}
+
 .service-proof-metrics {
   display: grid;
   gap: 0.75rem;
@@ -1574,6 +1663,32 @@ p {
 .service-proof-problems a:hover,
 .service-proof-problems a:focus-visible {
   color: var(--ink);
+}
+
+.service-proof-cta {
+  align-self: end;
+  border: 1px solid var(--line-strong);
+  border-radius: 2px;
+  color: var(--ink);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  justify-self: start;
+  letter-spacing: 0.12em;
+  padding: 0.62rem 0.78rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    background 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease;
+}
+
+.service-proof-cta:hover,
+.service-proof-cta:focus-visible {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: #ffffff;
 }
 
 .engagement-model-grid {
@@ -3890,6 +4005,15 @@ p {
     min-height: 0;
   }
 
+  .service-explorer-desktop {
+    display: none;
+  }
+
+  .service-mobile-accordion {
+    display: grid;
+    gap: 0.75rem;
+  }
+
   .faq-topic-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -4681,6 +4805,8 @@ p {
 
   .service-nav-card,
   .service-area-card,
+  .service-panel,
+  .service-accordion-item,
   .service-proof-tile,
   .engagement-model-card,
   .engagement-model-cta {
