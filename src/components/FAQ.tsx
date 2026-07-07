@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+
 const faqGroups = [
   {
     topic: "Fit & Engagement",
@@ -90,7 +94,7 @@ const faqGroups = [
       {
         question: "What does success look like?",
         answer:
-          "Success should be tied to the mandate: clearer priorities, better economics, stronger retention, improved conversion, cleaner reporting, or a more effective growth operating cadence.",
+          "Success should be tied to the mandate: clearer priorities, better economics, stronger retention, improved conversion, or a more effective growth operating cadence.",
       },
     ],
   },
@@ -132,21 +136,36 @@ const faqGroups = [
 ];
 
 export function FAQ() {
+  const [activeTopic, setActiveTopic] = useState(faqGroups[0].topic);
+  const activeGroup = faqGroups.find((group) => group.topic === activeTopic) ?? faqGroups[0];
+
   return (
-    <div className="faq-group-list">
-      {faqGroups.map((group) => (
-        <section className="faq-group" key={group.topic}>
-          <h3>{group.topic}</h3>
-          <div className="faq-list">
-            {group.items.map((item) => (
-              <details className="faq-item" key={item.question}>
-                <summary>{item.question}</summary>
-                <p>{item.answer}</p>
-              </details>
-            ))}
-          </div>
-        </section>
-      ))}
+    <div className="faq-topic-layout">
+      <div className="faq-topic-list" aria-label="FAQ topics">
+        {faqGroups.map((group) => (
+          <button
+            aria-pressed={group.topic === activeTopic}
+            className="faq-topic-button"
+            key={group.topic}
+            onClick={() => setActiveTopic(group.topic)}
+            type="button"
+          >
+            <span>{group.topic}</span>
+            <em>{group.items.length} questions</em>
+          </button>
+        ))}
+      </div>
+      <section className="faq-topic-panel" aria-live="polite">
+        <h3>{activeGroup.topic}</h3>
+        <div className="faq-list">
+          {activeGroup.items.map((item) => (
+            <details className="faq-item" key={item.question}>
+              <summary>{item.question}</summary>
+              <p>{item.answer}</p>
+            </details>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

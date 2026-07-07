@@ -1,10 +1,93 @@
 import Link from "next/link";
 
+const problemCards = [
+  {
+    id: "problem-growth-priorities",
+    href: "#growth-strategy",
+    title: "Growth priorities are unclear",
+    problem:
+      "The team is active across channels, agencies, and ideas, but the revenue plan is not clear enough to guide decisions.",
+    help:
+      "I diagnose where growth is actually coming from, identify the biggest constraints, and turn that into a sharper 90-day plan, budget logic, and operating rhythm.",
+  },
+  {
+    id: "problem-acquisition",
+    href: "#acquisition-demand",
+    title: "Acquisition is inefficient or over-reliant",
+    problem:
+      "CAC is high, channel mix is unclear, creative learning is not compounding, or spend is not tied cleanly to business economics.",
+    help:
+      "I assess spend quality, channel roles, creative testing, and media economics, then build a plan for more accountable acquisition.",
+  },
+  {
+    id: "problem-retention",
+    href: "#lifecycle-retention",
+    title: "Retention is not compounding",
+    problem:
+      "The business is acquiring customers but not doing enough to keep, reactivate, increase value, or build stronger customer relationships.",
+    help:
+      "I map the customer journey, identify lifecycle leaks, and build CRM, segmentation, win-back, churn, and retention systems that make acquisition more valuable.",
+  },
+  {
+    id: "problem-conversion",
+    href: "#cro-testing",
+    title: "Traffic is not converting",
+    problem:
+      "Paid and organic traffic is expensive, but landing pages, PDPs, checkout, merchandising, or offers are not converting strongly enough.",
+    help:
+      "I identify the highest-value conversion problems, prioritize tests, and work with product, creative, analytics, and merchandising teams to improve the funnel.",
+  },
+  {
+    id: "problem-channels",
+    href: "#commerce-marketplace",
+    title: "Channels are underperforming",
+    problem:
+      "Marketplace, retail, DTC, affiliate, influencer, or social commerce channels are underperforming because ownership, catalog quality, PDPs, or channel logic are fragmented.",
+    help:
+      "I help define channel roles, improve the operating system around the channel, and build the scorecards, workflows, and execution cadence needed to scale.",
+  },
+  {
+    id: "problem-reporting",
+    href: "#analytics-cadence",
+    title: "Reporting does not drive decisions",
+    problem:
+      "Dashboards are messy, pacing is unclear, meetings are reactive, or metrics are not defined.",
+    help:
+      "I define what success looks like, clarify the reporting stack, and help build dashboards, pacing views, and operating reviews that give leadership a clearer picture of the business.",
+  },
+  {
+    id: "problem-ai",
+    href: "#ai-workflows",
+    title: "AI is being used casually, not operationally",
+    problem:
+      "Teams are experimenting with AI, but workflows remain inconsistent, QA is manual, and reporting, research, or execution still take too long.",
+    help:
+      "I turn AI usage into practical workflows for analysis, QA, CRM sequencing, PDP/catalog review, reporting, and research.",
+  },
+  {
+    id: "problem-launches",
+    href: "#acquisition-demand",
+    title: "Launches need stronger commercial execution",
+    problem:
+      "A new product, channel, campaign, or business model is launching, but the growth plan, owner map, channel mix, and measurement plan are not clear.",
+    help:
+      "I help translate the launch into a commercial operating plan across acquisition, lifecycle, creative, reporting, and cross-functional execution.",
+  },
+  {
+    id: "problem-leadership",
+    href: "#engagement-models",
+    title: "Teams need senior growth leadership",
+    problem:
+      "The company needs experienced growth judgment before a full-time hire, between leaders, or around a defined strategic mandate.",
+    help:
+      "I can step in as an advisor, fractional operator, interim leader, or project lead to bring structure, prioritization, and senior decision-making to the work.",
+  },
+];
+
 const serviceAreas = [
   {
     id: "growth-strategy",
     title: "Growth Strategy & Revenue Planning",
-    shortProblem: "Unclear priorities, weak forecast logic, or budget decisions not tied to business goals.",
     positioning:
       "Diagnose where growth is coming from, where the business is leaking opportunity, and what the next revenue stage should be built around.",
     problem:
@@ -13,7 +96,7 @@ const serviceAreas = [
       "Best when leadership needs sharper growth priorities, budget logic, forecasting, or a senior operator who can connect marketing to the broader business.",
     action:
       "I audit the current growth system, identify the real constraints, build a clearer revenue plan, and translate it into operating rhythms teams can follow.",
-    deliverables: [
+    outputs: [
       "Growth audit",
       "90-day plan",
       "Revenue model",
@@ -21,18 +104,10 @@ const serviceAreas = [
       "Operating roadmap",
       "Executive narrative",
     ],
-    proof: [
-      { label: "Mad Engine", href: "/case-studies/mad-engine-tiktok-shop" },
-      { label: "Netflix.Shop", href: "/case-studies/netflix-shop" },
-      { label: "Paxful / Echo Base" },
-      { label: "Menlo Club", href: "/case-studies/menlo-club" },
-    ],
-    navProof: "Mad Engine / Netflix.Shop",
   },
   {
     id: "acquisition-demand",
     title: "Acquisition, Media & Demand Generation",
-    shortProblem: "High CAC, unclear MER/ROAS, weak channel mix, or creative learning that is not compounding.",
     positioning:
       "Scale paid, organic, influencer, affiliate, retail media, and creative testing against business economics.",
     problem:
@@ -41,25 +116,17 @@ const serviceAreas = [
       "Best when a company needs to improve CAC, ROAS, MER, tACOS, spend allocation, creative testing, or channel diversification.",
     action:
       "I assess spend quality, build test structure, improve creative and audience learning, and connect performance to business economics.",
-    deliverables: [
+    outputs: [
       "Channel audit",
       "Media plan",
       "Testing roadmap",
       "Budget allocation model",
       "Creative learning agenda",
     ],
-    proof: [
-      { label: "Netflix.Shop", href: "/case-studies/netflix-shop" },
-      { label: "Scoops Ahoy", href: "/case-studies/scoops-ahoy" },
-      { label: "Veestro", href: "/case-studies/veestro" },
-      { label: "Mad Engine", href: "/case-studies/mad-engine-tiktok-shop" },
-    ],
-    navProof: "Netflix.Shop / Scoops Ahoy",
   },
   {
     id: "lifecycle-retention",
     title: "Lifecycle, CRM & Retention",
-    shortProblem: "Acquisition does not compound, CRM is weak, churn is high, or repeat purchase is low.",
     positioning:
       "Improve retention, reactivation, churn, customer value, and lifecycle systems that make acquisition more valuable.",
     problem:
@@ -68,23 +135,17 @@ const serviceAreas = [
       "Best when a subscription, marketplace, or DTC business needs better lifecycle flows, win-back programs, churn reduction, or segmentation.",
     action:
       "I map the customer journey, diagnose retention leaks, and build CRM programs that connect customer behavior to revenue.",
-    deliverables: [
+    outputs: [
       "Lifecycle audit",
       "Flow map",
       "Segmentation plan",
       "Win-back strategy",
       "Retention test roadmap",
     ],
-    proof: [
-      { label: "Menlo Club", href: "/case-studies/menlo-club" },
-      { label: "Veestro", href: "/case-studies/veestro" },
-    ],
-    navProof: "Menlo Club / Veestro",
   },
   {
     id: "cro-testing",
     title: "CRO, Funnel Optimization & Testing",
-    shortProblem: "Traffic is expensive, but the site, checkout, offer, landing pages, or PDPs are not converting.",
     positioning:
       "Improve conversion across landing pages, PDPs, checkout, merchandising, and offer flow.",
     problem:
@@ -93,23 +154,17 @@ const serviceAreas = [
       "Best when a company needs a practical testing system for landing pages, PDPs, checkout, creative-message match, or merchandising flow.",
     action:
       "I identify the highest-value conversion problems, prioritize tests, and work with product, merchandising, analytics, and creative teams to improve the funnel.",
-    deliverables: [
+    outputs: [
       "Funnel audit",
       "Test backlog",
       "Landing page briefs",
       "PDP recommendations",
       "Measurement plan",
     ],
-    proof: [
-      { label: "Veestro", href: "/case-studies/veestro" },
-      { label: "Netflix.Shop", href: "/case-studies/netflix-shop" },
-    ],
-    navProof: "Veestro / Netflix.Shop",
   },
   {
     id: "commerce-marketplace",
     title: "Commerce, Marketplace & Channel Growth",
-    shortProblem: "Marketplace channels underperform because ownership, catalog quality, PDPs, or channel logic are fragmented.",
     positioning:
       "Improve DTC, marketplace, retail, TikTok Shop, Amazon, Walmart, Target+, catalog, PDP, and channel systems.",
     problem:
@@ -118,24 +173,17 @@ const serviceAreas = [
       "Best when a business needs better performance across Shopify, Amazon, Walmart, Target+, TikTok Shop, retail media, or channel operations.",
     action:
       "I improve marketplace strategy, catalog/PDP standards, retail media testing, channel ownership, and the cadence around digital commerce performance.",
-    deliverables: [
+    outputs: [
       "Marketplace audit",
       "PDP/catalog QA framework",
       "Channel scorecard",
       "Retail media plan",
       "Merchandising/growth cadence",
     ],
-    proof: [
-      { label: "Mad Engine / TikTok Shop", href: "/case-studies/mad-engine-tiktok-shop" },
-      { label: "Mad Engine marketplace portfolio" },
-      { label: "Netflix.Shop", href: "/case-studies/netflix-shop" },
-    ],
-    navProof: "Mad Engine / TikTok Shop",
   },
   {
     id: "analytics-cadence",
     title: "Analytics, Forecasting & Operating Cadence",
-    shortProblem: "Dashboards are messy, pacing is unclear, meetings are reactive, or metrics are not defined.",
     positioning:
       "Make performance easier for leadership to understand, forecast, and act on.",
     problem:
@@ -144,25 +192,17 @@ const serviceAreas = [
       "Best when a business needs better pacing, forecasting, dashboard requirements, AOP planning, or performance storytelling.",
     action:
       "I build the reporting requirements, meeting rhythm, and performance narrative that help teams move from reactive updates to better decisions.",
-    deliverables: [
+    outputs: [
       "Dashboard requirements",
       "Weekly business review format",
       "Forecast model",
       "Metric definitions",
       "Executive readout template",
     ],
-    proof: [
-      { label: "Mad Engine", href: "/case-studies/mad-engine-tiktok-shop" },
-      { label: "Netflix.Shop", href: "/case-studies/netflix-shop" },
-      { label: "Menlo Club", href: "/case-studies/menlo-club" },
-      { label: "Paxful / Echo Base" },
-    ],
-    navProof: "Mad Engine / Menlo Club",
   },
   {
     id: "ai-workflows",
     title: "AI-Enabled Marketing & Growth Systems",
-    shortProblem: "AI usage is ad hoc, QA is manual, reporting is slow, and team workflows are inconsistent.",
     positioning:
       "Turn AI from casual usage into practical growth workflows that improve speed, analysis, QA, and execution quality.",
     problem:
@@ -171,7 +211,7 @@ const serviceAreas = [
       "Best when a company wants practical AI systems for growth work without vague hype or disconnected experiments.",
     action:
       "I design workflows that make teams faster and more consistent across campaign analysis, CRM sequencing, PDP QA, reporting, forecasting, and growth research.",
-    deliverables: [
+    outputs: [
       "AI workflow audit",
       "Prompt/process library",
       "Codex workflow specs",
@@ -179,15 +219,8 @@ const serviceAreas = [
       "Marketplace/PDP QA workflow",
       "CRM sequencing workflow",
     ],
-    proof: [
-      { label: "Paxful / Echo Base AI workflows" },
-      { label: "Codex-enabled site and operating workflows" },
-    ],
-    navProof: "Paxful / Codex workflows",
   },
 ];
-
-const systemSteps = ["Diagnose", "Plan", "Build", "Measure", "Scale"];
 
 const proofTiles = [
   {
@@ -198,6 +231,11 @@ const proofTiles = [
       { value: "10K → 90K", label: "SKU expansion" },
       { value: "$17 → $26", label: "AOV increase" },
     ],
+    problems: [
+      { label: "Channel underperformance", href: "#problem-channels" },
+      { label: "Launch / channel expansion", href: "#problem-launches" },
+      { label: "Marketplace growth", href: "#problem-channels" },
+    ],
   },
   {
     company: "Netflix.Shop",
@@ -206,6 +244,11 @@ const proofTiles = [
       { value: "13M+", label: "Consumers reached" },
       { value: "2.5M", label: "Visitors" },
       { value: "7 figures", label: "Revenue" },
+    ],
+    problems: [
+      { label: "Acquisition / demand generation", href: "#problem-acquisition" },
+      { label: "Campaign launch", href: "#problem-launches" },
+      { label: "DTC awareness", href: "#problem-acquisition" },
     ],
   },
   {
@@ -216,6 +259,11 @@ const proofTiles = [
       { value: "+$65", label: "AOV" },
       { value: "+$90", label: "LTV per user" },
     ],
+    problems: [
+      { label: "Retention not compounding", href: "#problem-retention" },
+      { label: "Business model launch", href: "#problem-launches" },
+      { label: "Subscription growth", href: "#problem-retention" },
+    ],
   },
   {
     company: "Veestro",
@@ -225,6 +273,12 @@ const proofTiles = [
       { value: "15%", label: "Sitewide CVR lift" },
       { value: "6 figures/mo", label: "Winback revenue" },
     ],
+    problems: [
+      { label: "Traffic not converting", href: "#problem-conversion" },
+      { label: "Acquisition efficiency", href: "#problem-acquisition" },
+      { label: "Lifecycle / retention", href: "#problem-retention" },
+      { label: "Repositioning", href: "#problem-growth-priorities" },
+    ],
   },
 ];
 
@@ -233,51 +287,42 @@ const engagementModels = [
     title: "Diagnostic Sprint",
     bestFit:
       "Best fit when the problem is unclear and the first job is to identify the real constraint.",
-    includes: ["Growth audit", "Priority map", "Decision readout"],
   },
   {
     title: "Strategic Project",
     bestFit:
       "Best fit when there is a defined growth, CRM, CRO, marketplace, reporting, channel, or AI workflow mandate.",
-    includes: ["Scoped workstream", "Execution plan", "Operator-ready deliverables"],
   },
   {
     title: "Advisory Retainer",
     bestFit:
       "Best fit when leadership or a growth team needs ongoing senior guidance, decision rhythm, and operating support.",
-    includes: ["Senior counsel", "Team support", "Performance cadence"],
   },
   {
     title: "Fractional / Interim Leadership",
     bestFit:
       "Best fit when a company needs temporary senior ownership, transition support, or leadership before or between full-time hires.",
-    includes: ["Function ownership", "Cross-functional cadence", "Hiring support"],
   },
 ];
 
 export function ServiceNavigator() {
   return (
-    <div className="service-nav-grid" aria-label="Service areas">
-      {serviceAreas.map((service, index) => (
-        <a className="service-nav-card card" href={`#${service.id}`} key={service.id}>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <strong>{service.title}</strong>
-          <p>{service.shortProblem}</p>
-          <em>{service.navProof}</em>
+    <div className="service-nav-grid" aria-label="Business problems">
+      {problemCards.map((card, index) => (
+        <a className="service-nav-card card" href={card.href} id={card.id} key={card.id}>
+          <div className="service-nav-heading">
+            <span>{String(index + 1).padStart(2, "0")}</span>
+            <strong>{card.title}</strong>
+          </div>
+          <div className="service-nav-copy">
+            <p>
+              <b>Problem:</b> {card.problem}
+            </p>
+            <p>
+              <b>How I help:</b> {card.help}
+            </p>
+          </div>
         </a>
-      ))}
-    </div>
-  );
-}
-
-export function GrowthSystemMap() {
-  return (
-    <div className="growth-system-map" aria-label="Growth operating pattern">
-      {systemSteps.map((step, index) => (
-        <div className="growth-system-step" key={step}>
-          <span>{String(index + 1).padStart(2, "0")}</span>
-          <strong>{step}</strong>
-        </div>
       ))}
     </div>
   );
@@ -307,23 +352,13 @@ export function ServiceSections() {
               <p>{service.action}</p>
             </div>
           </div>
-          <div className="service-chip-group" aria-label={`${service.title} deliverables`}>
-            {service.deliverables.map((deliverable) => (
-              <span className="mini-chip" key={deliverable}>
-                {deliverable}
-              </span>
-            ))}
-          </div>
-          <div className="service-proof-row">
-            {service.proof.map((proof) =>
-              proof.href ? (
-                <Link href={proof.href} key={proof.label}>
-                  {proof.label}
-                </Link>
-              ) : (
-                <span key={proof.label}>{proof.label}</span>
-              ),
-            )}
+          <div className="service-output-block">
+            <span>Typical outputs</span>
+            <ul className="service-output-list">
+              {service.outputs.map((output) => (
+                <li key={output}>{output}</li>
+              ))}
+            </ul>
           </div>
           <Link className="service-card-cta" href="/contact">
             Discuss this service →
@@ -338,7 +373,7 @@ export function ServiceProofTiles() {
   return (
     <div className="service-proof-grid">
       {proofTiles.map((tile) => (
-        <Link className="service-proof-tile card" href={tile.href} key={tile.company}>
+        <article className="service-proof-tile card" key={tile.company}>
           <h3>{tile.company}</h3>
           <div className="service-proof-metrics">
             {tile.metrics.map((metric) => (
@@ -348,8 +383,20 @@ export function ServiceProofTiles() {
               </div>
             ))}
           </div>
-          <span>View case study →</span>
-        </Link>
+          <div className="service-proof-problems">
+            <span>Relevant problems</span>
+            <ul>
+              {tile.problems.map((problem) => (
+                <li key={`${tile.company}-${problem.label}`}>
+                  <a href={problem.href}>{problem.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Link className="service-card-cta" href={tile.href}>
+            View case study →
+          </Link>
+        </article>
       ))}
     </div>
   );
@@ -357,24 +404,17 @@ export function ServiceProofTiles() {
 
 export function EngagementModels() {
   return (
-    <div className="engagement-model-grid">
+    <div className="engagement-model-grid" id="engagement-models">
       {engagementModels.map((model) => (
         <article className="engagement-model-card card" key={model.title}>
           <h3>{model.title}</h3>
           <p>{model.bestFit}</p>
-          <div className="service-chip-group">
-            {model.includes.map((item) => (
-              <span className="mini-chip" key={item}>
-                {item}
-              </span>
-            ))}
-          </div>
         </article>
       ))}
       <div className="engagement-model-cta card">
         <p className="case-card-meta">Next step</p>
-        <h3>Not sure which model fits?</h3>
-        <p>Start with the business problem. The engagement shape can follow once the scope is clear.</p>
+        <h3>Not sure which model fits your problem?</h3>
+        <p>No problem, reach out for a free advisory call and we can figure out what path makes sense for you.</p>
         <Link className="button primary" href="/contact">
           Start a Conversation
         </Link>

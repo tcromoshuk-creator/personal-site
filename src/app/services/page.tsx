@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { ContactCTA } from "@/components/ContactCTA";
+import Link from "next/link";
 import { FAQ } from "@/components/FAQ";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import {
   EngagementModels,
-  GrowthSystemMap,
   ServiceNavigator,
   ServiceProofTiles,
   ServiceSections,
@@ -33,20 +32,9 @@ export default function ServicesPage() {
       <Section
         className="service-nav-section"
         eyebrow="How I Can Help"
-        title="Find the business problem first."
-        intro="Use this as a quick map of the service areas. Each one ties back to a mandate, deliverables, and proof from past work."
+        title="Types of problems I tackle"
       >
         <ServiceNavigator />
-      </Section>
-
-      <Section
-        tone="alt"
-        className="growth-system-section"
-        eyebrow="Operating Pattern"
-        title="A growth system, not disconnected tactics."
-        intro="Most mandates move through the same rhythm: diagnose the constraint, plan the work, build the system, measure performance, and scale what works."
-      >
-        <GrowthSystemMap />
       </Section>
 
       <Section
@@ -70,7 +58,6 @@ export default function ServicesPage() {
         className="engagement-model-section"
         eyebrow="Engagement Models"
         title="Different ways the work can take shape."
-        intro="Fractional and interim leadership belong here: as engagement models, not service categories."
       >
         <EngagementModels />
       </Section>
@@ -79,13 +66,11 @@ export default function ServicesPage() {
         <FAQ />
       </Section>
 
-      <ContactCTA
-        eyebrow="Next step"
-        title="Bring me the business problem, not just the channel problem."
-        intro="The right conversation usually starts with what the company is trying to improve: revenue, retention, acquisition efficiency, marketplace performance, forecasting, or the operating cadence around growth."
-        secondaryHref="/case-studies"
-        secondaryLabel="View Case Studies"
-      />
+      <Section className="services-bottom-cta">
+        <Link className="button primary" href="/contact">
+          Contact Me
+        </Link>
+      </Section>
     </>
   );
 }
