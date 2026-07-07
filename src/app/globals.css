@@ -2258,6 +2258,166 @@ p {
   opacity: 0.38;
 }
 
+.case-veestro-media-showcase {
+  display: grid;
+  gap: clamp(1.4rem, 3vw, 2.2rem);
+}
+
+.case-veestro-media-group {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.case-veestro-media-heading h3 {
+  font-size: clamp(1.25rem, 2vw, 1.7rem);
+}
+
+.case-veestro-brand-guide {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0;
+  max-width: 760px;
+}
+
+.case-veestro-brand-guide-cover {
+  background: transparent;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  display: grid;
+  padding: 0;
+  text-align: left;
+}
+
+.case-veestro-brand-guide-cover img {
+  background: var(--paper);
+  border-radius: var(--radius);
+  box-shadow: 0 18px 44px rgba(15, 27, 61, 0.12);
+  height: auto;
+  width: 100%;
+}
+
+.case-veestro-brand-guide-actions {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.case-veestro-brand-guide-trigger {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+}
+
+.case-veestro-brand-guide-trigger,
+.case-veestro-pdf-link {
+  color: var(--accent);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.case-veestro-brand-guide figcaption {
+  background: rgba(220, 232, 242, 0.56);
+  border: 1px solid rgba(15, 27, 61, 0.08);
+  border-radius: 10px;
+  color: var(--muted);
+  display: block;
+  font-size: 0.76rem;
+  line-height: 1.35;
+  margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  padding: 0.68rem 0.78rem;
+}
+
+.case-veestro-lightbox {
+  align-items: center;
+  background: rgba(6, 12, 31, 0.86);
+  display: grid;
+  inset: 0;
+  justify-items: center;
+  padding: clamp(0.75rem, 3vw, 1.5rem);
+  position: fixed;
+  z-index: 80;
+}
+
+.case-veestro-lightbox-panel {
+  display: grid;
+  gap: 0.75rem;
+  max-height: min(92vh, 980px);
+  max-width: min(96vw, 1280px);
+  width: 100%;
+}
+
+.case-veestro-lightbox-top {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.case-veestro-lightbox-top p {
+  color: #ffffff;
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.case-veestro-lightbox-top span {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.case-veestro-lightbox-top button,
+.case-veestro-lightbox-nav {
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 6px;
+  color: var(--ink);
+  cursor: pointer;
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding: 0.65rem 0.8rem;
+  text-transform: uppercase;
+}
+
+.case-veestro-lightbox-stage {
+  align-items: center;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  min-height: 0;
+}
+
+.case-veestro-lightbox-stage img {
+  background: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 18px 64px rgba(0, 0, 0, 0.32);
+  height: auto;
+  justify-self: center;
+  max-height: 82vh;
+  max-width: 100%;
+  object-fit: contain;
+  width: auto;
+}
+
+.case-veestro-lightbox-nav:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
 .case-link-list {
   display: grid;
   gap: 0.7rem;
@@ -4029,6 +4189,45 @@ p {
   }
 
   .case-menlo-lightbox-nav {
+    order: 2;
+    width: 100%;
+  }
+
+  .case-veestro-brand-guide {
+    max-width: 100%;
+  }
+
+  .case-veestro-lightbox {
+    align-items: stretch;
+    padding: 0.7rem;
+  }
+
+  .case-veestro-lightbox-panel {
+    max-height: 100%;
+  }
+
+  .case-veestro-lightbox-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .case-veestro-lightbox-top button {
+    width: 100%;
+  }
+
+  .case-veestro-lightbox-stage {
+    gap: 0.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .case-veestro-lightbox-stage img {
+    grid-column: 1 / -1;
+    max-height: 72vh;
+    order: 1;
+  }
+
+  .case-veestro-lightbox-nav {
     order: 2;
     width: 100%;
   }

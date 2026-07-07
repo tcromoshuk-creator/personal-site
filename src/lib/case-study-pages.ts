@@ -699,55 +699,17 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       caption: "The repositioning moved Veestro from vegan-only messaging toward broader plant-based eating.",
       orientation: "landscape",
     },
-    media: [
-      {
-        type: "image",
-        src: "/case-studies/veestro/achievement-deck-page-09.png",
-        alt: "Veestro rebrand overview from achievement deck",
-        caption: "Rebrand overview slide covering the strategic shift, goals, and early execution.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/veestro/achievement-deck-page-10.png",
-        alt: "Veestro rebrand results from achievement deck",
-        caption: "Results slide covering CAC, CVR, paid media, lifecycle, influencer, and traffic gains.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/veestro/veestro-brand-pillars.jpg",
-        alt: "Veestro brand pillars visual",
-        caption: "Brand pillars helped make the plant-based positioning more accessible and commercially useful.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/veestro/veestro-brand-voice.jpg",
-        alt: "Veestro brand voice visual",
-        caption: "Messaging work clarified the brand promise, voice, and customer-facing reasons to choose Veestro.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/veestro/veestro-lifestyle-box.jpg",
-        alt: "Veestro lifestyle packaging visual",
-        caption: "Updated imagery supported a more modern plant-based brand system.",
-        orientation: "landscape",
-      },
-      {
-        type: "pdf",
-        src: "/case-studies/veestro/veestro-rebrand.pdf",
-        alt: "Veestro rebrand guide PDF",
-        caption: "Veestro rebrand guide and visual system for the plant-based positioning reset.",
-        orientation: "landscape",
-      },
-    ],
+    media: [],
     relevantLinks: [
       {
-        label: "Veestro Shopify / CRO prototype",
+        label: "Veestro Shopify 2.0 prototype",
         href: "https://www.figma.com/proto/Qemu8swjttehhagGhhAGOc/Veestro---Shopify?node-id=1634-30047&starting-point-node-id=1634%3A30047",
-        note: "Figma prototype for Shopify rebuild direction.",
+        note: "Interactive prototype for the Shopify 2.0 rebuild.",
+      },
+      {
+        label: "Brand guide / rebrand deck",
+        href: "/case-studies/veestro/veestro-rebrand.pdf",
+        note: "PDF version of the rebrand deck.",
       },
     ],
     sections: [
