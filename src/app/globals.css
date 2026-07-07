@@ -837,9 +837,9 @@ p {
   aspect-ratio: 1.05 / 1;
   display: flex;
   flex-direction: column;
-  gap: clamp(1rem, 2vw, 1.35rem);
-  min-height: 430px;
-  padding: clamp(1.35rem, 2.5vw, 2rem);
+  gap: 1rem;
+  min-height: 390px;
+  padding: clamp(1.25rem, 2.2vw, 1.75rem);
 }
 
 .homepage-case-grid .case-card-company,
@@ -848,7 +848,7 @@ p {
 }
 
 .homepage-case-grid .case-card-body {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
 
 .homepage-case-grid .case-card-body > p {
@@ -856,18 +856,37 @@ p {
   line-height: 1.55;
 }
 
+.homepage-case-grid .case-card-capabilities {
+  gap: 0.35rem;
+}
+
+.homepage-case-grid .mini-chip {
+  align-items: center;
+  display: inline-flex;
+  min-height: 0;
+  padding: 0.24rem 0.42rem;
+  width: auto;
+}
+
 .homepage-case-grid .outcome-tile-grid {
   border-left: 0;
   border-top: 1px solid var(--line);
-  gap: 0.75rem;
+  column-gap: 1.4rem;
+  row-gap: 0.75rem;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: auto;
   padding-left: 0;
-  padding-top: 1rem;
+  padding-top: 1.05rem;
+}
+
+.homepage-case-grid .outcome-tile {
+  min-width: 0;
 }
 
 .homepage-case-grid .outcome-tile strong {
-  font-size: clamp(1.1rem, 2.05vw, 1.55rem);
+  font-size: clamp(1rem, 1.65vw, 1.42rem);
+  letter-spacing: -0.045em;
+  white-space: nowrap;
 }
 
 .homepage-case-grid .case-card-link {
@@ -4658,7 +4677,12 @@ p {
 
   .homepage-case-grid .case-card-compact {
     aspect-ratio: auto;
+    gap: 0.9rem;
     min-height: 0;
+  }
+
+  .homepage-case-grid .mini-chip {
+    flex: 0 1 auto;
   }
 
   .outcome-tile-grid {
