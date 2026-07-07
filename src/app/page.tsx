@@ -8,7 +8,7 @@ import { PlatformEcosystem } from "@/components/PlatformEcosystem";
 import { Section } from "@/components/Section";
 import { caseStudies, homepageAudiences, industries, site } from "@/lib/content";
 
-const homepageCaseStudySlugs = ["mad-engine-tiktok-shop", "netflix-shop", "five-four-menlo-club", "veestro"];
+const homepageCaseStudySlugs = ["mad-engine-tiktok-shop", "netflix-shop"];
 
 const homepageExpertiseCards = [
   {
@@ -88,7 +88,7 @@ export default function Home() {
       </Section>
 
       <Section className="case-proof-section" eyebrow="Case Studies" title="A few highlights of my work">
-        <div className="grid case-grid">
+        <div className="grid case-grid homepage-case-grid">
           {caseStudies
             .filter((study) => homepageCaseStudySlugs.includes(study.slug))
             .map((study) => (
