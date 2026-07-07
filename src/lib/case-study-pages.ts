@@ -368,7 +368,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       "A Netflix Consumer Products launch that turned a fictional Stranger Things ice cream brand into a real Walmart retail and digital-commerce campaign.",
     indexSummary:
       "A retail and digital launch across Walmart traffic, paid social, paid search, organic, influencer seeding, PR, activations, and product creative.",
-    role: "Head of Growth, Netflix.Shop / Co-lead, digital and retail launch",
+    role: "Growth & Performance Marketing Lead",
     timeframe: "Planned 2022 / Campaign ran Sep-Dec 2023",
     category: "Retail Commerce / Consumer Products / Social Commerce",
     platforms: [
@@ -408,29 +408,15 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         type: "image",
         src: "/case-studies/scoops-ahoy/scoops-ahoy-sundae.jpg",
         alt: "Scoops Ahoy product and sundae creative",
-        caption: "Product photography supported Walmart.com, social, PR, and campaign creative.",
+        caption: "Product and retail creative helped turn the Stranger Things brand moment into commerce demand.",
         orientation: "landscape",
       },
       {
         type: "image",
-        src: "/case-studies/scoops-ahoy/scoops-ahoy-webby.jpg",
+        src: "/case-studies/scoops-ahoy/scoops-ahoy-webby-cropped.jpg",
         alt: "Webby Awards page for Netflix Scoops Ahoy campaign",
-        caption: "The campaign won two Webby awards for Best Social Commerce/Shopping Campaign.",
+        caption: "Webby recognition for the Scoops Ahoy campaign, highlighting the campaign's retail and social-commerce impact.",
         orientation: "portrait",
-      },
-      {
-        type: "image",
-        src: "/case-studies/scoops-ahoy/achievement-deck-page-05.png",
-        alt: "Scoops Ahoy brand launch overview from achievement deck",
-        caption: "Launch overview slide covering goals, partners, and channel strategy.",
-        orientation: "landscape",
-      },
-      {
-        type: "image",
-        src: "/case-studies/scoops-ahoy/achievement-deck-page-06.png",
-        alt: "Scoops Ahoy campaign results from achievement deck",
-        caption: "Results slide covering digital reach, Walmart traffic, press, awards, sell-through, and retail shelf impact.",
-        orientation: "landscape",
       },
     ],
     sections: [
@@ -439,7 +425,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         title: "Overview",
         body: [
           "Near the end of 2022, Netflix Consumer Products was looking for ways to sustain Stranger Things cultural relevance while the next season was still years away. The opportunity was to bring Scoops Ahoy, the fictional ice cream brand from season 3, into the real world.",
-          "I co-led the digital and retail launch work as part of a cross-functional Tiger Team, helping turn the idea into a campaign that could drive awareness, Walmart traffic, product demand, and retail confidence.",
+          "The broader Scoops Ahoy launch was a cross-functional Consumer Products effort across Netflix, Walmart, Golden West Food Group, agency partners, and retail and PR teams. My role was to lead the performance and growth marketing workstream, turning the campaign into measurable retail and digital demand through traffic strategy, paid social, paid search, influencer seeding, organic support, and performance-oriented channel execution.",
         ],
       },
       {
@@ -460,24 +446,24 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         id: "strategy",
         title: "Strategy",
         body: [
-          "The campaign treated Scoops Ahoy as both an entertainment moment and a retail-commerce launch. The work connected Netflix fandom, Walmart availability, product creative, paid and organic channels, PR, influencer seeding, and market activations.",
-          "We used organic marketing across YouTube, Instagram, and TikTok on multiple Netflix and Stranger Things handles; paid social on Instagram and TikTok to drive video views and Walmart traffic; paid search through Google Ads and Shopping ads; PR with news, editorial, and bloggers; Scoops Ahoy ice cream truck activations in Houston, Las Vegas, and Atlanta; and influencer seeding.",
+          "The campaign treated Scoops Ahoy as both an entertainment moment and a retail-commerce launch. My work helped connect Netflix fandom, Walmart availability, product creative, paid and organic channels, influencer seeding, and retail traffic strategy into a more accountable growth plan.",
+          "I led or directly supported the performance-oriented channels, including organic support across YouTube, Instagram, and TikTok; paid social on Instagram and TikTok to drive video views and Walmart traffic; paid search through Google Ads and Shopping ads; and influencer seeding that helped connect awareness to commerce demand.",
         ],
       },
       {
         id: "execution",
         title: "Execution / What I Did",
         body: [
-          "I helped lead the digital and retail launch from a growth and commerce standpoint, working across Consumer Products, Title Marketing, Golden West Food Group, Walmart, and agency partners.",
-          "Throughout 2023, I led creative direction and execution for marketing assets based on performance marketing best practices and prior brand/CRO work. That included launch trailers, paid assets, and product imagery for Walmart.com.",
-          "I also managed key digital marketing channels directly, including paid media and influencer work, while coordinating with cross-functional teams for organic and agency partners for PR and activations.",
+          "I led the performance and growth marketing side of the launch, managing the channels and execution that drove traffic, demand, and measurable digital performance.",
+          "I also advised cross-functionally on the broader campaign, helping connect the retail launch, product story, creator and influencer support, and paid and organic media into a more accountable growth plan.",
+          "That work included paid media execution, influencer support, traffic strategy, performance-oriented creative guidance, and coordination with Consumer Products, Title Marketing, Golden West Food Group, Walmart, and agency partners.",
         ],
       },
       {
         id: "results",
         title: "Results",
         body: [
-          "From September to December 2023, the campaign reached more than 93M consumers through digital channels and drove more than 2.1M visitors to Walmart.com to buy Scoops Ahoy pints through delivery or in-store pickup.",
+          "From September to December 2023, the performance and growth workstream helped the broader launch reach more than 93M consumers through digital channels and drive more than 2.1M visitors to Walmart.com to buy Scoops Ahoy pints through delivery or in-store pickup.",
           "CTR exceeded product-marketing benchmarks, averaging 2.2% across assets compared with roughly 1% for comparable product marketing. CPV came in at $0.37 per person.",
           "The campaign was featured in outlets including Variety, Elite Daily, Decider, People, and others. It also won two Webby awards for Best Social Commerce/Shopping Campaign.",
           "Stores sold out of pints multiple times during the fall and winter period, Walmart buyers dedicated exclusive freezer shelf space after initial sales performance, and the sales contract was extended through the end of 2024.",

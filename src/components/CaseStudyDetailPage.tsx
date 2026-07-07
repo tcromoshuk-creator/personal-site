@@ -223,6 +223,41 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
   );
 }
 
+function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] }) {
+  const webbyMedia = mediaAssets.find((media) => media.src.includes("scoops-ahoy-webby"));
+  const productMedia = mediaAssets.filter((media) =>
+    ["scoops-ahoy-pint", "scoops-ahoy-sundae"].some((asset) => media.src.includes(asset)),
+  );
+
+  return (
+    <div className="case-scoops-media-showcase">
+      {webbyMedia && (
+        <div className="case-scoops-media-group">
+          <div className="case-scoops-media-heading">
+            <h3>Campaign Recognition</h3>
+          </div>
+          <div className="case-scoops-recognition">
+            <MediaBlock media={webbyMedia} />
+          </div>
+        </div>
+      )}
+
+      {productMedia.length > 0 && (
+        <div className="case-scoops-media-group">
+          <div className="case-scoops-media-heading">
+            <h3>Product / Retail Creative</h3>
+          </div>
+          <div className="case-media-grid case-scoops-product-grid">
+            {productMedia.map((media) => (
+              <MediaBlock media={media} key={media.src} />
+            ))}
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
 function ResultsBand({ study }: { study: CaseStudyPageContent }) {
   const metrics = study.metrics.filter(
     (metric) => !(study.slug === "mad-engine-tiktok-shop" && metric.value === "No paid media"),
@@ -448,6 +483,8 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
                   <VeestroMediaShowcase />
                 ) : study.slug === "netflix-shop" ? (
                   <NetflixShopMediaAssets mediaAssets={mediaAssets} />
+                ) : study.slug === "scoops-ahoy" ? (
+                  <ScoopsAhoyMediaAssets mediaAssets={mediaAssets} />
                 ) : (
                   <>
                     <div className="case-media-grid case-media-grid-desktop">
