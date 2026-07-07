@@ -172,7 +172,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         id: "results",
         title: "Results",
         body: [
-          "TikTok Shop moved from a sub-$100K 2025 baseline, using $120K as the year-over-year baseline for growth calculation, to a $720K 2026 run-rate.",
+          "TikTok Shop moved from sub-$100K GMV in 2025 to a $720K GMV 2026 run-rate.",
           "The channel reached 720% of the original $100K AOP goal, expanded SKU coverage from 10,000 products to 90,000+ products, increased AOV from $17 to $26, and grew affiliate creators from roughly 5-10 per month to 100-200 per month.",
           "The forecast moved from $0 to $100K to $500K, then outpaced that again. The next opportunity identified was scaling toward $1.5M with additional agency and paid media support, but these results were creator-led before paid media launched.",
         ],
@@ -195,7 +195,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
   },
   {
     slug: "netflix-shop",
-    company: "Netflix.Shop",
+    company: "Netflix",
     companyLabel: "Netflix.Shop",
     logo: "/logos/netflix.svg",
     headline: "Netflix Has A Shop!? Campaign",
@@ -243,7 +243,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         type: "image",
         src: "/case-studies/netflix-shop/netflix-shop-bfcm-product-grid.jpg",
         alt: "Netflix.Shop BFCM product grid social creative",
-        caption: "Promotional creative connected Netflix fandom to the Cyber Week offer.",
+        caption: "Promotional creative connected Netflix fandom to the Black Friday offer.",
         width: 1417,
         height: 895,
         orientation: "landscape",
@@ -252,7 +252,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
         type: "image",
         src: "/case-studies/netflix-shop/netflix-shop-instagram-girls-partnership.png",
         alt: "Netflix.Shop influencer partnership Instagram post",
-        caption: "Tutorial-style content showed fans how to find and shop Netflix merchandise.",
+        caption: "Meme-led social creative turned familiar Netflix TV moments into campaign content for the 'Netflix has a shop?' idea.",
         width: 1722,
         height: 1222,
         orientation: "landscape",
@@ -392,7 +392,7 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       { value: "93M+", label: "Consumers reached" },
       { value: "2.1M+", label: "Walmart visitors" },
       { value: "2.2%", label: "Average CTR" },
-      { value: "$0.37", label: "Cost per view" },
+      { value: "$0.37", label: "Cost per visit" },
       { value: "2", label: "Webby awards" },
       { value: "2024", label: "Sales contract extended" },
     ],
@@ -404,6 +404,13 @@ export const caseStudyPages: CaseStudyPageContent[] = [
       orientation: "landscape",
     },
     media: [
+      {
+        type: "video",
+        src: "/case-studies/scoops-ahoy/scoops-ahoy-launch-trailer.mp4",
+        alt: "Scoops Ahoy Launch Trailer",
+        caption: "Scoops Ahoy Launch Trailer. Debuted September 2023.",
+        orientation: "landscape",
+      },
       {
         type: "image",
         src: "/case-studies/scoops-ahoy/scoops-ahoy-sundae.jpg",
@@ -520,11 +527,11 @@ export const caseStudyPages: CaseStudyPageContent[] = [
     tags: ["Subscription", "Retention", "BigCommerce", "Launch GM"],
     metrics: [
       { value: "25% → 12%", label: "Churn rate improvement" },
-      { value: "$65", label: "AOV increase" },
+      { value: "+$65", label: "AOV increase" },
       { value: "10,000+", label: "Members in first quarter" },
       { value: "3 years", label: "Concept to full launch" },
       { value: "6 teams", label: "Departments coordinated" },
-      { value: "$99", label: "Premium quarterly subscription" },
+      { value: "+$90", label: "LTV per user" },
     ],
     heroMedia: {
       type: "image",

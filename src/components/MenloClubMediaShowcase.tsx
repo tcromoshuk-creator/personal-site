@@ -87,7 +87,7 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
         </figure>
       </div>
 
-      <div className="case-menlo-media-group">
+      <div className="case-menlo-media-group case-desktop-only-media-group">
         <div className="case-menlo-media-heading">
           <h3>Premium Seasonal Magazine / Lookbook</h3>
         </div>
@@ -131,7 +131,7 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
       </div>
 
       {supportingAssets.length > 0 && (
-        <div className="case-menlo-media-group">
+        <div className="case-menlo-media-group case-desktop-only-media-group">
           <div className="case-menlo-media-heading">
             <h3>Supporting Launch Assets</h3>
           </div>
@@ -142,6 +142,67 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
           </div>
         </div>
       )}
+
+      <details className="case-mobile-media case-mobile-drawer case-mobile-media-drawer case-special-mobile-media">
+        <summary>More launch assets</summary>
+        <div className="case-mobile-media-list">
+          <div className="case-menlo-media-group">
+            <div className="case-menlo-media-heading">
+              <h3>Premium Seasonal Magazine / Lookbook</h3>
+            </div>
+            <figure className="case-menlo-lookbook">
+              <button
+                className="case-menlo-lookbook-cover"
+                type="button"
+                onClick={() => {
+                  setActivePageIndex(0);
+                  setIsLookbookOpen(true);
+                }}
+              >
+                <Image
+                  src={lookbookPages[0].src}
+                  alt="Premium Seasonal magazine cover"
+                  width={880}
+                  height={1100}
+                  sizes="(max-width: 900px) 82vw, 320px"
+                />
+              </button>
+              <div className="case-menlo-lookbook-actions">
+                <button
+                  className="case-menlo-lookbook-trigger"
+                  type="button"
+                  onClick={() => {
+                    setActivePageIndex(0);
+                    setIsLookbookOpen(true);
+                  }}
+                >
+                  View Lookbook
+                </button>
+                <a className="case-menlo-pdf-link" href="/case-studies/menlo-club/premium-seasonal-magazine.pdf" target="_blank" rel="noreferrer">
+                  Open PDF
+                </a>
+              </div>
+              <figcaption>
+                Premium Seasonal magazine/lookbook used to preview each collection and support the upgraded subscription
+                experience.
+              </figcaption>
+            </figure>
+          </div>
+
+          {supportingAssets.length > 0 && (
+            <div className="case-menlo-media-group">
+              <div className="case-menlo-media-heading">
+                <h3>Supporting Launch Assets</h3>
+              </div>
+              <div className="case-media-grid case-menlo-support-grid">
+                {supportingAssets.map((media) => (
+                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </details>
 
       {isLookbookOpen && (
         <div

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { MenloClubMediaShowcase } from "@/components/MenloClubMediaShowcase";
 import { VeestroMediaShowcase } from "@/components/VeestroMediaShowcase";
-import type { CaseStudyMedia, CaseStudyPageContent } from "@/lib/case-study-pages";
+import type { CaseStudyMedia, CaseStudyMetric, CaseStudyPageContent } from "@/lib/case-study-pages";
 import { caseStudyPages } from "@/lib/case-study-pages";
 
 function CaseStudyLogo({ study }: { study: CaseStudyPageContent }) {
@@ -157,6 +157,23 @@ const netflixInvasionVideos = [
   },
 ];
 
+function VimeoCard({ video }: { video: (typeof netflixInvasionVideos)[number] }) {
+  return (
+    <article className="case-vimeo-card">
+      <div className="case-vimeo-frame">
+        <iframe
+          src={video.src}
+          title={`Netflix.Shop Invasion Series ${video.label}`}
+          loading="lazy"
+          allow="fullscreen; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+      <h4>{video.label}</h4>
+    </article>
+  );
+}
+
 function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] }) {
   const campaignSocialMedia = mediaAssets.filter((media) =>
     ["netflix-shop-instagram-bfcm-stranger-things", "netflix-shop-bfcm-product-grid"].some((asset) =>
@@ -171,108 +188,209 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
 
   return (
     <div className="case-netflix-media-showcase">
-      <div className="case-netflix-media-group">
-        <div className="case-netflix-media-heading">
-          <h3>The Invasion Series</h3>
-          <p>The three-part hero video series used as the core creative hook for the Netflix.Shop BFCM campaign.</p>
+      <div className="case-desktop-media-showcase">
+        <div className="case-netflix-media-group">
+          <div className="case-netflix-media-heading">
+            <h3>The Invasion Series</h3>
+            <p>The three-part hero video series used as the core creative hook for the Netflix.Shop BFCM campaign.</p>
+          </div>
+          <div className="case-vimeo-grid">
+            {netflixInvasionVideos.map((video) => (
+              <VimeoCard video={video} key={video.src} />
+            ))}
+          </div>
         </div>
-        <div className="case-vimeo-grid">
-          {netflixInvasionVideos.map((video) => (
-            <article className="case-vimeo-card" key={video.src}>
-              <div className="case-vimeo-frame">
-                <iframe
-                  src={video.src}
-                  title={`Netflix.Shop Invasion Series ${video.label}`}
-                  loading="lazy"
-                  allow="fullscreen; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
-              <h4>{video.label}</h4>
-            </article>
-          ))}
-        </div>
+
+        {campaignSocialMedia.length > 0 && (
+          <div className="case-netflix-media-group">
+            <div className="case-netflix-media-heading">
+              <h3>Campaign social creative</h3>
+            </div>
+            <div className="case-media-grid case-netflix-campaign-grid">
+              {campaignSocialMedia.map((media) => (
+                <MediaBlock media={media} key={media.src} />
+              ))}
+            </div>
+          </div>
+        )}
+
+        {creatorSupportMedia.length > 0 && (
+          <div className="case-netflix-media-group">
+            <div className="case-netflix-media-heading">
+              <h3>Influencer &amp; creator support</h3>
+            </div>
+            <div className="case-media-grid case-netflix-creator-grid">
+              {creatorSupportMedia.map((media) => (
+                <MediaBlock media={media} key={media.src} />
+              ))}
+            </div>
+          </div>
+        )}
       </div>
 
-      {campaignSocialMedia.length > 0 && (
-        <div className="case-netflix-media-group">
-          <div className="case-netflix-media-heading">
-            <h3>Campaign social creative</h3>
-          </div>
-          <div className="case-media-grid case-netflix-campaign-grid">
-            {campaignSocialMedia.map((media) => (
-              <MediaBlock media={media} key={media.src} />
+      <div className="case-mobile-media case-special-mobile-media">
+        <div className="case-netflix-media-heading">
+          <h3>The Invasion Series</h3>
+        </div>
+        <VimeoCard video={netflixInvasionVideos[0]} />
+        <details className="case-mobile-drawer case-mobile-media-drawer">
+          <summary>More Netflix.Shop creative</summary>
+          <div className="case-mobile-media-list">
+            {netflixInvasionVideos.slice(1).map((video) => (
+              <VimeoCard video={video} key={`mobile-${video.src}`} />
+            ))}
+            {[...campaignSocialMedia, ...creatorSupportMedia].map((media) => (
+              <MediaBlock media={media} key={`mobile-${media.src}`} />
             ))}
           </div>
-        </div>
-      )}
-
-      {creatorSupportMedia.length > 0 && (
-        <div className="case-netflix-media-group">
-          <div className="case-netflix-media-heading">
-            <h3>Influencer &amp; creator support</h3>
-          </div>
-          <div className="case-media-grid case-netflix-creator-grid">
-            {creatorSupportMedia.map((media) => (
-              <MediaBlock media={media} key={media.src} />
-            ))}
-          </div>
-        </div>
-      )}
+        </details>
+      </div>
     </div>
   );
 }
 
 function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] }) {
+  const trailerMedia = mediaAssets.find((media) => media.src.includes("scoops-ahoy-launch-trailer"));
   const webbyMedia = mediaAssets.find((media) => media.src.includes("scoops-ahoy-webby"));
   const productMedia = mediaAssets.filter((media) =>
     ["scoops-ahoy-pint", "scoops-ahoy-sundae"].some((asset) => media.src.includes(asset)),
   );
+  const additionalMedia = [webbyMedia, ...productMedia].filter(Boolean) as CaseStudyMedia[];
 
   return (
     <div className="case-scoops-media-showcase">
-      {webbyMedia && (
-        <div className="case-scoops-media-group">
+      <div className="case-desktop-media-showcase">
+        {trailerMedia && (
+          <div className="case-scoops-media-group">
+            <div className="case-scoops-media-heading">
+              <h3>Scoops Ahoy Launch Trailer</h3>
+              <p>Debuted September 2023</p>
+            </div>
+            <div className="case-scoops-trailer">
+              <MediaBlock media={trailerMedia} />
+            </div>
+          </div>
+        )}
+
+        {webbyMedia && (
+          <div className="case-scoops-media-group">
+            <div className="case-scoops-media-heading">
+              <h3>Campaign Recognition</h3>
+            </div>
+            <div className="case-scoops-recognition">
+              <MediaBlock media={webbyMedia} />
+            </div>
+          </div>
+        )}
+
+        {productMedia.length > 0 && (
+          <div className="case-scoops-media-group">
+            <div className="case-scoops-media-heading">
+              <h3>Product / Retail Creative</h3>
+            </div>
+            <div className="case-media-grid case-scoops-product-grid">
+              {productMedia.map((media) => (
+                <MediaBlock media={media} key={media.src} />
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+
+      {trailerMedia && (
+        <div className="case-mobile-media case-special-mobile-media">
           <div className="case-scoops-media-heading">
-            <h3>Campaign Recognition</h3>
+            <h3>Scoops Ahoy Launch Trailer</h3>
+            <p>Debuted September 2023</p>
           </div>
-          <div className="case-scoops-recognition">
-            <MediaBlock media={webbyMedia} />
-          </div>
+          <MediaBlock media={trailerMedia} priority />
+          {additionalMedia.length > 0 && (
+            <details className="case-mobile-drawer case-mobile-media-drawer">
+              <summary>More campaign assets</summary>
+              <div className="case-mobile-media-list">
+                {additionalMedia.map((media) => (
+                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                ))}
+              </div>
+            </details>
+          )}
         </div>
       )}
-
-      {productMedia.length > 0 && (
-        <div className="case-scoops-media-group">
-          <div className="case-scoops-media-heading">
-            <h3>Product / Retail Creative</h3>
-          </div>
-          <div className="case-media-grid case-scoops-product-grid">
-            {productMedia.map((media) => (
-              <MediaBlock media={media} key={media.src} />
-            ))}
-          </div>
+      {!trailerMedia && (
+        <div className="case-mobile-media case-special-mobile-media">
+          {additionalMedia.length > 0 && (
+            <>
+              <MediaBlock media={additionalMedia[0]} priority />
+              {additionalMedia.length > 1 && (
+                <details className="case-mobile-drawer case-mobile-media-drawer">
+                  <summary>More campaign assets</summary>
+                  <div className="case-mobile-media-list">
+                    {additionalMedia.slice(1).map((media) => (
+                      <MediaBlock media={media} key={`mobile-${media.src}`} />
+                    ))}
+                  </div>
+                </details>
+              )}
+            </>
+          )}
         </div>
       )}
     </div>
   );
 }
 
-function ResultsBand({ study }: { study: CaseStudyPageContent }) {
+function getResultsMetrics(study: CaseStudyPageContent, variant: "desktop" | "mobile" = "desktop") {
   const metrics = study.metrics.filter(
     (metric) => !(study.slug === "mad-engine-tiktok-shop" && metric.value === "No paid media"),
   );
 
+  if (study.slug === "mad-engine-tiktok-shop" && variant === "mobile") {
+    return metrics
+      .filter((metric) => metric.label !== "AOV increase")
+      .map((metric) =>
+        metric.label === "Of original AOP goal" ? { value: "$17 → $26", label: "AOV increase" } : metric,
+      );
+  }
+
+  return metrics;
+}
+
+function ResultsBandTiles({ metrics, slug }: { metrics: CaseStudyMetric[]; slug: string }) {
   return (
-    <div className="case-result-band card" aria-label={`${study.companyLabel} results`}>
+    <>
       {metrics.slice(0, 6).map((metric) => (
-        <div className="case-result-tile" key={`${study.slug}-${metric.value}-${metric.label}`}>
+        <div className="case-result-tile" key={`${slug}-${metric.value}-${metric.label}`}>
           <strong>{metric.value}</strong>
           <span>{metric.label}</span>
           {metric.support && <p>{metric.support}</p>}
         </div>
       ))}
-    </div>
+    </>
+  );
+}
+
+function ResultsBand({ study }: { study: CaseStudyPageContent }) {
+  const desktopMetrics = getResultsMetrics(study);
+
+  if (study.slug !== "mad-engine-tiktok-shop") {
+    return (
+      <div className="case-result-band card" aria-label={`${study.companyLabel} results`}>
+        <ResultsBandTiles metrics={desktopMetrics} slug={study.slug} />
+      </div>
+    );
+  }
+
+  const mobileMetrics = getResultsMetrics(study, "mobile");
+
+  return (
+    <>
+      <div className="case-result-band card case-result-band-desktop" aria-label={`${study.companyLabel} results`}>
+        <ResultsBandTiles metrics={desktopMetrics} slug={study.slug} />
+      </div>
+      <div className="case-result-band card case-result-band-mobile" aria-label={`${study.companyLabel} mobile results`}>
+        <ResultsBandTiles metrics={mobileMetrics} slug={`${study.slug}-mobile`} />
+      </div>
+    </>
   );
 }
 

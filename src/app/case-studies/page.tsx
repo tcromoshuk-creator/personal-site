@@ -50,8 +50,8 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
       "I took over TikTok Shop as an under-managed sales channel and helped turn it into a creator-led marketplace engine for licensed apparel. The work combined SKU expansion, creator activation, storefront and PDP optimization, fulfillment improvements, and weekly operating cadence to prove TikTok Shop could become a meaningful revenue channel before paid media was even introduced.",
     metrics: [
       { value: "$120K → $720K", label: "Revenue run-rate" },
-      { value: "7.2x", label: "Against AOP goal" },
       { value: "10K → 90K", label: "SKU expansion" },
+      { value: "$17 → $26", label: "AOV increase" },
     ],
     tags: ["TikTok Shop", "Social Commerce", "Creator-Led Growth", "Marketplace Growth"],
     heroMedia: {
@@ -105,7 +105,7 @@ const caseStudyIndexOverrides: Record<string, CaseStudyIndexOverride> = {
     metrics: [
       { value: "25% → 12%", label: "Churn rate improvement" },
       { value: "+$65", label: "AOV increase" },
-      { value: "10,000+", label: "Members in first quarter" },
+      { value: "+$90", label: "LTV per user" },
     ],
     tags: ["Subscription", "Retention", "BigCommerce", "Business Model Launch"],
     heroMedia: {
@@ -199,6 +199,7 @@ export default function CaseStudiesPage() {
                 const metrics = override.metrics ?? study.metrics;
                 const tags = override.tags ?? study.tags;
                 const heroMedia = override.heroMedia ?? study.heroMedia;
+                const detailHref = `/case-studies/${study.slug}`;
 
                 return (
                   <article
@@ -208,7 +209,9 @@ export default function CaseStudiesPage() {
                   >
                     <div className="case-index-card-body">
                       <div className="case-index-copy">
-                        <h2>{headline}</h2>
+                        <h2>
+                          <Link href={detailHref}>{headline}</Link>
+                        </h2>
                         <p>{indexSummary}</p>
                       </div>
                       <div className="case-index-results" aria-label={`${study.companyLabel} outcomes`}>
@@ -229,7 +232,7 @@ export default function CaseStudiesPage() {
                           </span>
                         ))}
                       </div>
-                      <Link className="case-card-link" href={`/case-studies/${study.slug}`}>
+                      <Link className="case-card-link" href={detailHref}>
                         Read Case Study
                       </Link>
                     </div>
@@ -244,8 +247,10 @@ export default function CaseStudiesPage() {
                         <p>{study.companyLabel}</p>
                       </div>
                       {heroMedia && (
-                        <div
+                        <Link
+                          aria-label={`Read ${study.companyLabel} case study`}
                           className="case-index-media square"
+                          href={detailHref}
                           style={{
                             aspectRatio: "1 / 1",
                             alignSelf: "start",
@@ -262,7 +267,7 @@ export default function CaseStudiesPage() {
                             sizes="(max-width: 900px) 100vw, 360px"
                             style={override.mediaStyle}
                           />
-                        </div>
+                        </Link>
                       )}
                     </div>
                   </article>
