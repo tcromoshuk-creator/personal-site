@@ -309,24 +309,45 @@ const engagementModels = [
 
 export function ServiceNavigator() {
   return (
-    <div className="service-nav-grid" aria-label="Business problems">
-      {problemCards.map((card, index) => (
-        <a className="service-nav-card card" href={card.href} id={card.id} key={card.id}>
-          <div className="service-nav-heading">
-            <span>{String(index + 1).padStart(2, "0")}</span>
-            <strong>{card.title}</strong>
-          </div>
-          <div className="service-nav-copy">
-            <p>
-              <b>Problem:</b> {card.problem}
-            </p>
-            <p>
-              <b>How I help:</b> {card.help}
-            </p>
-          </div>
-        </a>
-      ))}
-    </div>
+    <>
+      <div className="service-nav-grid" aria-label="Business problems">
+        {problemCards.map((card, index) => (
+          <a className="service-nav-card card" href={card.href} id={card.id} key={card.id}>
+            <div className="service-nav-heading">
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{card.title}</strong>
+            </div>
+            <div className="service-nav-copy">
+              <p>
+                <b>Problem:</b> {card.problem}
+              </p>
+              <p>
+                <b>How I help:</b> {card.help}
+              </p>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <div className="service-problem-accordion" aria-label="Business problems">
+        {problemCards.map((card, index) => (
+          <details className="service-problem-item card" key={card.id}>
+            <summary>
+              <span>{String(index + 1).padStart(2, "0")}</span>
+              <strong>{card.title}</strong>
+            </summary>
+            <div className="service-nav-copy">
+              <p>
+                <b>Problem:</b> {card.problem}
+              </p>
+              <p>
+                <b>How I help:</b> {card.help}
+              </p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </>
   );
 }
 
@@ -373,7 +394,7 @@ export function ServiceSections() {
         {serviceAreas.map((service, index) => (
           <details className="service-accordion-item card" key={service.id} open={index === 0}>
             <summary>{service.title}</summary>
-            <ServiceDetail service={service} />
+            <ServiceDetail hideTitle service={service} />
           </details>
         ))}
       </div>
@@ -381,11 +402,17 @@ export function ServiceSections() {
   );
 }
 
-function ServiceDetail({ service }: { service: (typeof serviceAreas)[number] }) {
+function ServiceDetail({
+  hideTitle = false,
+  service,
+}: {
+  hideTitle?: boolean;
+  service: (typeof serviceAreas)[number];
+}) {
   return (
     <>
       <div className="service-area-heading">
-        <h3>{service.title}</h3>
+        {!hideTitle && <h3>{service.title}</h3>}
         <p>{service.positioning}</p>
       </div>
       <div className="service-area-details">

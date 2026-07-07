@@ -1377,6 +1377,10 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.service-problem-accordion {
+  display: none;
+}
+
 .service-nav-card {
   color: inherit;
   display: grid;
@@ -1440,6 +1444,56 @@ p {
 
 .service-nav-card b {
   color: var(--ink);
+}
+
+.service-problem-item {
+  padding: 0;
+}
+
+.service-problem-item summary {
+  align-items: baseline;
+  color: var(--ink);
+  cursor: pointer;
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  list-style: none;
+  padding: 1rem;
+}
+
+.service-problem-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.service-problem-item summary::after {
+  color: var(--accent);
+  content: "+";
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.service-problem-item[open] summary::after {
+  content: "-";
+}
+
+.service-problem-item summary span {
+  color: var(--accent);
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.64rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+}
+
+.service-problem-item summary strong {
+  font-family: "Urbanist", ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.02rem, 4.6vw, 1.22rem);
+  line-height: 1.1;
+}
+
+.service-problem-item .service-nav-copy {
+  margin: 0 1rem 1rem;
 }
 
 .service-area-grid {
@@ -1584,6 +1638,7 @@ p {
 }
 
 .service-card-cta {
+  margin-top: 0.45rem;
   justify-self: start;
   text-decoration: none;
 }
@@ -4005,6 +4060,15 @@ p {
     min-height: 0;
   }
 
+  .service-nav-grid {
+    display: none;
+  }
+
+  .service-problem-accordion {
+    display: grid;
+    gap: 0.65rem;
+  }
+
   .service-explorer-desktop {
     display: none;
   }
@@ -4021,6 +4085,10 @@ p {
   .service-proof-grid,
   .engagement-model-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .service-proof-problems {
+    display: none;
   }
 
   .experience-expertise-grid {
@@ -4815,7 +4883,7 @@ p {
 
   .service-proof-grid,
   .engagement-model-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .faq-topic-list {
@@ -4833,6 +4901,36 @@ p {
   .service-proof-metrics span {
     font-size: 0.5rem;
     letter-spacing: 0.08em;
+  }
+
+  .service-proof-grid {
+    gap: 0.65rem;
+  }
+
+  .service-proof-tile {
+    gap: 0.75rem;
+  }
+
+  .service-proof-tile h3 {
+    font-size: clamp(0.95rem, 4.6vw, 1.12rem);
+  }
+
+  .service-proof-metrics {
+    gap: 0.45rem;
+  }
+
+  .service-proof-metrics div {
+    padding-top: 0.45rem;
+  }
+
+  .service-proof-cta {
+    font-size: 0.58rem;
+    letter-spacing: 0.08em;
+    padding: 0.52rem 0.48rem;
+  }
+
+  .engagement-model-grid {
+    grid-template-columns: 1fr;
   }
 
   .case-detail-hero {
