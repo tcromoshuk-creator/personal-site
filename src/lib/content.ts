@@ -119,6 +119,45 @@ export const expertiseCards = [
   },
 ];
 
+export const coreExpertiseCards = [
+  {
+    title: "Growth Strategy & Revenue Planning",
+    body: "Diagnose where growth is really coming from, where the business is leaking opportunity, and what the next stage of revenue should be built around.",
+    levers: ["Revenue planning", "Forecasting", "Budget logic"],
+    leadsTo: "Sharper priorities, budget logic, and leadership alignment.",
+  },
+  {
+    title: "Commercial Growth & Channel Strategy",
+    body: "Build the right growth system across DTC, retail, marketplaces, partnerships, product/catalog, and conversion without making the business dependent on one channel.",
+    levers: ["Channel strategy", "Conversion", "Partnerships"],
+    leadsTo: "A healthier channel mix and fewer single-channel dependencies.",
+  },
+  {
+    title: "Acquisition, Media & Demand Generation",
+    body: "Scale paid social, search, affiliate, influencer, retail media, and creative testing against margin-aware CAC, MER, ROAS, and revenue goals.",
+    levers: ["Paid media", "Creative testing", "MER / ROAS"],
+    leadsTo: "More accountable spend, cleaner tests, and stronger media economics.",
+  },
+  {
+    title: "Lifecycle, CRM & Retention",
+    body: "Build CRM, retention, reactivation, churn, subscription, and customer-value systems that make acquisition more valuable.",
+    levers: ["CRM sequencing", "Retention programs", "Win-back"],
+    leadsTo: "Higher LTV, stronger retention, and more useful customer journeys.",
+  },
+  {
+    title: "Performance Systems, Forecasting & Operating Cadence",
+    body: "Build dashboards, pacing, forecasts, budget logic, metric definitions, and decision rhythms that help leadership act faster and with more confidence.",
+    levers: ["Dashboards", "Pacing", "Decision rhythm"],
+    leadsTo: "Clearer executive decisions and fewer reactive performance reviews.",
+  },
+  {
+    title: "AI-Enabled Marketing & Growth Systems",
+    body: "Use practical AI workflows to make growth teams faster and more consistent across analysis, reporting, CRM sequencing, creative QA, PDP/catalog QA, and research.",
+    levers: ["Codex workflows", "Creative QA", "Research automation"],
+    leadsTo: "Faster analysis, repeatable workflows, and better operating consistency.",
+  },
+];
+
 export const operatingSystemSteps = [
   {
     title: "Diagnose",

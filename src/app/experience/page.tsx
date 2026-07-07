@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ExpertiseCards } from "@/components/ExpertiseCards";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
-import { site } from "@/lib/content";
+import { coreExpertiseCards, site } from "@/lib/content";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -212,7 +212,7 @@ export default function ExperiencePage() {
         eyebrow="Core Expertise"
         title="The functions I lead across growth and commerce."
       >
-        <ExpertiseCards />
+        <ExpertiseCards items={coreExpertiseCards} />
       </Section>
 
       <Section
