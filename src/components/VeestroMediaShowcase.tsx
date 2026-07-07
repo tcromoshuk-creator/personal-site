@@ -88,6 +88,27 @@ export function VeestroMediaShowcase() {
         </figure>
       </div>
 
+      <div className="case-veestro-media-group">
+        <div className="case-veestro-media-heading">
+          <h3>Influencer / Social Support</h3>
+        </div>
+        <div className="case-media-grid case-veestro-influencer-grid">
+          <figure className="case-media landscape case-veestro-influencer-card">
+            <Image
+              src="/case-studies/veestro/veestro-lifestyle-box.jpg"
+              alt="Veestro influencer content with plant-based meals and packaging"
+              width={1600}
+              height={1067}
+              sizes="(max-width: 900px) 92vw, 560px"
+            />
+            <figcaption>
+              Influencer content helped introduce the refreshed plant-based positioning through product and lifestyle
+              storytelling.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
       {isViewerOpen && (
         <div
           className="case-veestro-lightbox"

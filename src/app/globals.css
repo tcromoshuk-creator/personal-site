@@ -2418,6 +2418,15 @@ p {
   opacity: 0.38;
 }
 
+.case-veestro-influencer-grid {
+  grid-template-columns: minmax(0, 560px);
+}
+
+.case-veestro-influencer-card img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
 .case-link-list {
   display: grid;
   gap: 0.7rem;
