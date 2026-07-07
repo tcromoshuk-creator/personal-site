@@ -2,6 +2,8 @@
 
 import { FormEvent, useState } from "react";
 
+const contactEmail = "tcromoshuk@gmail.com";
+
 const reasons = [
   "Full-time leadership role",
   "Fractional/advisory work",
@@ -18,40 +20,23 @@ export function ContactForm() {
     const form = event.currentTarget;
     const data = new FormData(form);
     const payload = Object.fromEntries(data.entries());
+    const reason = String(payload.reason || "Other");
     const subject = encodeURIComponent(
-      `Personal site inquiry: ${String(payload.reason || "Contact")}`,
+      `Growth conversation: ${reason}`,
     );
     const body = encodeURIComponent(
       [
         `Name: ${payload.name || ""}`,
         `Email: ${payload.email || ""}`,
         `Company: ${payload.company || ""}`,
-        `Reason: ${payload.reason || ""}`,
+        `Reason: ${reason}`,
         "",
+        "Message:",
         String(payload.message || ""),
       ].join("\n"),
     );
 
-    const endpoint = process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT;
-    if (endpoint) {
-      fetch(endpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      })
-        .then((response) => {
-          if (!response.ok) throw new Error("Form endpoint failed");
-          setStatus("Thanks. Your message was sent.");
-          form.reset();
-        })
-        .catch(() => {
-          window.location.href = `mailto:tcromoshuk@gmail.com?subject=${subject}&body=${body}`;
-          setStatus("Opening your email client as a fallback.");
-        });
-      return;
-    }
-
-    window.location.href = `mailto:tcromoshuk@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${body}`;
     setStatus("Opening your email client to finish sending.");
   }
 
@@ -60,11 +45,11 @@ export function ContactForm() {
       <div className="grid two-col">
         <div className="form-field">
           <label htmlFor="name">Name</label>
-          <input id="name" name="name" required autoComplete="name" />
+          <input id="name" name="name" autoComplete="name" />
         </div>
         <div className="form-field">
           <label htmlFor="email">Email</label>
-          <input id="email" name="email" type="email" required autoComplete="email" />
+          <input id="email" name="email" type="email" autoComplete="email" />
         </div>
       </div>
       <div className="grid two-col">
@@ -74,7 +59,7 @@ export function ContactForm() {
         </div>
         <div className="form-field">
           <label htmlFor="reason">Reason for reaching out</label>
-          <select id="reason" name="reason" required defaultValue="">
+          <select id="reason" name="reason" defaultValue="">
             <option value="" disabled>
               Select one
             </option>
@@ -88,15 +73,11 @@ export function ContactForm() {
       </div>
       <div className="form-field">
         <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" required />
+        <textarea id="message" name="message" />
       </div>
       <button className="button primary" type="submit">
         Start a Conversation
       </button>
-      <p className="form-note">
-        For launch, the form opens a pre-filled email unless a form endpoint is
-        configured in Vercel.
-      </p>
       {status && <p className="status" role="status">{status}</p>}
     </form>
   );

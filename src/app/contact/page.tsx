@@ -11,6 +11,27 @@ export const metadata: Metadata = createMetadata({
   path: "/contact",
 });
 
+function EmailIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M4.75 6.75h14.5v10.5H4.75z" />
+      <path d="m5.25 7.25 6.75 5 6.75-5" />
+    </svg>
+  );
+}
+
+function LinkedInIcon() {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24">
+      <path d="M6.5 9.75v7.5" />
+      <path d="M10.75 17.25v-7.5" />
+      <path d="M10.75 13.25c0-2.1 1.05-3.5 3-3.5 1.75 0 2.75 1.15 2.75 3.25v4.25" />
+      <path d="M6.5 6.75h.01" />
+      <path d="M4.75 3.75h14.5v16.5H4.75z" />
+    </svg>
+  );
+}
+
 export default function ContactPage() {
   return (
     <div className="contact-page page-shell-compact">
@@ -29,23 +50,41 @@ export default function ContactPage() {
         <div className="section-inner contact-page-grid">
           <div className="contact-page-copy">
             <div>
-              <p className="eyebrow">Best-fit conversations</p>
-              <h2>Full-time leadership first, with selective advisory support.</h2>
+              <h2>Tell me what you&apos;re trying to grow.</h2>
             </div>
             <p>
-              The strongest fit is usually a Growth, E-Commerce, Marketplace
-              Growth, or Marketing leadership mandate where acquisition,
-              retention, marketplace performance, reporting, and operating
-              cadence need to connect.
+              Whether you&apos;re hiring for a full-time growth, e-commerce,
+              marketplace, or marketing leader, or looking for senior advisory
+              support on a specific growth problem, the best conversations
+              usually start with the business goal, the constraint, and what
+              needs to change.
             </p>
             <div className="contact-methods">
-              <a className="card contact-method-card" href={`mailto:${site.email}`}>
-                <span>Email</span>
-                <strong>{site.email}</strong>
+              <a
+                aria-label={`Email ${site.email}`}
+                className="card contact-method-card"
+                href={`mailto:${site.email}`}
+              >
+                <span className="contact-method-icon">
+                  <EmailIcon />
+                </span>
+                <span className="contact-method-text">
+                  <span>Email</span>
+                  <strong>{site.email}</strong>
+                </span>
               </a>
-              <a className="card contact-method-card" href={site.linkedin}>
-                <span>LinkedIn</span>
-                <strong>View Profile</strong>
+              <a
+                aria-label="View Tyrell Cromoshuk on LinkedIn"
+                className="card contact-method-card"
+                href={site.linkedin}
+              >
+                <span className="contact-method-icon">
+                  <LinkedInIcon />
+                </span>
+                <span className="contact-method-text">
+                  <span>LinkedIn</span>
+                  <strong>View Profile</strong>
+                </span>
               </a>
             </div>
           </div>
