@@ -156,10 +156,9 @@ export default function CaseStudiesPage() {
           <p className="eyebrow">Case Studies</p>
           <h1>Highlights of my past work</h1>
           <p className="lede">
-            These case studies show business problems I tackled across my
-            career, the operating choices behind the work, and the measurable
-            results that followed across marketplace, DTC, subscription, retail,
-            and lifecycle growth.
+            Business problems I tackled across my career, the operating choices
+            behind the work, and the measurable results that followed across
+            marketplace, DTC, subscription, retail, and lifecycle growth.
           </p>
         </div>
       </section>

@@ -217,7 +217,7 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
         {creatorSupportMedia.length > 0 && (
           <div className="case-netflix-media-group">
             <div className="case-netflix-media-heading">
-              <h3>Influencer &amp; creator support</h3>
+              <h3>Influencer &amp; Partnership Support</h3>
             </div>
             <div className="case-media-grid case-netflix-creator-grid">
               {creatorSupportMedia.map((media) => (
@@ -234,16 +234,43 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
         </div>
         <VimeoCard video={netflixInvasionVideos[0]} />
         <details className="case-mobile-drawer case-mobile-media-drawer">
-          <summary>More Netflix.Shop creative</summary>
+          <summary>More Invasion Series videos</summary>
           <div className="case-mobile-media-list">
             {netflixInvasionVideos.slice(1).map((video) => (
               <VimeoCard video={video} key={`mobile-${video.src}`} />
             ))}
-            {[...campaignSocialMedia, ...creatorSupportMedia].map((media) => (
-              <MediaBlock media={media} key={`mobile-${media.src}`} />
-            ))}
           </div>
         </details>
+        {campaignSocialMedia.length > 0 && (
+          <div className="case-netflix-media-mobile-group">
+            <div className="case-netflix-media-heading">
+              <h3>Campaign social creative</h3>
+            </div>
+            <details className="case-mobile-drawer case-mobile-media-drawer">
+              <summary>View campaign social creative</summary>
+              <div className="case-mobile-media-list">
+                {campaignSocialMedia.map((media) => (
+                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                ))}
+              </div>
+            </details>
+          </div>
+        )}
+        {creatorSupportMedia.length > 0 && (
+          <div className="case-netflix-media-mobile-group">
+            <div className="case-netflix-media-heading">
+              <h3>Influencer &amp; Partnership Support</h3>
+            </div>
+            <details className="case-mobile-drawer case-mobile-media-drawer">
+              <summary>View influencer and partnership assets</summary>
+              <div className="case-mobile-media-list">
+                {creatorSupportMedia.map((media) => (
+                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                ))}
+              </div>
+            </details>
+          </div>
+        )}
       </div>
     </div>
   );
@@ -428,8 +455,8 @@ function getMadEngineChartPath(values: number[], startIndex = 0) {
 
 function MadEngineRunRateChart() {
   const baselinePath = getMadEngineChartPath(madEngineBaselineCumulative);
-  const actualPath = getMadEngineChartPath(madEngineActualForecastCumulative.slice(0, 5));
-  const forecastPath = getMadEngineChartPath(madEngineActualForecastCumulative.slice(4), 4);
+  const actualPath = getMadEngineChartPath(madEngineActualForecastCumulative.slice(0, 6));
+  const forecastPath = getMadEngineChartPath(madEngineActualForecastCumulative.slice(5), 5);
   const forecastStartPoint = getMadEngineChartPoint(madEngineActualForecastCumulative[5], 5);
   const baselineEndPoint = getMadEngineChartPoint(madEngineBaselineCumulative[11], 11);
   const forecastEndPoint = getMadEngineChartPoint(madEngineActualForecastCumulative[11], 11);
