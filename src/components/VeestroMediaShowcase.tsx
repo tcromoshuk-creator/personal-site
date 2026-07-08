@@ -53,6 +53,9 @@ export function VeestroMediaShowcase() {
         <figure className="case-veestro-brand-guide">
           <button
             className="case-veestro-brand-guide-cover"
+            data-analytics-asset-title="Veestro brand guide"
+            data-analytics-case-study-slug="veestro"
+            data-analytics-event="pdf_open"
             type="button"
             onClick={() => {
               setActivePageIndex(0);
@@ -70,6 +73,9 @@ export function VeestroMediaShowcase() {
           <div className="case-veestro-brand-guide-actions">
             <button
               className="case-veestro-brand-guide-trigger"
+              data-analytics-asset-title="Veestro brand guide"
+              data-analytics-case-study-slug="veestro"
+              data-analytics-event="pdf_open"
               type="button"
               onClick={() => {
                 setActivePageIndex(0);
@@ -78,7 +84,15 @@ export function VeestroMediaShowcase() {
             >
               View Brand Guide
             </button>
-            <a className="case-veestro-pdf-link" href="/case-studies/veestro/veestro-rebrand.pdf" target="_blank" rel="noreferrer">
+            <a
+              className="case-veestro-pdf-link"
+              data-analytics-asset-title="Veestro rebrand PDF"
+              data-analytics-case-study-slug="veestro"
+              data-analytics-event="pdf_open"
+              href="/case-studies/veestro/veestro-rebrand.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
               Open PDF
             </a>
           </div>

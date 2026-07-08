@@ -229,6 +229,7 @@ const proofTiles = [
   {
     company: "Mad Engine Global",
     href: "/case-studies/mad-engine-tiktok-shop",
+    slug: "mad-engine-tiktok-shop",
     metrics: [
       { value: "$120K → $720K", label: "Revenue run-rate" },
       { value: "10K → 90K", label: "SKU expansion" },
@@ -243,6 +244,7 @@ const proofTiles = [
   {
     company: "Netflix.Shop",
     href: "/case-studies/netflix-shop",
+    slug: "netflix-shop",
     metrics: [
       { value: "13M+", label: "Consumers reached" },
       { value: "2.5M", label: "Visitors" },
@@ -257,6 +259,7 @@ const proofTiles = [
   {
     company: "Menlo Club",
     href: "/case-studies/menlo-club",
+    slug: "menlo-club",
     metrics: [
       { value: "25% → 12%", label: "Churn rate" },
       { value: "+$65", label: "AOV" },
@@ -271,6 +274,7 @@ const proofTiles = [
   {
     company: "Veestro",
     href: "/case-studies/veestro",
+    slug: "veestro",
     metrics: [
       { value: "60%", label: "CAC drop" },
       { value: "15%", label: "Sitewide CVR lift" },
@@ -437,7 +441,12 @@ function ServiceDetail({
           ))}
         </ul>
       </div>
-      <Link className="service-card-cta" href="/contact">
+      <Link
+        className="service-card-cta"
+        data-analytics-event="service_discuss_click"
+        data-analytics-service-area={service.title}
+        href="/contact"
+      >
         Discuss this service →
       </Link>
     </>
@@ -471,7 +480,14 @@ export function ServiceProofTiles() {
               ))}
             </ul>
           </div>
-          <Link className="service-proof-cta" href={tile.href}>
+          <Link
+            className="service-proof-cta"
+            data-analytics-case-study-slug={tile.slug}
+            data-analytics-case-study-title={tile.company}
+            data-analytics-event="case_study_click"
+            data-analytics-link-location="services_proof_tile"
+            href={tile.href}
+          >
             View case study →
           </Link>
         </article>

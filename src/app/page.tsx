@@ -16,7 +16,12 @@ export default function Home() {
       <Hero
         title="Growth leadership for brands."
         intro="I help brands scale by building profitable revenue engines. Over 15+ years, I've led hands-on growth across DTC, subscription, retail, marketplaces, entertainment, fintech, food, fashion, and technology."
-        primaryCta={{ href: "/experience", label: "View Experience" }}
+        primaryCta={{
+          analyticsEvent: "view_experience_click",
+          analyticsLinkLocation: "homepage_hero",
+          href: "/experience",
+          label: "View Experience",
+        }}
         secondaryCta={{ href: "/contact", label: "Start a Conversation" }}
         showSystemMap
       />
@@ -57,7 +62,12 @@ export default function Home() {
             ))}
         </div>
         <div className="button-row case-button-row">
-          <Link className="button secondary" href="/case-studies">
+          <Link
+            className="button secondary"
+            data-analytics-event="view_case_studies_click"
+            data-analytics-link-location="homepage_case_studies_section"
+            href="/case-studies"
+          >
             View all case studies
           </Link>
         </div>
@@ -98,7 +108,14 @@ export default function Home() {
                   <li key={bullet}>{bullet}</li>
                 ))}
               </ul>
-              <Link className="button secondary" href={audience.href}>
+              <Link
+                className="button secondary"
+                data-analytics-event={audience.href === "/experience" ? "view_experience_click" : undefined}
+                data-analytics-link-location={
+                  audience.href === "/experience" ? "homepage_engagement_models" : undefined
+                }
+                href={audience.href}
+              >
                 {audience.cta}
                 <span aria-hidden="true">→</span>
               </Link>
@@ -118,7 +135,12 @@ export default function Home() {
             Contact Me
             <span aria-hidden="true">→</span>
           </Link>
-          <a className="button secondary" href={site.linkedin}>
+          <a
+            className="button secondary"
+            data-analytics-event="linkedin_click external_link_click"
+            data-analytics-link-location="homepage_contact_section"
+            href={site.linkedin}
+          >
             LinkedIn
             <span aria-hidden="true">→</span>
           </a>

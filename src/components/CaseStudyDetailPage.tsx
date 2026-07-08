@@ -68,7 +68,15 @@ function MobileCaseContext({ study }: { study: CaseStudyPageContent }) {
   );
 }
 
-function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priority?: boolean }) {
+function MediaBlock({
+  caseStudySlug,
+  media,
+  priority = false,
+}: {
+  caseStudySlug: string;
+  media: CaseStudyMedia;
+  priority?: boolean;
+}) {
   const className = `case-media ${media.orientation === "portrait" ? "portrait" : "landscape"}`;
 
   return (
@@ -83,7 +91,16 @@ function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priori
           priority={priority}
         />
       ) : media.type === "video" ? (
-        <video controls muted playsInline preload="metadata" poster={media.poster}>
+        <video
+          controls
+          data-analytics-case-study-slug={caseStudySlug}
+          data-analytics-event="video_click"
+          data-analytics-video-title={media.alt}
+          muted
+          playsInline
+          preload="metadata"
+          poster={media.poster}
+        >
           <source src={media.src} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
@@ -91,10 +108,23 @@ function MediaBlock({ media, priority = false }: { media: CaseStudyMedia; priori
         <div className="case-pdf-frame">
           <object data={media.src} type="application/pdf" aria-label={media.alt}>
             <p>
-              <a href={media.src}>Open PDF</a>
+              <a
+                data-analytics-asset-title={media.alt}
+                data-analytics-case-study-slug={caseStudySlug}
+                data-analytics-event="pdf_open"
+                href={media.src}
+              >
+                Open PDF
+              </a>
             </p>
           </object>
-          <a className="case-pdf-link" href={media.src}>
+          <a
+            className="case-pdf-link"
+            data-analytics-asset-title={media.alt}
+            data-analytics-case-study-slug={caseStudySlug}
+            data-analytics-event="pdf_open"
+            href={media.src}
+          >
             Open PDF
           </a>
         </div>
@@ -127,13 +157,13 @@ function MobileMediaAssets({ study, mediaAssets }: { study: CaseStudyPageContent
 
   return (
     <div className="case-mobile-media">
-      <MediaBlock media={featuredMedia} priority />
+      <MediaBlock caseStudySlug={study.slug} media={featuredMedia} priority />
       {additionalMedia.length > 0 && (
         <details className="case-mobile-drawer case-mobile-media-drawer">
           <summary>More campaign assets</summary>
           <div className="case-mobile-media-list">
             {additionalMedia.map((media) => (
-              <MediaBlock media={media} key={`mobile-${media.src}`} />
+              <MediaBlock caseStudySlug={study.slug} media={media} key={`mobile-${media.src}`} />
             ))}
           </div>
         </details>
@@ -158,12 +188,19 @@ const netflixInvasionVideos = [
 ];
 
 function VimeoCard({ video }: { video: (typeof netflixInvasionVideos)[number] }) {
+  const videoTitle = `Netflix.Shop Invasion Series ${video.label}`;
+
   return (
-    <article className="case-vimeo-card">
+    <article
+      className="case-vimeo-card"
+      data-analytics-case-study-slug="netflix-shop"
+      data-analytics-event="video_click"
+      data-analytics-video-title={videoTitle}
+    >
       <div className="case-vimeo-frame">
         <iframe
           src={video.src}
-          title={`Netflix.Shop Invasion Series ${video.label}`}
+          title={videoTitle}
           loading="lazy"
           allow="fullscreen; picture-in-picture"
           allowFullScreen
@@ -208,7 +245,7 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
             </div>
             <div className="case-media-grid case-netflix-campaign-grid">
               {campaignSocialMedia.map((media) => (
-                <MediaBlock media={media} key={media.src} />
+                <MediaBlock caseStudySlug="netflix-shop" media={media} key={media.src} />
               ))}
             </div>
           </div>
@@ -221,7 +258,7 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
             </div>
             <div className="case-media-grid case-netflix-creator-grid">
               {creatorSupportMedia.map((media) => (
-                <MediaBlock media={media} key={media.src} />
+                <MediaBlock caseStudySlug="netflix-shop" media={media} key={media.src} />
               ))}
             </div>
           </div>
@@ -250,7 +287,7 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
               <summary>View campaign social creative</summary>
               <div className="case-mobile-media-list">
                 {campaignSocialMedia.map((media) => (
-                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                  <MediaBlock caseStudySlug="netflix-shop" media={media} key={`mobile-${media.src}`} />
                 ))}
               </div>
             </details>
@@ -265,7 +302,7 @@ function NetflixShopMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[]
               <summary>View influencer and partnership assets</summary>
               <div className="case-mobile-media-list">
                 {creatorSupportMedia.map((media) => (
-                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                  <MediaBlock caseStudySlug="netflix-shop" media={media} key={`mobile-${media.src}`} />
                 ))}
               </div>
             </details>
@@ -294,7 +331,7 @@ function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] 
               <p>Debuted September 2023</p>
             </div>
             <div className="case-scoops-trailer">
-              <MediaBlock media={trailerMedia} />
+              <MediaBlock caseStudySlug="scoops-ahoy" media={trailerMedia} />
             </div>
           </div>
         )}
@@ -305,7 +342,7 @@ function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] 
               <h3>Campaign Recognition</h3>
             </div>
             <div className="case-scoops-recognition">
-              <MediaBlock media={webbyMedia} />
+              <MediaBlock caseStudySlug="scoops-ahoy" media={webbyMedia} />
             </div>
           </div>
         )}
@@ -317,7 +354,7 @@ function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] 
             </div>
             <div className="case-media-grid case-scoops-product-grid">
               {productMedia.map((media) => (
-                <MediaBlock media={media} key={media.src} />
+                <MediaBlock caseStudySlug="scoops-ahoy" media={media} key={media.src} />
               ))}
             </div>
           </div>
@@ -330,13 +367,13 @@ function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] 
             <h3>Scoops Ahoy Launch Trailer</h3>
             <p>Debuted September 2023</p>
           </div>
-          <MediaBlock media={trailerMedia} priority />
+          <MediaBlock caseStudySlug="scoops-ahoy" media={trailerMedia} priority />
           {additionalMedia.length > 0 && (
             <details className="case-mobile-drawer case-mobile-media-drawer">
               <summary>More campaign assets</summary>
               <div className="case-mobile-media-list">
                 {additionalMedia.map((media) => (
-                  <MediaBlock media={media} key={`mobile-${media.src}`} />
+                  <MediaBlock caseStudySlug="scoops-ahoy" media={media} key={`mobile-${media.src}`} />
                 ))}
               </div>
             </details>
@@ -347,13 +384,13 @@ function ScoopsAhoyMediaAssets({ mediaAssets }: { mediaAssets: CaseStudyMedia[] 
         <div className="case-mobile-media case-special-mobile-media">
           {additionalMedia.length > 0 && (
             <>
-              <MediaBlock media={additionalMedia[0]} priority />
+              <MediaBlock caseStudySlug="scoops-ahoy" media={additionalMedia[0]} priority />
               {additionalMedia.length > 1 && (
                 <details className="case-mobile-drawer case-mobile-media-drawer">
                   <summary>More campaign assets</summary>
                   <div className="case-mobile-media-list">
                     {additionalMedia.slice(1).map((media) => (
-                      <MediaBlock media={media} key={`mobile-${media.src}`} />
+                      <MediaBlock caseStudySlug="scoops-ahoy" media={media} key={`mobile-${media.src}`} />
                     ))}
                   </div>
                 </details>
@@ -419,6 +456,25 @@ function ResultsBand({ study }: { study: CaseStudyPageContent }) {
       </div>
     </>
   );
+}
+
+function getRelevantLinkEvents(link: { href: string; label: string }) {
+  const href = link.href.toLowerCase();
+  const isPdf = href.endsWith(".pdf");
+  const isExternal = href.startsWith("http");
+  const isVideo =
+    href.includes("vimeo.com") ||
+    href.includes("youtube.com") ||
+    href.includes("youtu.be") ||
+    link.label.toLowerCase().includes("video");
+
+  return [
+    isPdf ? "pdf_open" : undefined,
+    isVideo ? "video_click" : undefined,
+    isExternal ? "external_link_click" : undefined,
+  ]
+    .filter(Boolean)
+    .join(" ");
 }
 
 const madEngineChartMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -539,7 +595,15 @@ function RelatedCaseStudies({ currentSlug, related }: { currentSlug: string; rel
       <p className="eyebrow">Related Case Studies</p>
       <div className="case-related-grid">
         {relatedStudies.map((study) => (
-          <Link className="card case-related-card" href={`/case-studies/${study.slug}`} key={`${currentSlug}-${study.slug}`}>
+          <Link
+            className="card case-related-card"
+            data-analytics-case-study-slug={study.slug}
+            data-analytics-case-study-title={study.companyLabel}
+            data-analytics-event="case_study_click"
+            data-analytics-link-location="related_case_studies"
+            href={`/case-studies/${study.slug}`}
+            key={`${currentSlug}-${study.slug}`}
+          >
             <div className="case-related-brand-row">
               <CaseStudyLogo study={study} />
               <h3>{study.companyLabel}</h3>
@@ -634,7 +698,7 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
                   <>
                     <div className="case-media-grid case-media-grid-desktop">
                       {mediaAssets.map((media) => (
-                        <MediaBlock media={media} key={media.src} />
+                        <MediaBlock caseStudySlug={study.slug} media={media} key={media.src} />
                       ))}
                     </div>
                     <MobileMediaAssets study={study} mediaAssets={mediaAssets} />
@@ -649,7 +713,12 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
               <Link className="button primary" href="/contact">
                 Start a Conversation
               </Link>
-              <Link className="button secondary" href="/case-studies">
+              <Link
+                className="button secondary"
+                data-analytics-event="view_case_studies_click"
+                data-analytics-link-location="case_study_end_actions"
+                href="/case-studies"
+              >
                 View All Case Studies
               </Link>
             </section>
@@ -671,7 +740,17 @@ export function CaseStudyDetailPage({ study }: { study: CaseStudyPageContent }) 
                 <h2>Relevant Links</h2>
                 <div className="case-link-list">
                   {study.relevantLinks.map((link) => (
-                    <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
+                    <a
+                      data-analytics-asset-title={link.label}
+                      data-analytics-case-study-slug={study.slug}
+                      data-analytics-event={getRelevantLinkEvents(link)}
+                      data-analytics-link-location="case_study_relevant_links"
+                      data-analytics-video-title={link.label}
+                      href={link.href}
+                      key={link.href}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <span>{link.label}</span>
                       {link.note && <small>{link.note}</small>}
                     </a>

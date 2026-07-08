@@ -64,6 +64,8 @@ export default function ContactPage() {
               <a
                 aria-label={`Email ${site.email}`}
                 className="card contact-method-card"
+                data-analytics-event="email_click"
+                data-analytics-link-location="contact_methods"
                 href={`mailto:${site.email}`}
               >
                 <span className="contact-method-icon">
@@ -77,6 +79,8 @@ export default function ContactPage() {
               <a
                 aria-label="View Tyrell Cromoshuk on LinkedIn"
                 className="card contact-method-card"
+                data-analytics-event="linkedin_click external_link_click"
+                data-analytics-link-location="contact_methods"
                 href={site.linkedin}
               >
                 <span className="contact-method-icon contact-method-icon-linkedin">
@@ -105,7 +109,12 @@ export default function ContactPage() {
             Review selected examples across TikTok Shop, Netflix.Shop, Menlo
             Club, and Veestro before starting the conversation.
           </p>
-          <Link className="button secondary" href="/case-studies">
+          <Link
+            className="button secondary"
+            data-analytics-event="view_case_studies_click"
+            data-analytics-link-location="contact_page_cta"
+            href="/case-studies"
+          >
             View Case Studies
           </Link>
         </div>

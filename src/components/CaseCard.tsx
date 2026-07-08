@@ -109,7 +109,14 @@ export function CaseCard({
             ))}
           </div>
         </details>
-        <Link className="case-card-link" href={`/case-studies/${study.slug}`}>
+        <Link
+          className="case-card-link"
+          data-analytics-case-study-slug={study.slug}
+          data-analytics-case-study-title={study.company}
+          data-analytics-event="case_study_click"
+          data-analytics-link-location="homepage_case_study_card"
+          href={`/case-studies/${study.slug}`}
+        >
           Read case study →
         </Link>
       </article>
@@ -117,7 +124,14 @@ export function CaseCard({
   }
 
   return (
-    <Link className="card case-card" href={`/case-studies/${study.slug}`}>
+    <Link
+      className="card case-card"
+      data-analytics-case-study-slug={study.slug}
+      data-analytics-case-study-title={study.company}
+      data-analytics-event="case_study_click"
+      data-analytics-link-location="case_study_card"
+      href={`/case-studies/${study.slug}`}
+    >
       <CategoryMeta category={study.category} />
       <div className="case-card-title">
         <h3>{study.company}</h3>

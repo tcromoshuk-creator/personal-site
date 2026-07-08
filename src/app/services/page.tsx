@@ -26,7 +26,12 @@ export default function ServicesPage() {
         title="Senior growth support for brands with real commercial complexity."
         intro="I help companies diagnose growth constraints, build profitable revenue systems, and improve the operating cadence around acquisition, retention, commerce, analytics, and AI-enabled workflows."
         primaryCta={{ href: "/contact", label: "Start a Conversation" }}
-        secondaryCta={{ href: "/case-studies", label: "View Case Studies" }}
+        secondaryCta={{
+          analyticsEvent: "view_case_studies_click",
+          analyticsLinkLocation: "services_hero",
+          href: "/case-studies",
+          label: "View Case Studies",
+        }}
       />
 
       <Section

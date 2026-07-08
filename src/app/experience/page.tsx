@@ -192,7 +192,12 @@ export default function ExperiencePage() {
         title="A deeper look at the growth systems I have led."
         intro="A web version of my resume across full-time leadership roles, advisory work, and the operating systems I've built across my career."
         primaryCta={{ href: "/contact", label: "Start a Conversation" }}
-        secondaryCta={{ href: site.linkedin, label: "View LinkedIn" }}
+        secondaryCta={{
+          analyticsEvent: "linkedin_click external_link_click",
+          analyticsLinkLocation: "experience_hero",
+          href: site.linkedin,
+          label: "View LinkedIn",
+        }}
       />
 
       <Section className="experience-proof-section">
@@ -335,7 +340,12 @@ export default function ExperiencePage() {
           <Link className="button primary" href="/contact">
             Start a Conversation
           </Link>
-          <a className="button secondary" href={site.linkedin}>
+          <a
+            className="button secondary"
+            data-analytics-event="linkedin_click external_link_click"
+            data-analytics-link-location="experience_bottom_cta"
+            href={site.linkedin}
+          >
             View LinkedIn
           </a>
         </div>

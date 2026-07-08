@@ -73,7 +73,12 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
         <div className="case-menlo-media-heading">
           <h3>Launch Video</h3>
         </div>
-        <figure className="case-menlo-video">
+        <figure
+          className="case-menlo-video"
+          data-analytics-case-study-slug="menlo-club"
+          data-analytics-event="video_click"
+          data-analytics-video-title="Menlo Club Premium Seasonal launch video"
+        >
           <div className="case-menlo-video-frame">
             <iframe
               src="https://www.youtube.com/embed/0mqC60QsVDo"
@@ -94,6 +99,9 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
         <figure className="case-menlo-lookbook">
           <button
             className="case-menlo-lookbook-cover"
+            data-analytics-asset-title="Premium Seasonal Magazine / Lookbook"
+            data-analytics-case-study-slug="menlo-club"
+            data-analytics-event="lookbook_open"
             type="button"
             onClick={() => {
               setActivePageIndex(0);
@@ -111,6 +119,9 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
           <div className="case-menlo-lookbook-actions">
             <button
               className="case-menlo-lookbook-trigger"
+              data-analytics-asset-title="Premium Seasonal Magazine / Lookbook"
+              data-analytics-case-study-slug="menlo-club"
+              data-analytics-event="lookbook_open"
               type="button"
               onClick={() => {
                 setActivePageIndex(0);
@@ -119,7 +130,15 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
             >
               View Lookbook
             </button>
-            <a className="case-menlo-pdf-link" href="/case-studies/menlo-club/premium-seasonal-magazine.pdf" target="_blank" rel="noreferrer">
+            <a
+              className="case-menlo-pdf-link"
+              data-analytics-asset-title="Premium Seasonal magazine PDF"
+              data-analytics-case-study-slug="menlo-club"
+              data-analytics-event="pdf_open"
+              href="/case-studies/menlo-club/premium-seasonal-magazine.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
               Open PDF
             </a>
           </div>
@@ -153,6 +172,9 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
             <figure className="case-menlo-lookbook">
               <button
                 className="case-menlo-lookbook-cover"
+                data-analytics-asset-title="Premium Seasonal Magazine / Lookbook"
+                data-analytics-case-study-slug="menlo-club"
+                data-analytics-event="lookbook_open"
                 type="button"
                 onClick={() => {
                   setActivePageIndex(0);
@@ -170,6 +192,9 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
               <div className="case-menlo-lookbook-actions">
                 <button
                   className="case-menlo-lookbook-trigger"
+                  data-analytics-asset-title="Premium Seasonal Magazine / Lookbook"
+                  data-analytics-case-study-slug="menlo-club"
+                  data-analytics-event="lookbook_open"
                   type="button"
                   onClick={() => {
                     setActivePageIndex(0);
@@ -178,7 +203,15 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
                 >
                   View Lookbook
                 </button>
-                <a className="case-menlo-pdf-link" href="/case-studies/menlo-club/premium-seasonal-magazine.pdf" target="_blank" rel="noreferrer">
+                <a
+                  className="case-menlo-pdf-link"
+                  data-analytics-asset-title="Premium Seasonal magazine PDF"
+                  data-analytics-case-study-slug="menlo-club"
+                  data-analytics-event="pdf_open"
+                  href="/case-studies/menlo-club/premium-seasonal-magazine.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Open PDF
                 </a>
               </div>

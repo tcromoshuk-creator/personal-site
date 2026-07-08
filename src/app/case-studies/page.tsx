@@ -209,7 +209,15 @@ export default function CaseStudiesPage() {
                     <div className="case-index-card-body">
                       <div className="case-index-copy">
                         <h2>
-                          <Link href={detailHref}>{headline}</Link>
+                          <Link
+                            data-analytics-case-study-slug={study.slug}
+                            data-analytics-case-study-title={study.companyLabel}
+                            data-analytics-event="case_study_click"
+                            data-analytics-link-location="case_studies_index_title"
+                            href={detailHref}
+                          >
+                            {headline}
+                          </Link>
                         </h2>
                         <p>{indexSummary}</p>
                       </div>
@@ -231,7 +239,14 @@ export default function CaseStudiesPage() {
                           </span>
                         ))}
                       </div>
-                      <Link className="case-card-link" href={detailHref}>
+                      <Link
+                        className="case-card-link"
+                        data-analytics-case-study-slug={study.slug}
+                        data-analytics-case-study-title={study.companyLabel}
+                        data-analytics-event="case_study_click"
+                        data-analytics-link-location="case_studies_index_cta"
+                        href={detailHref}
+                      >
                         Read Case Study
                       </Link>
                     </div>
@@ -249,6 +264,10 @@ export default function CaseStudiesPage() {
                         <Link
                           aria-label={`Read ${study.companyLabel} case study`}
                           className="case-index-media square"
+                          data-analytics-case-study-slug={study.slug}
+                          data-analytics-case-study-title={study.companyLabel}
+                          data-analytics-event="case_study_click"
+                          data-analytics-link-location="case_studies_index_media"
                           href={detailHref}
                           style={{
                             aspectRatio: "1 / 1",

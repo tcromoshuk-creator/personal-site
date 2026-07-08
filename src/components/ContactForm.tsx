@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { getSafePagePath, trackEvent } from "@/lib/analytics";
 
 const contactEmail = "tcromoshuk@gmail.com";
 
@@ -21,6 +22,11 @@ export function ContactForm() {
     const data = new FormData(form);
     const payload = Object.fromEntries(data.entries());
     const reason = String(payload.reason || "Other");
+    trackEvent("generate_lead", {
+      lead_source: "contact_form",
+      reason_type: reason,
+      page_path: getSafePagePath(),
+    });
     const subject = encodeURIComponent(
       `Growth conversation: ${reason}`,
     );

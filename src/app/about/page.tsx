@@ -114,7 +114,12 @@ export default function AboutPage() {
         eyebrow="About"
         title="From scrappy startups to $100M+ commerce portfolios."
         intro="Over 15+ years, I've built profitable revenue engines across DTC, subscription, and marketplace brands — moving from hands-on acquisition into growth leadership and P&L-level decision-making."
-        primaryCta={{ href: "/experience", label: "View Experience" }}
+        primaryCta={{
+          analyticsEvent: "view_experience_click",
+          analyticsLinkLocation: "about_hero",
+          href: "/experience",
+          label: "View Experience",
+        }}
         secondaryCta={{ href: "/contact", label: "Start a Conversation" }}
       />
 
@@ -224,7 +229,12 @@ export default function AboutPage() {
                 senior operator to own the broader growth system.
               </p>
             </div>
-            <Link className="button secondary" href="/experience">
+            <Link
+              className="button secondary"
+              data-analytics-event="view_experience_click"
+              data-analytics-link-location="about_current_focus"
+              href="/experience"
+            >
               View Experience
             </Link>
           </div>
@@ -256,7 +266,12 @@ export default function AboutPage() {
           <Link className="button primary" href="/contact">
             Start a Conversation
           </Link>
-          <Link className="button secondary" href="/experience">
+          <Link
+            className="button secondary"
+            data-analytics-event="view_experience_click"
+            data-analytics-link-location="about_bottom_cta"
+            href="/experience"
+          >
             View Experience
           </Link>
         </div>

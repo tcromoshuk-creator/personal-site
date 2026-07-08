@@ -6,8 +6,18 @@ type HeroProps = {
   eyebrow?: string;
   title: string;
   intro: string;
-  primaryCta?: { href: string; label: string };
-  secondaryCta?: { href: string; label: string };
+  primaryCta?: {
+    analyticsEvent?: string;
+    analyticsLinkLocation?: string;
+    href: string;
+    label: string;
+  };
+  secondaryCta?: {
+    analyticsEvent?: string;
+    analyticsLinkLocation?: string;
+    href: string;
+    label: string;
+  };
   availability?: string;
   showSystemMap?: boolean;
 };
@@ -48,12 +58,22 @@ export function Hero({
           {(primaryCta || secondaryCta) && (
             <div className="button-row">
               {primaryCta && (
-                <Link className="button primary" href={primaryCta.href}>
+                <Link
+                  className="button primary"
+                  data-analytics-event={primaryCta.analyticsEvent}
+                  data-analytics-link-location={primaryCta.analyticsLinkLocation}
+                  href={primaryCta.href}
+                >
                   {primaryCta.label}
                 </Link>
               )}
               {secondaryCta && (
-                <Link className="button secondary" href={secondaryCta.href}>
+                <Link
+                  className="button secondary"
+                  data-analytics-event={secondaryCta.analyticsEvent}
+                  data-analytics-link-location={secondaryCta.analyticsLinkLocation}
+                  href={secondaryCta.href}
+                >
                   {secondaryCta.label}
                 </Link>
               )}
