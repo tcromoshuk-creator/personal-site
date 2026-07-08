@@ -2610,6 +2610,7 @@ p {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   overflow: hidden;
+  position: relative;
 }
 
 .case-vimeo-frame iframe {
@@ -2622,6 +2623,12 @@ p {
 .case-vimeo-card h4 {
   font-size: 1rem;
   letter-spacing: 0;
+}
+
+.case-video-click-overlay {
+  inset: 0;
+  position: absolute;
+  z-index: 2;
 }
 
 .case-netflix-campaign-grid {
@@ -2728,6 +2735,7 @@ p {
   background: var(--paper-soft);
   border-radius: var(--radius);
   overflow: hidden;
+  position: relative;
 }
 
 .case-menlo-video-frame iframe {

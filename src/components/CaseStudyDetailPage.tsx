@@ -174,14 +174,17 @@ function MobileMediaAssets({ study, mediaAssets }: { study: CaseStudyPageContent
 
 const netflixInvasionVideos = [
   {
+    href: "https://vimeo.com/961414740?share=copy",
     label: "Part One",
     src: "https://player.vimeo.com/video/961414740?title=0&byline=0&portrait=0",
   },
   {
+    href: "https://vimeo.com/961414677?share=copy",
     label: "Part Two",
     src: "https://player.vimeo.com/video/961414677?title=0&byline=0&portrait=0",
   },
   {
+    href: "https://vimeo.com/961414591?share=copy",
     label: "Part Three",
     src: "https://player.vimeo.com/video/961414591?title=0&byline=0&portrait=0",
   },
@@ -198,6 +201,16 @@ function VimeoCard({ video }: { video: (typeof netflixInvasionVideos)[number] })
       data-analytics-video-title={videoTitle}
     >
       <div className="case-vimeo-frame">
+        <a
+          aria-label={`Open ${videoTitle}`}
+          className="case-video-click-overlay"
+          data-analytics-case-study-slug="netflix-shop"
+          data-analytics-event="video_click"
+          data-analytics-video-title={videoTitle}
+          href={video.href}
+          target="_blank"
+          rel="noreferrer"
+        />
         <iframe
           src={video.src}
           title={videoTitle}

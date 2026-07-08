@@ -1,6 +1,7 @@
 "use client";
 
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef } from "react";
 import {
   type AnalyticsEventName,
@@ -71,8 +72,19 @@ function buildParams(element: HTMLElement, eventName: AnalyticsEventName) {
   return params;
 }
 
+function shouldDelayNavigation(eventNames: AnalyticsEventName[]) {
+  return eventNames.some((eventName) =>
+    ["email_click", "service_discuss_click", "view_case_studies_click", "video_click"].includes(eventName),
+  );
+}
+
+function isPlainPrimaryClick(event: MouseEvent) {
+  return event.button === 0 && !event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey;
+}
+
 export function AnalyticsEvents() {
   const pathname = usePathname();
+  const router = useRouter();
   const hasLoadedInitialPage = useRef(false);
 
   useEffect(() => {
@@ -91,20 +103,52 @@ export function AnalyticsEvents() {
   }, [pathname]);
 
   useEffect(() => {
+    function navigateAfterTracking(link: HTMLAnchorElement) {
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("#")) return;
+
+      const target = link.getAttribute("target");
+      const url = new URL(href, window.location.href);
+      const isInternal = url.origin === window.location.origin && !href.startsWith("mailto:");
+      const destination = isInternal ? `${url.pathname}${url.search}${url.hash}` : href;
+
+      window.setTimeout(() => {
+        if (target === "_blank") {
+          window.open(destination, "_blank", "noopener,noreferrer");
+          return;
+        }
+
+        if (isInternal) {
+          router.push(destination);
+          return;
+        }
+
+        window.location.href = destination;
+      }, 150);
+    }
+
     function onClick(event: MouseEvent) {
       const target = event.target instanceof Element ? event.target : null;
       const analyticsElement = target?.closest<HTMLElement>("[data-analytics-event]");
       if (!analyticsElement) return;
 
       const eventNames = toAnalyticsEventNames(analyticsElement.dataset.analyticsEvent);
+      const link = analyticsElement instanceof HTMLAnchorElement ? analyticsElement : analyticsElement.closest("a");
+
       eventNames.forEach((eventName) => {
         trackEvent(eventName, buildParams(analyticsElement, eventName));
       });
+
+      if (link && !link.getAttribute("target") && isPlainPrimaryClick(event) && shouldDelayNavigation(eventNames)) {
+        event.preventDefault();
+        event.stopPropagation();
+        navigateAfterTracking(link);
+      }
     }
 
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
-  }, []);
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, [router]);
 
   return null;
 }

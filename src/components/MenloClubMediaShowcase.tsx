@@ -80,6 +80,16 @@ export function MenloClubMediaShowcase({ mediaAssets }: { mediaAssets: CaseStudy
           data-analytics-video-title="Menlo Club Premium Seasonal launch video"
         >
           <div className="case-menlo-video-frame">
+            <a
+              aria-label="Open Menlo Club Premium Seasonal launch video"
+              className="case-video-click-overlay"
+              data-analytics-case-study-slug="menlo-club"
+              data-analytics-event="video_click"
+              data-analytics-video-title="Menlo Club Premium Seasonal launch video"
+              href="https://www.youtube.com/watch?v=0mqC60QsVDo&ab_channel=MenloHouse"
+              target="_blank"
+              rel="noreferrer"
+            />
             <iframe
               src="https://www.youtube.com/embed/0mqC60QsVDo"
               title="Menlo Club Premium Seasonal launch video"
