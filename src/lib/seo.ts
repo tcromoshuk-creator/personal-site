@@ -7,6 +7,13 @@ type PageMetadata = {
   path?: string;
 };
 
+const socialImage = {
+  url: "/images/tyrell-headshot.jpg",
+  width: 2520,
+  height: 1680,
+  alt: "Tyrell Cromoshuk",
+};
+
 export function createMetadata({
   title,
   description = site.description,
@@ -35,11 +42,13 @@ export function createMetadata({
       url,
       siteName: site.name,
       type: "website",
+      images: [socialImage],
     },
     twitter: {
       card: "summary_large_image",
       title: fullTitle,
       description,
+      images: [socialImage.url],
     },
   };
 }
