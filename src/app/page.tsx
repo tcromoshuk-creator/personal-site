@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { CaseCard } from "@/components/CaseCard";
 import { CompanyStrip } from "@/components/CompanyStrip";
-import { ExpertiseCards } from "@/components/ExpertiseCards";
+import { GrowthSystemComparison } from "@/components/GrowthSystemComparison";
 import { GrowthOperatingSystem } from "@/components/GrowthOperatingSystem";
 import { Hero } from "@/components/Hero";
 import { PlatformEcosystem } from "@/components/PlatformEcosystem";
 import { Section } from "@/components/Section";
-import { caseStudies, coreExpertiseCards, homepageAudiences, industries, site } from "@/lib/content";
+import { caseStudies, homepageAudiences, industries, site } from "@/lib/content";
 
 const homepageCaseStudySlugs = ["mad-engine-tiktok-shop", "netflix-shop"];
 
@@ -41,16 +41,12 @@ export default function Home() {
       </Section>
 
       <Section
-        className="capabilities-section"
-        eyebrow="Core Expertise"
-        title="Growth functions I lead end-to-end."
+        className="growth-philosophy-section"
+        eyebrow="Growth Philosophy"
+        title="Growth is more than a channel. I build the system."
+        intro="Many companies define growth too narrowly. I connect the full customer journey—from demand generation through activation, engagement, and retention—to create long-term value."
       >
-        <ExpertiseCards items={coreExpertiseCards} />
-        <div className="button-row section-action">
-          <Link className="button secondary" href="/services">
-            View Services
-          </Link>
-        </div>
+        <GrowthSystemComparison />
       </Section>
 
       <Section className="case-proof-section" eyebrow="Case Studies" title="A few highlights of my work">
