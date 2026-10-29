@@ -705,7 +705,7 @@ export const futureContent = {
 
 export const timeline = [
   {
-    date: "Sept 2025 - Present",
+    date: "Sept 2025 - Aug 2026",
     role: "SVP, Growth Retail & Marketplace Commerce",
     company: "Mad Engine Global",
     detail:

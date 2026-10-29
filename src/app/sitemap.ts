@@ -2,24 +2,11 @@ import type { MetadataRoute } from "next";
 import { caseStudyPages } from "@/lib/case-study-pages";
 import { site } from "@/lib/content";
 
-const staticRoutes = [
-  "/",
-  "/about",
-  "/experience",
-  "/services",
-  "/case-studies",
-  "/contact",
-];
-
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date("2026-07-07");
-  const routes = [
-    ...staticRoutes,
+  const paths = [
+    "", "/about", "/experience", "/services", "/case-studies", "/contact", "/agents",
     ...caseStudyPages.map((study) => `/case-studies/${study.slug}`),
   ];
-
-  return routes.map((route) => ({
-    url: new URL(route, site.url).toString(),
-    lastModified,
-  }));
+  // Only canonical HTML pages. Do not invent last-modified dates on each build.
+  return paths.map((path) => ({ url: `${site.url}${path || "/"}` }));
 }

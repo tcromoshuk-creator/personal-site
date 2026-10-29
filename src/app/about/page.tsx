@@ -92,7 +92,7 @@ const careerChapters = [
       "Joined after the Paxful marketplace had shut down and been revived under Echo Base, with a mandate to rebuild the marketing and growth foundation for a global P2P fintech marketplace. Led post-relaunch growth across acquisition, lifecycle, CRM, reactivation, compliance-sensitive messaging, and practical AI-enabled workflows.",
   },
   {
-    period: "2025-Present",
+    period: "2025-2026",
     company: "Mad Engine Global",
     role: "Marketplace and e-commerce portfolio leadership",
     logos: [
@@ -103,7 +103,7 @@ const careerChapters = [
       },
     ],
     body:
-      "Lead growth strategy and operating transformation across a $120M+ e-commerce portfolio spanning Amazon, Walmart, Target+, TikTok Shop, retail media, analytics, merchandising, catalog quality, and executive reporting. Built stronger operating cadence, clearer ownership, improved retail media efficiency, and marketplace growth systems across cross-functional teams.",
+      "Led growth strategy and operating transformation across a $120M+ e-commerce portfolio spanning Amazon, Walmart, Target+, TikTok Shop, retail media, analytics, merchandising, catalog quality, and executive reporting. Built stronger operating cadence, clearer ownership, improved retail media efficiency, and marketplace growth systems across cross-functional teams.",
   },
 ];
 

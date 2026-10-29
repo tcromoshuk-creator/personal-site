@@ -12,9 +12,9 @@ import {
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "Services",
+  title: "Fractional Growth Leadership & Marketing Advisory",
   description:
-    "Consulting and advisory services across growth strategy, e-commerce, marketplace growth, paid acquisition, lifecycle, CRO, executive reporting, forecasting, and AI-enabled growth systems.",
+    "Fractional and interim growth leadership, marketing consulting, and advisory for DTC, subscription, and marketplace businesses. Growth strategy, acquisition, retention, and reporting.",
   path: "/services",
 });
 

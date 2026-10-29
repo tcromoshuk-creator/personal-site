@@ -3,6 +3,8 @@ import { AnalyticsEvents } from "@/components/AnalyticsEvents";
 import { GoogleTagManager, GoogleTagManagerNoScript } from "@/components/GoogleTagManager";
 import { SiteHeader } from "@/components/SiteHeader";
 import { createMetadata } from "@/lib/seo";
+import { StructuredData } from "@/components/StructuredData";
+import { websiteStructuredData } from "@/lib/structured-data";
 import "./globals.css";
 
 const navItems = [
@@ -24,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body suppressHydrationWarning>
+        <StructuredData data={websiteStructuredData} />
         <GoogleTagManagerNoScript />
         <GoogleTagManager />
         <AnalyticsEvents />

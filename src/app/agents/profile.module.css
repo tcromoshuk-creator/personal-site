@@ -1,0 +1,21 @@
+.profile p { color: var(--muted); }
+.profileMeta { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 1rem; }
+.profileMeta p { margin: 0; }
+.contents { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; padding-top: 1.5rem; margin-top: 1.5rem; border-top: 1px solid var(--line); }
+.profile a { text-underline-offset: .22em; }
+.anchor { scroll-margin-top: 6rem; }
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.card { background: var(--paper); border: 1px solid var(--line); padding: clamp(1.25rem, 3vw, 2rem); border-radius: var(--radius); }
+.card h3 { margin-top: 0; font-size: 1.3rem; line-height: 1.35; }
+.card p, .role p { line-height: 1.8; }
+.roles { display: grid; gap: 2rem; }
+.role { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 2rem; border-top: 1px solid var(--line-strong); padding-top: 2rem; }
+.role h3 { margin: .6rem 0; font-size: 1.5rem; }
+.role p:first-child { margin-top: 0; }
+.role ul { padding-left: 1.25rem; color: var(--ink-mid); line-height: 1.8; }
+.readable { max-width: 76ch; line-height: 1.8; }
+@media (max-width: 760px) {
+  .grid, .role { grid-template-columns: minmax(0, 1fr); }
+  .role { gap: .5rem; }
+  .contents { gap: 1rem; }
+}
